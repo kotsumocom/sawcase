@@ -29,7 +29,7 @@
     "lint": "deno lint"
   },
   "imports": {
-    "@kotsumo/sawtooth-css": "jsr:@kotsumo/sawtooth-css@^0.1.3",
+    "@kotsumo/sawtooth-css": "jsr:@kotsumo/sawtooth-css@^0.1.4",
     "@std/path": "jsr:@std/path@1"
   },
   "lint": {
