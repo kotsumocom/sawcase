@@ -1,0 +1,15 @@
+/* ==========================================================
+ * sc-admin-shell — 管理画面の全画面シェル
+ *
+ * 画面全体を覆い、header + body の縦分割を行う。
+ * ========================================================== */
+
+.sc-admin-shell {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  height: 100dvh;
+  overflow: hidden;
+  background-color: var(--st-sys-color-surface, #fef7ff);
+  color: var(--st-sys-color-on-surface, #1d1b20);
+}

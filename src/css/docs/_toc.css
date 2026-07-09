@@ -1,0 +1,58 @@
+/* ==========================================================
+ * sc-docs-toc — 右サイドバー（ページ内目次）
+ *
+ * デスクトップ: sticky で常時表示
+ * タブレット: 非表示
+ * モバイル: 非表示
+ * ========================================================== */
+
+.sc-docs-toc {
+  display: none;
+  width: var(--sc-docs-toc-width);
+  min-width: var(--sc-docs-toc-width);
+  position: sticky;
+  top: var(--sc-docs-header-height);
+  height: fit-content;
+  max-height: calc(100vh - var(--sc-docs-header-height) - 2rem);
+  overflow-y: auto;
+  padding: var(--st-sys-spacing-4, 16px);
+  flex-shrink: 0;
+}
+
+.sc-docs-toc__title {
+  font-size: var(--st-sys-typescale-label-small-size, 0.6875rem);
+  font-weight: 600;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--st-sys-spacing-3, 12px);
+}
+
+.sc-docs-toc__link {
+  display: block;
+  font-size: var(--st-sys-typescale-body-small-size, 0.75rem);
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  text-decoration: none;
+  padding: var(--st-sys-spacing-1, 4px) var(--st-sys-spacing-2, 8px);
+  border-left: 2px solid transparent;
+  transition: all var(--st-sys-motion-duration-short1, 100ms)
+    var(--st-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+  line-height: 1.5;
+}
+
+.sc-docs-toc__link:hover {
+  color: var(--st-sys-color-on-surface, #1d1b20);
+}
+
+.sc-docs-toc__link--active {
+  color: var(--st-sys-color-primary, #6750a4);
+  border-left-color: var(--st-sys-color-primary, #6750a4);
+  font-weight: 600;
+}
+
+/* デスクトップ: 表示 */
+@media (min-width: 1025px) {
+  .sc-docs-toc {
+    display: block;
+  }
+}

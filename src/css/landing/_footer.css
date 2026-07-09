@@ -1,0 +1,62 @@
+/* ==========================================================
+ * sc-lp-footer — LP フッター [β]
+ *
+ * シンプルなフッター。リンクグループ + コピーライト。
+ * ========================================================== */
+
+.sc-lp-footer {
+  border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  background-color: var(--st-sys-color-surface, #fef7ff);
+  padding: var(--st-sys-spacing-10, 40px) var(--st-sys-spacing-6, 24px);
+}
+
+.sc-lp-footer__inner {
+  max-width: var(--sc-lp-content-max-width);
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--st-sys-spacing-8, 32px);
+  flex-wrap: wrap;
+}
+
+.sc-lp-footer__group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--st-sys-spacing-2, 8px);
+}
+
+.sc-lp-footer__group-title {
+  font-size: var(--st-sys-typescale-label-large-size, 0.875rem);
+  font-weight: 600;
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  margin-bottom: var(--st-sys-spacing-1, 4px);
+}
+
+.sc-lp-footer__link {
+  font-size: var(--st-sys-typescale-body-medium-size, 0.875rem);
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  text-decoration: none;
+  transition: color var(--st-sys-motion-duration-short1, 100ms)
+    var(--st-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+}
+
+.sc-lp-footer__link:hover {
+  color: var(--st-sys-color-primary, #6750a4);
+}
+
+.sc-lp-footer__copyright {
+  width: 100%;
+  text-align: center;
+  font-size: var(--st-sys-typescale-body-small-size, 0.75rem);
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin-top: var(--st-sys-spacing-6, 24px);
+  padding-top: var(--st-sys-spacing-4, 16px);
+  border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+}
+
+@media (max-width: 768px) {
+  .sc-lp-footer__inner {
+    flex-direction: column;
+  }
+}

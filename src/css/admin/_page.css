@@ -1,0 +1,72 @@
+/* ==========================================================
+ * sc-admin-page — ページ構造プリミティブ
+ *
+ * メインコンテンツ内のページレイアウト。
+ * ページヘッダー（タイトル + アクション）とボディで構成。
+ * ========================================================== */
+
+.sc-admin-page {
+  max-width: 72rem;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* 幅バリエーション */
+.sc-admin-page--narrow {
+  max-width: 42rem;
+}
+
+.sc-admin-page--wide {
+  max-width: 80rem;
+}
+
+.sc-admin-page--full {
+  max-width: 100%;
+}
+
+/* ページヘッダー（タイトル行 + アクション） */
+.sc-admin-page__header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--st-sys-spacing-4, 16px);
+  margin-bottom: var(--st-sys-spacing-6, 24px);
+}
+
+.sc-admin-page__title {
+  font-size: var(--st-sys-typescale-title-large-size, 1.375rem);
+  font-weight: 600;
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  margin: 0;
+  line-height: 1.3;
+}
+
+.sc-admin-page__description {
+  font-size: var(--st-sys-typescale-body-medium-size, 0.875rem);
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin: var(--st-sys-spacing-1, 4px) 0 0;
+}
+
+.sc-admin-page__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2, 8px);
+  flex-shrink: 0;
+}
+
+/* ページボディ */
+.sc-admin-page__body {
+  /* コンテンツがここに入る */
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+  .sc-admin-page__header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .sc-admin-page__actions {
+    justify-content: flex-end;
+  }
+}

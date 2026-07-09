@@ -1,0 +1,69 @@
+/* ==========================================================
+ * sc-auth — 認証画面
+ *
+ * ログイン、サインアップ、パスワードリセット等の中央配置カード。
+ * ========================================================== */
+
+.sc-auth {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: var(--st-sys-spacing-4, 16px);
+  background-color: var(--st-sys-color-surface-container-low, #f7f2fa);
+}
+
+.sc-auth__card {
+  width: 100%;
+  max-width: var(--sc-auth-card-width);
+  background-color: var(--st-sys-color-surface, #fef7ff);
+  border-radius: var(--st-sys-shape-corner-xl, 28px);
+  box-shadow: var(
+    --st-sys-elevation-level2,
+    0 1px 2px 0 rgba(0, 0, 0, 0.3),
+    0 2px 6px 2px rgba(0, 0, 0, 0.15)
+  );
+  overflow: hidden;
+}
+
+.sc-auth__header {
+  text-align: center;
+  padding: var(--st-sys-spacing-8, 32px) var(--st-sys-spacing-6, 24px)
+    var(--st-sys-spacing-4, 16px);
+}
+
+.sc-auth__logo {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin-bottom: var(--st-sys-spacing-4, 16px);
+}
+
+.sc-auth__title {
+  font-size: var(--st-sys-typescale-title-large-size, 1.375rem);
+  font-weight: 600;
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  margin: 0;
+}
+
+.sc-auth__body {
+  padding: var(--st-sys-spacing-4, 16px) var(--st-sys-spacing-6, 24px);
+}
+
+.sc-auth__footer {
+  padding: var(--st-sys-spacing-4, 16px) var(--st-sys-spacing-6, 24px)
+    var(--st-sys-spacing-8, 32px);
+  text-align: center;
+  font-size: var(--st-sys-typescale-body-medium-size, 0.875rem);
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+}
+
+.sc-auth__footer a {
+  color: var(--st-sys-color-primary, #6750a4);
+  text-decoration: none;
+}
+
+.sc-auth__footer a:hover {
+  text-decoration: underline;
+}

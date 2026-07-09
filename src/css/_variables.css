@@ -1,0 +1,35 @@
+/* ==========================================================
+ * Sawcase — CSS カスタムプロパティ
+ *
+ * sawtooth-css のデザイントークン（--st-*）を前提として、
+ * sawcase 固有のレイアウト変数を定義する。
+ * ========================================================== */
+
+:root {
+  /* --- Admin Layout --- */
+  --sc-admin-header-height: 48px;
+  --sc-admin-nav-width: 13rem;
+  --sc-admin-nav-width-collapsed: 3rem;
+
+  /* --- Docs Layout --- */
+  --sc-docs-header-height: 48px;
+  --sc-docs-sidebar-width: 15rem;
+  --sc-docs-toc-width: 12rem;
+  --sc-docs-content-max-width: 50rem;
+
+  /* --- Common --- */
+  --sc-auth-card-width: 24rem;
+
+  /* --- LP Layout --- */
+  --sc-lp-content-max-width: 72rem;
+
+  /* --- Breakpoints (参考値、メディアクエリで直接使用) --- */
+  /* モバイル: < 768px */
+  /* タブレット: 768px - 1024px */
+  /* デスクトップ: > 1024px */
+
+  /* --- z-index レイヤー --- */
+  --sc-z-header: 100;
+  --sc-z-nav: 90;
+  --sc-z-overlay: 80;
+}

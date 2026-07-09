@@ -1,0 +1,34 @@
+/* ==========================================================
+ * sc-empty — 空状態
+ *
+ * データがない場合の表示。アイコン + タイトル + 説明。
+ * ========================================================== */
+
+.sc-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--st-sys-spacing-12, 48px) var(--st-sys-spacing-4, 16px);
+  text-align: center;
+}
+
+.sc-empty__icon {
+  font-size: 3rem;
+  margin-bottom: var(--st-sys-spacing-4, 16px);
+  opacity: 0.6;
+}
+
+.sc-empty__title {
+  font-size: var(--st-sys-typescale-title-medium-size, 1rem);
+  font-weight: 600;
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  margin: 0 0 var(--st-sys-spacing-2, 8px);
+}
+
+.sc-empty__description {
+  font-size: var(--st-sys-typescale-body-medium-size, 0.875rem);
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin: 0;
+  max-width: 24rem;
+}

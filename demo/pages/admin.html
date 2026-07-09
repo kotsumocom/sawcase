@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>管理画面デモ — Sawcase</title>
+  <link rel="stylesheet" href="/dist/sawcase.css">
+</head>
+<body>
+
+<div class="sc-admin-shell">
+  <!-- ヘッダー -->
+  <header class="sc-admin-header">
+    <button class="sc-admin-header__menu-btn" aria-label="メニュー">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
+    </button>
+    <div class="sc-admin-header__brand">
+      <span class="sc-admin-header__app-name">MyApp</span>
+    </div>
+    <div class="sc-admin-header__breadcrumb">
+      ダッシュボード
+    </div>
+    <div class="sc-admin-header__actions">
+      <button style="background:none;border:none;cursor:pointer;padding:8px;">🔔</button>
+      <button style="background:none;border:none;cursor:pointer;padding:8px;">👤</button>
+    </div>
+  </header>
+
+  <!-- ボディ -->
+  <div class="sc-admin-body">
+    <!-- サイドナビ -->
+    <nav class="sc-admin-nav" id="admin-nav">
+      <div class="sc-admin-nav__group">
+        <div class="sc-admin-nav__group-label">メイン</div>
+        <a href="#" class="sc-admin-nav__link sc-admin-nav__link--active">
+          <svg class="sc-admin-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="3" width="7" height="7" rx="1" />
+            <rect x="14" y="3" width="7" height="7" rx="1" />
+            <rect x="3" y="14" width="7" height="7" rx="1" />
+            <rect x="14" y="14" width="7" height="7" rx="1" />
+          </svg>
+          <span>ダッシュボード</span>
+        </a>
+        <a href="#" class="sc-admin-nav__link">
+          <svg class="sc-admin-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          <span>ユーザー</span>
+        </a>
+        <a href="#" class="sc-admin-nav__link">
+          <svg class="sc-admin-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+            <polyline points="14 2 14 8 20 8" />
+          </svg>
+          <span>レポート</span>
+        </a>
+      </div>
+      <div class="sc-admin-nav__group">
+        <div class="sc-admin-nav__group-label">設定</div>
+        <a href="#" class="sc-admin-nav__link">
+          <svg class="sc-admin-nav__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="3" />
+            <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z" />
+          </svg>
+          <span>設定</span>
+        </a>
+      </div>
+      <div class="sc-admin-nav__footer">
+        <a href="#" class="sc-admin-nav__link sc-admin-nav__link--danger">ログアウト</a>
+      </div>
+    </nav>
+
+    <!-- オーバーレイ -->
+    <div class="sc-admin-overlay" id="admin-overlay"></div>
+
+    <!-- メインコンテンツ -->
+    <main class="sc-admin-content">
+      <div class="sc-admin-page">
+        <div class="sc-admin-page__header">
+          <div>
+            <h2 class="sc-admin-page__title">ダッシュボード</h2>
+            <p class="sc-admin-page__description">概要データの確認</p>
+          </div>
+        </div>
+
+        <!-- Stats カード -->
+        <div class="sc-admin-stats">
+          <div class="sc-admin-stats__card">
+            <div class="sc-admin-stats__label">総収入</div>
+            <div class="sc-admin-stats__value">¥1,234,567</div>
+            <div class="sc-admin-stats__trend sc-admin-stats__trend--up">+12.5%</div>
+          </div>
+          <div class="sc-admin-stats__card">
+            <div class="sc-admin-stats__label">ユーザー数</div>
+            <div class="sc-admin-stats__value">1,234</div>
+            <div class="sc-admin-stats__trend sc-admin-stats__trend--up">+5.2%</div>
+          </div>
+          <div class="sc-admin-stats__card">
+            <div class="sc-admin-stats__label">注文数</div>
+            <div class="sc-admin-stats__value">567</div>
+            <div class="sc-admin-stats__trend sc-admin-stats__trend--down">-2.1%</div>
+          </div>
+          <div class="sc-admin-stats__card">
+            <div class="sc-admin-stats__label">コンバージョン率</div>
+            <div class="sc-admin-stats__value">3.2%</div>
+            <div class="sc-admin-stats__trend sc-admin-stats__trend--up">+0.8%</div>
+          </div>
+        </div>
+
+        <div class="sc-admin-page__body">
+          <p style="color: #49454f;">ここにグラフやテーブルが入ります。</p>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>
+
+<script src="/dist/sawcase.js"></script>
+<script>
+  sawcase.initAdminNav();
+</script>
+</body>
+</html>

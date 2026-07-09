@@ -1,0 +1,104 @@
+/* ==========================================================
+ * sc-docs-header — ドキュメントヘッダー
+ *
+ * ブランド + トップナビ（ガイド/API/変更履歴） + アクション
+ * ========================================================== */
+
+.sc-docs-header {
+  display: flex;
+  align-items: center;
+  height: var(--sc-docs-header-height);
+  min-height: var(--sc-docs-header-height);
+  padding: 0 var(--st-sys-spacing-4, 16px);
+  background-color: var(--st-sys-color-surface, #fef7ff);
+  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  position: sticky;
+  top: 0;
+  z-index: var(--sc-z-header);
+  gap: var(--st-sys-spacing-4, 16px);
+  flex-shrink: 0;
+}
+
+/* ブランド */
+.sc-docs-header__brand {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2, 8px);
+  flex-shrink: 0;
+}
+
+.sc-docs-header__logo {
+  width: 24px;
+  height: 24px;
+  object-fit: contain;
+}
+
+.sc-docs-header__app-name {
+  font-size: var(--st-sys-typescale-title-medium-size, 1rem);
+  font-weight: 600;
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  white-space: nowrap;
+}
+
+/* トップナビゲーション */
+.sc-docs-header__nav {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-1, 4px);
+  flex: 1;
+}
+
+.sc-docs-header__link {
+  font-size: var(--st-sys-typescale-label-large-size, 0.875rem);
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  text-decoration: none;
+  padding: var(--st-sys-spacing-2, 8px) var(--st-sys-spacing-3, 12px);
+  border-radius: var(--st-sys-shape-corner-sm, 8px);
+  transition: background-color var(--st-sys-motion-duration-short1, 100ms)
+    var(--st-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+}
+
+.sc-docs-header__link:hover {
+  background-color: var(--st-sys-color-surface-variant, #e7e0ec);
+}
+
+.sc-docs-header__link--active {
+  color: var(--st-sys-color-primary, #6750a4);
+  font-weight: 600;
+}
+
+/* アクション */
+.sc-docs-header__actions {
+  display: flex;
+  align-items: center;
+  gap: var(--st-sys-spacing-2, 8px);
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* モバイル: ハンバーガーメニュー */
+.sc-docs-header__menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--st-sys-spacing-2, 8px);
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  border-radius: var(--st-sys-shape-corner-full, 9999px);
+}
+
+.sc-docs-header__menu-btn:hover {
+  background-color: var(--st-sys-color-surface-variant, #e7e0ec);
+}
+
+@media (max-width: 768px) {
+  .sc-docs-header__menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .sc-docs-header__nav {
+    display: none;
+  }
+}

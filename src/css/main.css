@@ -1,0 +1,38 @@
+/* ==========================================================
+ * Sawcase CSS — Main Entry Point
+ *
+ * 読み込み順: variables → admin → docs → common → landing
+ *
+ * ビルドスクリプト (build.ts) がこのファイルの @import を
+ * 再帰的に解決して1ファイルに結合する。
+ * ========================================================== */
+
+/* --- 1. Variables --- */
+@import "./_variables.css";
+
+/* --- 2. Admin Layout (sc-admin-*) --- */
+@import "./admin/_shell.css";
+@import "./admin/_header.css";
+@import "./admin/_nav.css";
+@import "./admin/_overlay.css";
+@import "./admin/_page.css";
+@import "./admin/_stats.css";
+
+/* --- 3. Docs Layout (sc-docs-*) --- */
+@import "./docs/_shell.css";
+@import "./docs/_header.css";
+@import "./docs/_sidebar.css";
+@import "./docs/_article.css";
+@import "./docs/_toc.css";
+
+/* --- 4. Common (sc-*) --- */
+@import "./common/_auth.css";
+@import "./common/_empty.css";
+@import "./common/_loading.css";
+
+/* --- 5. Landing Page (sc-lp-*) [β] --- */
+@import "./landing/_header.css";
+@import "./landing/_hero.css";
+@import "./landing/_section.css";
+@import "./landing/_features.css";
+@import "./landing/_footer.css";

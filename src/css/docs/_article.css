@@ -1,0 +1,168 @@
+/* ==========================================================
+ * sc-docs-article — 記事本文 (prose スタイル)
+ *
+ * Markdown レンダリングされたコンテンツのタイポグラフィ。
+ * コードブロック、テーブル、引用のスタイリング。
+ * 前後ナビゲーション。
+ * ========================================================== */
+
+.sc-docs-article {
+  max-width: var(--sc-docs-content-max-width);
+  width: 100%;
+}
+
+/* タイトル */
+.sc-docs-article__title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  margin: 0 0 var(--st-sys-spacing-6, 24px);
+  line-height: 1.3;
+}
+
+/* 本文 — prose スタイル */
+.sc-docs-article__body {
+  font-size: var(--st-sys-typescale-body-large-size, 1rem);
+  line-height: 1.75;
+  color: var(--st-sys-color-on-surface, #1d1b20);
+}
+
+/* 見出し */
+.sc-docs-article__body h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin: 2em 0 0.75em;
+  padding-bottom: var(--st-sys-spacing-2, 8px);
+  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+}
+
+.sc-docs-article__body h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 1.5em 0 0.5em;
+}
+
+.sc-docs-article__body h4 {
+  font-size: 1.125rem;
+  font-weight: 600;
+  margin: 1.25em 0 0.5em;
+}
+
+/* 段落 */
+.sc-docs-article__body p {
+  margin: 0 0 1em;
+}
+
+/* リスト */
+.sc-docs-article__body ul,
+.sc-docs-article__body ol {
+  margin: 0 0 1em;
+  padding-left: 1.5em;
+}
+
+.sc-docs-article__body li {
+  margin-bottom: 0.25em;
+}
+
+/* インラインコード */
+.sc-docs-article__body code {
+  font-family: "Fira Code", "JetBrains Mono", monospace;
+  font-size: 0.875em;
+  background-color: var(--st-sys-color-surface-variant, #e7e0ec);
+  padding: 0.125em 0.375em;
+  border-radius: var(--st-sys-shape-corner-xs, 4px);
+}
+
+/* コードブロック */
+.sc-docs-article__body pre {
+  background-color: var(--st-sys-color-surface-container-low, #f7f2fa);
+  border: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  border-radius: var(--st-sys-shape-corner-md, 12px);
+  padding: var(--st-sys-spacing-4, 16px);
+  overflow-x: auto;
+  margin: 0 0 1.5em;
+}
+
+.sc-docs-article__body pre code {
+  background: none;
+  padding: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+/* テーブル */
+.sc-docs-article__body table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 0 1.5em;
+  font-size: 0.875rem;
+}
+
+.sc-docs-article__body th {
+  text-align: left;
+  font-weight: 600;
+  padding: var(--st-sys-spacing-3, 12px);
+  border-bottom: 2px solid var(--st-sys-color-outline-variant, #cac4d0);
+  color: var(--st-sys-color-on-surface, #1d1b20);
+}
+
+.sc-docs-article__body td {
+  padding: var(--st-sys-spacing-3, 12px);
+  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+}
+
+/* 引用 */
+.sc-docs-article__body blockquote {
+  margin: 0 0 1.5em;
+  padding: var(--st-sys-spacing-3, 12px) var(--st-sys-spacing-4, 16px);
+  border-left: 4px solid var(--st-sys-color-primary, #6750a4);
+  background-color: color-mix(
+    in srgb,
+    var(--st-sys-color-primary, #6750a4) 5%,
+    transparent
+  );
+  border-radius: 0 var(--st-sys-shape-corner-sm, 8px)
+    var(--st-sys-shape-corner-sm, 8px) 0;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+}
+
+/* 水平線 */
+.sc-docs-article__body hr {
+  border: none;
+  border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  margin: 2em 0;
+}
+
+/* 前後ナビゲーション */
+.sc-docs-article__nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: var(--st-sys-spacing-10, 40px);
+  padding-top: var(--st-sys-spacing-6, 24px);
+  border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  gap: var(--st-sys-spacing-4, 16px);
+}
+
+.sc-docs-article__prev,
+.sc-docs-article__next {
+  font-size: var(--st-sys-typescale-body-medium-size, 0.875rem);
+  color: var(--st-sys-color-primary, #6750a4);
+  text-decoration: none;
+  padding: var(--st-sys-spacing-2, 8px) var(--st-sys-spacing-3, 12px);
+  border-radius: var(--st-sys-shape-corner-sm, 8px);
+  transition: background-color var(--st-sys-motion-duration-short1, 100ms)
+    var(--st-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+}
+
+.sc-docs-article__prev:hover,
+.sc-docs-article__next:hover {
+  background-color: color-mix(
+    in srgb,
+    var(--st-sys-color-primary, #6750a4) 8%,
+    transparent
+  );
+}
+
+.sc-docs-article__next {
+  margin-left: auto;
+}

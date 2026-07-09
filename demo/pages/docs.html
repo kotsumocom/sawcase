@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ドキュメントデモ — Sawcase</title>
+  <link rel="stylesheet" href="/dist/sawcase.css">
+</head>
+<body>
+
+<div class="sc-docs-shell">
+  <!-- ヘッダー -->
+  <header class="sc-docs-header">
+    <div class="sc-docs-header__brand">
+      <span class="sc-docs-header__app-name">MyApp Docs</span>
+    </div>
+    <nav class="sc-docs-header__nav">
+      <a href="#" class="sc-docs-header__link sc-docs-header__link--active">ガイド</a>
+      <a href="#" class="sc-docs-header__link">API</a>
+      <a href="#" class="sc-docs-header__link">変更履歴</a>
+    </nav>
+    <div class="sc-docs-header__actions">
+      <button style="background:none;border:none;cursor:pointer;padding:8px;">🔍</button>
+    </div>
+  </header>
+
+  <!-- ボディ -->
+  <div class="sc-docs-body">
+    <!-- 左サイドバー -->
+    <nav class="sc-docs-sidebar" id="docs-sidebar">
+      <div class="sc-docs-sidebar__group">
+        <div class="sc-docs-sidebar__group-label">はじめに</div>
+        <a href="#" class="sc-docs-sidebar__link sc-docs-sidebar__link--active">導入</a>
+        <a href="#" class="sc-docs-sidebar__link">インストール</a>
+        <a href="#" class="sc-docs-sidebar__link">クイックスタート</a>
+      </div>
+      <div class="sc-docs-sidebar__group">
+        <div class="sc-docs-sidebar__group-label">ガイド</div>
+        <a href="#" class="sc-docs-sidebar__link">管理画面</a>
+        <a href="#" class="sc-docs-sidebar__link">ドキュメント</a>
+        <a href="#" class="sc-docs-sidebar__link">認証画面</a>
+        <a href="#" class="sc-docs-sidebar__link">LP [β]</a>
+      </div>
+      <div class="sc-docs-sidebar__group">
+        <div class="sc-docs-sidebar__group-label">リファレンス</div>
+        <a href="#" class="sc-docs-sidebar__link">クラス一覧</a>
+        <a href="#" class="sc-docs-sidebar__link">CSS 変数</a>
+        <a href="#" class="sc-docs-sidebar__link">JS API</a>
+      </div>
+    </nav>
+
+    <!-- メインコンテンツ -->
+    <main class="sc-docs-content">
+      <article class="sc-docs-article">
+        <h1 class="sc-docs-article__title">導入ガイド</h1>
+        <div class="sc-docs-article__body">
+          <h2 id="overview">概要</h2>
+          <p>
+            Sawcase は sawtooth-css の上に載るレイアウト CSS + 軽量 JS ライブラリです。
+            管理画面・ドキュメントページ・LP の骨格をクラスベースで提供します。
+          </p>
+
+          <h2 id="install">インストール</h2>
+          <p>以下のコマンドでインストールできます：</p>
+          <pre><code>deno add jsr:@kotsumo/sawcase</code></pre>
+
+          <h2 id="usage">基本的な使い方</h2>
+          <p>
+            sawcase を使うには、まず CSS と JS を生成します。
+            <code>generate.ts</code> を使って dev.ts に組み込むのが推奨です。
+          </p>
+          <pre><code>import { generateSawcaseCSS } from "@kotsumo/sawcase/generate";
+
+await generateSawcaseCSS({
+  output: "./static/sawcase.css",
+  jsOutput: "./static/sawcase.js",
+  sawtooth: { output: "./static/sawtooth.css" },
+  theme: { colors: { primary: "#6750A4" } },
+});</code></pre>
+
+          <h3 id="prefixes">プレフィックス体系</h3>
+          <p>sawcase のクラスは以下のプレフィックスで分類されます：</p>
+          <table>
+            <thead>
+              <tr>
+                <th>プレフィックス</th>
+                <th>用途</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><code>sc-admin-</code></td>
+                <td>管理画面</td>
+              </tr>
+              <tr>
+                <td><code>sc-docs-</code></td>
+                <td>ドキュメント</td>
+              </tr>
+              <tr>
+                <td><code>sc-lp-</code></td>
+                <td>LP [β]</td>
+              </tr>
+              <tr>
+                <td><code>sc-</code></td>
+                <td>共通</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <blockquote>
+            <p><strong>Note:</strong> コンポーネント（ボタン、入力等）は sawtooth-css の <code>st-*</code> クラスを使います。</p>
+          </blockquote>
+
+          <h2 id="next">次のステップ</h2>
+          <p>
+            各レイアウトの詳しい使い方は、左のサイドバーからガイドページをご覧ください。
+          </p>
+
+          <hr>
+        </div>
+
+        <div class="sc-docs-article__nav">
+          <span></span>
+          <a href="#" class="sc-docs-article__next">インストール →</a>
+        </div>
+      </article>
+    </main>
+
+    <!-- 右 TOC -->
+    <aside class="sc-docs-toc">
+      <div class="sc-docs-toc__title">このページの目次</div>
+      <a href="#overview" class="sc-docs-toc__link sc-docs-toc__link--active">概要</a>
+      <a href="#install" class="sc-docs-toc__link">インストール</a>
+      <a href="#usage" class="sc-docs-toc__link">基本的な使い方</a>
+      <a href="#prefixes" class="sc-docs-toc__link" style="padding-left: 24px;">プレフィックス体系</a>
+      <a href="#next" class="sc-docs-toc__link">次のステップ</a>
+    </aside>
+  </div>
+</div>
+
+<script src="/dist/sawcase.js"></script>
+<script>
+  sawcase.initDocsToc();
+</script>
+</body>
+</html>

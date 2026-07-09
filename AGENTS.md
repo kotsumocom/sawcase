@@ -1,17 +1,17 @@
 # AI エージェントへの指示書
 
-このファイルは、AI アシスタントが sawcase-css プロジェクトで作業する上での中心的なコンテキストを定義します。
+このファイルは、AI アシスタントが sawcase プロジェクトで作業する上での中心的なコンテキストを定義します。
 
 ## プロジェクト概要
 
-sawcase-css は、**sawtooth-css (MD3 コンポーネント CSS)** の上に載る**レイアウト CSS ライブラリ**です。
-管理画面・ドキュメントページ・LP の骨格を CSS クラスとして提供します。
+sawcase は、**sawtooth-css (MD3 コンポーネント CSS)** の上に載る**レイアウト CSS + 軽量 JS ライブラリ**です。
+管理画面・ドキュメントページ・LP の骨格を CSS クラスと最小限の JS として提供します。
 
 ## 技術スタック
 
 - **言語/ランタイム**: Deno (TypeScript)
-- **ビルド**: Deno スクリプト (CSS ファイル結合 + 出力)
-- **配布**: JSR (`@kotsumo/sawcase-css`)
+- **ビルド**: Deno スクリプト (CSS ファイル結合 + JS バンドル)
+- **配布**: JSR (`@kotsumo/sawcase`)
 - **依存**: `@kotsumo/sawtooth-css` (JSR 依存)
 - **対象フレームワーク**: Deno Fresh + Zag.js + Preact
 
