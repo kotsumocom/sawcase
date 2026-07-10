@@ -2,8 +2,8 @@
  * @module
  * Sawcase — Deno Fresh 専用 SaaS スターターキット
  *
- * 管理画面・ドキュメント・LP・認証画面の骨格を Preact コンポーネントとして提供。
- * sawtooth-css, @deno/gfm, Zag.js, lucide-preact は依存として自動解決。
+ * テーマ設定 → デザイントークン → レイアウト → UI コンポーネント → Preact コンポーネント
+ * の流れで、管理画面・ドキュメント・LP・認証画面を簡単に構築。
  *
  * @example
  * ```tsx
@@ -70,5 +70,39 @@ export type {
   ToastItem,
 } from "./src/components/mod.ts";
 
-// CSS 生成（後方互換）
-export type { SawcaseGenerateOptions } from "./mod_types.ts";
+// --- テーマ設定の型定義 ---
+
+export type { ColorThemeConfig } from "./src/tokens/colors.ts";
+export type { TypographyConfig } from "./src/tokens/typography.ts";
+
+/** Sawcase テーマ設定 */
+export interface SawcaseTheme {
+  /** カラー設定 */
+  colors?: {
+    /** Primary カラー (HEX) */
+    primary?: string;
+    /** Secondary カラー (HEX) — 省略時は Primary から自動生成 */
+    secondary?: string;
+    /** Tertiary カラー (HEX) — 省略時は Primary から自動生成 */
+    tertiary?: string;
+    /** Error カラー (HEX) — デフォルト: #B3261E */
+    error?: string;
+  };
+  /** タイポグラフィ設定 */
+  typography?: {
+    /** フォントファミリ */
+    fontFamily?: string;
+  };
+}
+
+/** Sawcase 設定ファイルの型 */
+export interface SawcaseConfig {
+  /** テーマ設定 */
+  theme?: SawcaseTheme;
+  /** 含める UI コンポーネント（省略時は全コンポーネント） */
+  components?: string[];
+  /** 含めるレイアウト（省略時は全レイアウト） */
+  layouts?: string[];
+  /** 出力先ファイルパス */
+  output: string;
+}

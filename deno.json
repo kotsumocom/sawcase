@@ -1,8 +1,9 @@
 {
   "name": "@kotsumo/sawcase",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "exports": {
     ".": "./mod.ts",
+    "./styles": "./dist/sawcase.css",
     "./generate": "./generate.ts",
     "./components": "./src/components/mod.ts",
     "./js": "./src/js/mod.ts"
@@ -11,6 +12,7 @@
     "include": [
       "mod.ts",
       "generate.ts",
+      "dist/",
       "src/",
       ".agents/",
       "docs/",
@@ -18,19 +20,19 @@
       "README.md"
     ],
     "exclude": [
-      "dist/",
       "demo/"
     ]
   },
   "tasks": {
     "build": "deno run -A src/build.ts",
+    "sawcase:theme": "deno run -A generate.ts",
     "dev": "deno run -A --watch=src/ src/build.ts --watch",
     "preview": "deno run -A demo/server.ts",
     "fmt": "deno fmt",
     "lint": "deno lint"
   },
   "imports": {
-    "@kotsumo/sawtooth-css": "jsr:@kotsumo/sawtooth-css@^0.1.3",
+    "@material/material-color-utilities": "npm:@material/material-color-utilities@^0.3.0",
     "@deno/gfm": "jsr:@deno/gfm@^0.12",
     "@std/path": "jsr:@std/path@1",
     "preact": "npm:preact@^10.29.1",

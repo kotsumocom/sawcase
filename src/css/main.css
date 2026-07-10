@@ -1,7 +1,7 @@
 /* ==========================================================
  * Sawcase CSS — Main Entry Point
  *
- * 読み込み順: variables → admin → docs → common → landing
+ * 読み込み順: variables → layouts → (tokens + components は generate.ts で追加)
  *
  * ビルドスクリプト (build.ts) がこのファイルの @import を
  * 再帰的に解決して1ファイルに結合する。
@@ -10,42 +10,108 @@
 /* --- 1. Variables --- */
 @import "./_variables.css";
 
-/* --- 2. Admin Layout (sc-admin-*) --- */
-@import "./admin/_shell.css";
-@import "./admin/_header.css";
-@import "./admin/_nav.css";
-@import "./admin/_overlay.css";
-@import "./admin/_page.css";
-@import "./admin/_stats.css";
+/* --- 2. Base --- */
+@import "./base/_reset.css";
+@import "./base/_global.css";
 
-/* --- 3. Docs Layout (sc-docs-*) --- */
-@import "./docs/_shell.css";
-@import "./docs/_header.css";
-@import "./docs/_sidebar.css";
-@import "./docs/_article.css";
-@import "./docs/_toc.css";
+/* --- 3. Admin Layout (sc-admin-*) --- */
+@import "./layouts/admin/_shell.css";
+@import "./layouts/admin/_header.css";
+@import "./layouts/admin/_nav.css";
+@import "./layouts/admin/_overlay.css";
+@import "./layouts/admin/_page.css";
+@import "./layouts/admin/_stats.css";
 
-/* --- 4. Common (sc-*) --- */
-@import "./common/_auth.css";
-@import "./common/_empty.css";
-@import "./common/_loading.css";
-@import "./common/_interactive.css";
+/* --- 4. Docs Layout (sc-docs-*) --- */
+@import "./layouts/docs/_shell.css";
+@import "./layouts/docs/_header.css";
+@import "./layouts/docs/_sidebar.css";
+@import "./layouts/docs/_article.css";
+@import "./layouts/docs/_toc.css";
 
-/* --- 5. Landing Page (sc-lp-*) --- */
-@import "./landing/_header.css";
-@import "./landing/_hero.css";
-@import "./landing/_section.css";
-@import "./landing/_features.css";
-@import "./landing/_footer.css";
+/* --- 5. Common (sc-*) --- */
+@import "./layouts/common/_auth.css";
+@import "./layouts/common/_empty.css";
+@import "./layouts/common/_loading.css";
+@import "./layouts/common/_interactive.css";
 
-/* --- 6. Legal (sc-legal-*) --- */
-@import "./legal/_legal.css";
+/* --- 6. Landing Page (sc-lp-*) --- */
+@import "./layouts/landing/_header.css";
+@import "./layouts/landing/_hero.css";
+@import "./layouts/landing/_section.css";
+@import "./layouts/landing/_features.css";
+@import "./layouts/landing/_footer.css";
 
-/* --- 7. Error (sc-error-*) --- */
-@import "./error/_error.css";
+/* --- 7. Legal (sc-legal-*) --- */
+@import "./layouts/legal/_legal.css";
 
-/* --- 8. Pricing (sc-pricing-*) --- */
-@import "./pricing/_pricing.css";
+/* --- 8. Error (sc-error-*) --- */
+@import "./layouts/error/_error.css";
 
-/* --- 9. Blog (sc-blog-*) --- */
-@import "./blog/_blog.css";
+/* --- 9. Pricing (sc-pricing-*) --- */
+@import "./layouts/pricing/_pricing.css";
+
+/* --- 10. Blog (sc-blog-*) --- */
+@import "./layouts/blog/_blog.css";
+
+/* --- 11. UI Components (Zag.js) --- */
+@import "./components/_accordion.css";
+@import "./components/_alert.css";
+@import "./components/_angle-slider.css";
+@import "./components/_avatar.css";
+@import "./components/_badge.css";
+@import "./components/_button.css";
+@import "./components/_card.css";
+@import "./components/_carousel.css";
+@import "./components/_cascade-select.css";
+@import "./components/_checkbox.css";
+@import "./components/_clipboard.css";
+@import "./components/_collapsible.css";
+@import "./components/_color-picker.css";
+@import "./components/_combobox.css";
+@import "./components/_date-input.css";
+@import "./components/_date-picker.css";
+@import "./components/_dialog.css";
+@import "./components/_drawer.css";
+@import "./components/_editable.css";
+@import "./components/_file-upload.css";
+@import "./components/_floating-panel.css";
+@import "./components/_hover-card.css";
+@import "./components/_image-cropper.css";
+@import "./components/_input.css";
+@import "./components/_listbox.css";
+@import "./components/_marquee.css";
+@import "./components/_menu.css";
+@import "./components/_navigation-menu.css";
+@import "./components/_number-input.css";
+@import "./components/_pagination.css";
+@import "./components/_password-input.css";
+@import "./components/_pin-input.css";
+@import "./components/_popover.css";
+@import "./components/_presence.css";
+@import "./components/_progress-circular.css";
+@import "./components/_progress.css";
+@import "./components/_qr-code.css";
+@import "./components/_radio-group.css";
+@import "./components/_rating-group.css";
+@import "./components/_scroll-area.css";
+@import "./components/_segmented-control.css";
+@import "./components/_select.css";
+@import "./components/_signature-pad.css";
+@import "./components/_slider.css";
+@import "./components/_splitter.css";
+@import "./components/_steps.css";
+@import "./components/_switch.css";
+@import "./components/_tabs.css";
+@import "./components/_tags-input.css";
+@import "./components/_textarea.css";
+@import "./components/_timer.css";
+@import "./components/_toast.css";
+@import "./components/_toggle-group.css";
+@import "./components/_toggle.css";
+@import "./components/_tooltip.css";
+@import "./components/_tour.css";
+@import "./components/_tree-view.css";
+
+/* --- 12. Utilities --- */
+@import "./utilities/_layout.css";

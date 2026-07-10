@@ -1,12 +1,19 @@
 /**
  * Sawcase ビルドスクリプト
  *
- * 1. CSS: @import 解決 → 1ファイルに結合 → dist/sawcase.css
- * 2. JS: src/js/*.ts を結合 → dist/sawcase.js
- * 3. ミニファイ版を出力
+ * 1. デザイントークン生成（HCT カラー等）
+ * 2. CSS: @import 解決 → 1ファイルに結合 → dist/sawcase.css
+ * 3. JS: src/js/*.ts を結合 → dist/sawcase.js
+ * 4. ミニファイ版を出力
  */
 
 import * as path from "@std/path";
+import { generateColorCSS } from "./tokens/colors.ts";
+import { generateTypographyCSS } from "./tokens/typography.ts";
+import { generateSpacingCSS } from "./tokens/spacing.ts";
+import { generateShapeCSS } from "./tokens/shape.ts";
+import { generateElevationCSS } from "./tokens/elevation.ts";
+import { generateMotionCSS } from "./tokens/motion.ts";
 
 const ROOT_DIR = path.dirname(path.dirname(path.fromFileUrl(import.meta.url)));
 const SRC_DIR = path.join(ROOT_DIR, "src");
@@ -132,9 +139,23 @@ async function bundleJS(): Promise<string> {
 async function build(): Promise<void> {
   const startTime = performance.now();
 
-  // 1. CSS: @import 解決 + 結合
+  // 1. デザイントークン生成（デフォルトテーマ: #6750A4）
+  const tokensSections = [
+    generateColorCSS({ primary: "#6750A4" }),
+    generateTypographyCSS(),
+    generateSpacingCSS(),
+    generateShapeCSS(),
+    generateElevationCSS(),
+    generateMotionCSS(),
+  ];
+  const tokensCSS = tokensSections.join("\n\n");
+
+  // 2. CSS: @import 解決 + 結合
   const mainCSSPath = path.join(CSS_DIR, "main.css");
-  const bundledCSS = await resolveImports(mainCSSPath);
+  const layoutCSS = await resolveImports(mainCSSPath);
+
+  // 3. トークン + レイアウト + コンポーネントを結合
+  const bundledCSS = tokensCSS + "\n\n" + layoutCSS;
 
   // 2. JS バンドル
   const bundledJS = await bundleJS();

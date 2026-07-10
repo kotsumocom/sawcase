@@ -3,7 +3,6 @@
   "specifiers": {
     "jsr:@deno/gfm@0.12": "0.12.0",
     "jsr:@denosaurs/emoji@~0.3.1": "0.3.1",
-    "jsr:@kotsumo/sawtooth-css@~0.1.3": "0.1.3",
     "jsr:@std/internal@^1.0.14": "1.0.14",
     "jsr:@std/path@1": "1.1.6",
     "npm:@material/material-color-utilities@0.3": "0.3.0",
@@ -45,12 +44,6 @@
     },
     "@denosaurs/emoji@0.3.1": {
       "integrity": "b0aed5f55dec99e83da7c9637fe0a36d1d6252b7c99deaaa3fc5dea3fcf3da8b"
-    },
-    "@kotsumo/sawtooth-css@0.1.3": {
-      "integrity": "186e7f034f72972b2c66361fc45caafd37834f7c8fc268c8deabcba48e04445a",
-      "dependencies": [
-        "npm:@material/material-color-utilities"
-      ]
     },
     "@std/internal@1.0.14": {
       "integrity": "291516b3d4c35024d6ffbc0a9df5bf4c64116e05b50012cf846710152d2ffdf7"
@@ -407,8 +400,8 @@
   "workspace": {
     "dependencies": [
       "jsr:@deno/gfm@0.12",
-      "jsr:@kotsumo/sawtooth-css@~0.1.3",
       "jsr:@std/path@1",
+      "npm:@material/material-color-utilities@0.3",
       "npm:@zag-js/accordion@^1.42.0",
       "npm:@zag-js/clipboard@^1.42.0",
       "npm:@zag-js/dialog@^1.42.0",
