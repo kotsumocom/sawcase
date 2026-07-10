@@ -9,6 +9,9 @@
 .sc-docs-article {
   max-width: var(--sc-docs-content-max-width);
   width: 100%;
+  font-size: var(--st-sys-typescale-body-large-size, 1rem);
+  line-height: 1.75;
+  color: var(--st-sys-color-on-surface, #1d1b20);
 }
 
 /* タイトル */
@@ -20,14 +23,10 @@
   line-height: 1.3;
 }
 
-/* 本文 — prose スタイル */
-.sc-docs-article__body {
-  font-size: var(--st-sys-typescale-body-large-size, 1rem);
-  line-height: 1.75;
-  color: var(--st-sys-color-on-surface, #1d1b20);
-}
+/* 本文 — prose スタイル（__body ラッパーにも、直接にも適用） */
 
 /* 見出し */
+.sc-docs-article h2,
 .sc-docs-article__body h2 {
   font-size: 1.5rem;
   font-weight: 600;
@@ -36,12 +35,14 @@
   border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
 }
 
+.sc-docs-article h3,
 .sc-docs-article__body h3 {
   font-size: 1.25rem;
   font-weight: 600;
   margin: 1.5em 0 0.5em;
 }
 
+.sc-docs-article h4,
 .sc-docs-article__body h4 {
   font-size: 1.125rem;
   font-weight: 600;
@@ -49,22 +50,27 @@
 }
 
 /* 段落 */
+.sc-docs-article > p,
 .sc-docs-article__body p {
   margin: 0 0 1em;
 }
 
 /* リスト */
+.sc-docs-article > ul,
+.sc-docs-article > ol,
 .sc-docs-article__body ul,
 .sc-docs-article__body ol {
   margin: 0 0 1em;
   padding-left: 1.5em;
 }
 
+.sc-docs-article > li,
 .sc-docs-article__body li {
   margin-bottom: 0.25em;
 }
 
 /* インラインコード */
+.sc-docs-article code,
 .sc-docs-article__body code {
   font-family: "Fira Code", "JetBrains Mono", monospace;
   font-size: 0.875em;
@@ -74,6 +80,7 @@
 }
 
 /* コードブロック */
+.sc-docs-article pre,
 .sc-docs-article__body pre {
   background-color: var(--st-sys-color-surface-container-low, #f7f2fa);
   border: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
@@ -83,6 +90,7 @@
   margin: 0 0 1.5em;
 }
 
+.sc-docs-article pre code,
 .sc-docs-article__body pre code {
   background: none;
   padding: 0;
@@ -91,6 +99,7 @@
 }
 
 /* テーブル */
+.sc-docs-article table,
 .sc-docs-article__body table {
   width: 100%;
   border-collapse: collapse;
@@ -98,6 +107,7 @@
   font-size: 0.875rem;
 }
 
+.sc-docs-article th,
 .sc-docs-article__body th {
   text-align: left;
   font-weight: 600;
@@ -106,12 +116,14 @@
   color: var(--st-sys-color-on-surface, #1d1b20);
 }
 
+.sc-docs-article td,
 .sc-docs-article__body td {
   padding: var(--st-sys-spacing-3, 12px);
   border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
 }
 
 /* 引用 */
+.sc-docs-article blockquote,
 .sc-docs-article__body blockquote {
   margin: 0 0 1.5em;
   padding: var(--st-sys-spacing-3, 12px) var(--st-sys-spacing-4, 16px);
@@ -127,6 +139,7 @@
 }
 
 /* 水平線 */
+.sc-docs-article hr,
 .sc-docs-article__body hr {
   border: none;
   border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);

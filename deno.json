@@ -12,7 +12,7 @@
       "mod.ts",
       "generate.ts",
       "src/",
-      "AGENT.md",
+      ".agents/",
       "docs/",
       "LICENSE",
       "README.md"

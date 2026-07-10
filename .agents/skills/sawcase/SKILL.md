@@ -1,10 +1,12 @@
-# Sawcase — Deno Fresh 専用 SaaS スターターキット
+---
+name: sawcase
+description: |
+  Sawcase — Deno Fresh 専用 SaaS スターターキットのコンポーネントガイド。
+  管理画面、ドキュメント、LP、認証、規約、エラー、料金、ブログの
+  レイアウトと Zag.js ベースのインタラクティブコンポーネントの使い方。
+---
 
-## 概要
-
-Sawcase は Deno Fresh 専用の SaaS スターターキットです。
-管理画面、ドキュメント、LP、認証、規約、エラー、料金、ブログの
-レイアウトを Preact コンポーネントとして提供します。
+# Sawcase コンポーネントガイド
 
 ## インストール
 
@@ -13,6 +15,12 @@ deno add @kotsumo/sawcase
 ```
 
 依存パッケージ（sawtooth-css, @deno/gfm, Zag.js, lucide-preact）は自動解決されます。
+
+## インポート
+
+```tsx
+import { AdminShell, AdminPage, Clipboard } from "@kotsumo/sawcase/components";
+```
 
 ## コンポーネント一覧
 
@@ -49,7 +57,7 @@ deno add @kotsumo/sawcase
 ### 管理画面
 
 ```tsx
-import { AdminShell, AdminPage } from "@kotsumo/sawcase";
+import { AdminShell, AdminPage } from "@kotsumo/sawcase/components";
 import { LayoutDashboard, Users, Settings } from "lucide-preact";
 
 export default function Dashboard() {
@@ -70,7 +78,7 @@ export default function Dashboard() {
 ### ドキュメント
 
 ```tsx
-import { DocsLayout, Markdown } from "@kotsumo/sawcase";
+import { DocsLayout, Markdown } from "@kotsumo/sawcase/components";
 
 export default async function DocsPage({ params }) {
   const md = await Deno.readTextFile(`docs/${params.slug}.md`);
@@ -93,7 +101,7 @@ export default async function DocsPage({ params }) {
 ### 認証
 
 ```tsx
-import { AuthCard } from "@kotsumo/sawcase";
+import { AuthCard } from "@kotsumo/sawcase/components";
 
 export default function LoginPage() {
   return (
@@ -111,7 +119,7 @@ export default function LoginPage() {
 ### 規約ページ
 
 ```tsx
-import { LegalPage } from "@kotsumo/sawcase";
+import { LegalPage } from "@kotsumo/sawcase/components";
 
 export default async function Terms() {
   const md = await Deno.readTextFile("legal/terms.md");
@@ -133,7 +141,7 @@ export default async function Terms() {
 ### エラーページ
 
 ```tsx
-import { ErrorPage } from "@kotsumo/sawcase";
+import { ErrorPage } from "@kotsumo/sawcase/components";
 import { FileQuestion } from "lucide-preact";
 
 export default function NotFound() {
@@ -151,7 +159,7 @@ export default function NotFound() {
 ### 料金ページ
 
 ```tsx
-import { PricingPage } from "@kotsumo/sawcase";
+import { PricingPage } from "@kotsumo/sawcase/components";
 
 export default function Pricing() {
   return (
@@ -160,41 +168,26 @@ export default function Pricing() {
       title="料金プラン"
       subtitle="あなたに最適なプランを選択"
       plans={[
-        {
-          name: "Free",
-          price: "¥0/月",
-          features: ["機能A", "機能B"],
-          ctaHref: "/signup",
-        },
-        {
-          name: "Pro",
-          price: "¥980/月",
-          features: ["全機能", "優先サポート"],
-          recommended: true,
-          ctaHref: "/signup?plan=pro",
-        },
+        { name: "Free", price: "¥0/月", features: ["機能A", "機能B"], ctaHref: "/signup" },
+        { name: "Pro", price: "¥980/月", features: ["全機能", "優先サポート"], recommended: true, ctaHref: "/signup?plan=pro" },
       ]}
     />
   );
 }
 ```
 
-### コピーボタン
+### コピーボタン（Island として使用）
 
 ```tsx
-import { Clipboard } from "@kotsumo/sawcase";
+// islands/CopyInstall.tsx
+import { Clipboard } from "@kotsumo/sawcase/components";
 
-export default function Install() {
-  return (
-    <div>
-      <code>deno add @kotsumo/sawcase</code>
-      <Clipboard value="deno add @kotsumo/sawcase" />
-    </div>
-  );
+export default function CopyInstall() {
+  return <Clipboard value="deno add @kotsumo/sawcase" />;
 }
 ```
 
-## CSS クラス
+## CSS
 
 内部で sawtooth-css のデザイントークンを使用。
 CSS は `sawcase.css` としてビルド可能：
@@ -203,10 +196,32 @@ CSS は `sawcase.css` としてビルド可能：
 deno task build
 ```
 
-## 依存関係
+## 依存パッケージ
 
 - `@kotsumo/sawtooth-css` — デザイントークン + コンポーネント CSS
 - `lucide-preact` — アイコン
 - `@deno/gfm` — Markdown レンダリング
-- `@zag-js/*` — インタラクティブ UI
+- `@zag-js/*` — インタラクティブ UI（clipboard, dialog, tabs, toast, menu, tooltip, accordion）
 - `preact` — コンポーネントランタイム（Fresh が提供）
+
+## ディレクトリ構成
+
+```
+sawcase/
+├── src/
+│   ├── components/         ← Preact コンポーネント
+│   │   ├── admin/         AdminShell, AdminNav, AdminPage
+│   │   ├── auth/          AuthCard
+│   │   ├── blog/          BlogLayout
+│   │   ├── docs/          DocsLayout, Markdown
+│   │   ├── error/         ErrorPage
+│   │   ├── interactive/   Clipboard, Dialog, Tabs, Toast, Menu, Tooltip, Accordion
+│   │   ├── landing/       LandingPage
+│   │   ├── legal/         LegalPage
+│   │   ├── pricing/       PricingPage
+│   │   └── mod.ts         バレルエクスポート
+│   ├── css/               ← CSS ソース
+│   └── js/                ← JS ソース
+├── mod.ts                 ← パッケージエントリ
+└── deno.json
+```
