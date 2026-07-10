@@ -30,9 +30,16 @@
 @import "./common/_empty.css";
 @import "./common/_loading.css";
 
-/* --- 5. Landing Page (sc-lp-*) [β] --- */
+/* --- 5. Landing Page (sc-lp-*) --- */
 @import "./landing/_header.css";
 @import "./landing/_hero.css";
 @import "./landing/_section.css";
 @import "./landing/_features.css";
 @import "./landing/_footer.css";
+
+/* --- 6. Legal (sc-legal-*) --- */
+@import "./legal/_legal.css";
+
+/* --- 7. Error (sc-error-*) --- */
+@import "./error/_error.css";
+

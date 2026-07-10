@@ -1,0 +1,50 @@
+/* ==========================================================
+ * sc-error — エラーページのレイアウト
+ * ========================================================== */
+
+.sc-error-shell {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--st-sys-color-surface, #fef7ff);
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  padding: 24px;
+}
+
+.sc-error-card {
+  text-align: center;
+  max-width: 480px;
+}
+
+.sc-error-card__icon {
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin-bottom: 16px;
+}
+
+.sc-error-card__code {
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 1;
+  color: var(--st-sys-color-outline, #79747e);
+  margin-bottom: 8px;
+}
+
+.sc-error-card__title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.sc-error-card__message {
+  font-size: 1rem;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin-bottom: 32px;
+  line-height: 1.6;
+}
+
+.sc-error-card__actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}

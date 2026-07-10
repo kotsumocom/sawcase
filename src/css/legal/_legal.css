@@ -1,0 +1,82 @@
+/* ==========================================================
+ * sc-legal — 規約ページのレイアウト
+ * ========================================================== */
+
+.sc-legal-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--st-sys-color-surface, #fef7ff);
+  color: var(--st-sys-color-on-surface, #1d1b20);
+}
+
+.sc-legal-header {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  background-color: var(--st-sys-color-surface, #fef7ff);
+}
+
+.sc-legal-header__inner {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sc-legal-header__brand {
+  font-size: 1.125rem;
+}
+
+.sc-legal-header__nav {
+  display: flex;
+  gap: 16px;
+  font-size: 0.875rem;
+}
+
+.sc-legal-header__nav a {
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  text-decoration: none;
+}
+
+.sc-legal-header__nav a:hover {
+  color: var(--st-sys-color-primary, #6750a4);
+}
+
+.sc-legal-header__link--active {
+  color: var(--st-sys-color-primary, #6750a4) !important;
+  font-weight: 600;
+}
+
+.sc-legal-content {
+  flex: 1;
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 48px 24px;
+  width: 100%;
+}
+
+.sc-legal-article__title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sc-legal-article__date {
+  font-size: 0.875rem;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin-bottom: 32px;
+}
+
+.sc-legal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+}
+
+.sc-legal-footer__inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
