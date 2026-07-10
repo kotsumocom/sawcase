@@ -1,0 +1,106 @@
+/* ==========================================================
+ * sc-blog — ブログレイアウト
+ * ========================================================== */
+
+.sc-blog-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--st-sys-color-surface, #fef7ff);
+  color: var(--st-sys-color-on-surface, #1d1b20);
+}
+
+.sc-blog-header {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  background-color: var(--st-sys-color-surface, #fef7ff);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.sc-blog-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sc-blog-header__nav {
+  display: flex;
+  gap: 20px;
+  font-size: 0.875rem;
+}
+
+.sc-blog-header__nav a {
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  text-decoration: none;
+}
+
+.sc-blog-header__nav a:hover {
+  color: var(--st-sys-color-primary, #6750a4);
+}
+
+.sc-blog-body {
+  flex: 1;
+  display: flex;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 32px 24px;
+  gap: 48px;
+}
+
+.sc-blog-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.sc-blog-sidebar {
+  width: 280px;
+  flex-shrink: 0;
+}
+
+.sc-blog-sidebar__group {
+  margin-bottom: 24px;
+}
+
+.sc-blog-sidebar__group-label {
+  font-size: 0.6875rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin-bottom: 8px;
+  padding-bottom: 4px;
+  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+}
+
+.sc-blog-sidebar__link {
+  display: block;
+  padding: 6px 0;
+  font-size: 0.875rem;
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  text-decoration: none;
+}
+
+.sc-blog-sidebar__link:hover {
+  color: var(--st-sys-color-primary, #6750a4);
+}
+
+.sc-blog-sidebar__link--active {
+  color: var(--st-sys-color-primary, #6750a4);
+  font-weight: 600;
+}
+
+@media (max-width: 768px) {
+  .sc-blog-body {
+    flex-direction: column;
+  }
+  .sc-blog-sidebar {
+    width: 100%;
+    border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+    padding-top: 24px;
+  }
+}

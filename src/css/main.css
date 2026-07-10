@@ -44,3 +44,8 @@
 /* --- 7. Error (sc-error-*) --- */
 @import "./error/_error.css";
 
+/* --- 8. Pricing (sc-pricing-*) --- */
+@import "./pricing/_pricing.css";
+
+/* --- 9. Blog (sc-blog-*) --- */
+@import "./blog/_blog.css";

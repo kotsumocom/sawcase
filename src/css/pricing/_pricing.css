@@ -1,0 +1,138 @@
+/* ==========================================================
+ * sc-pricing — 料金ページ
+ * ========================================================== */
+
+.sc-pricing-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--st-sys-color-surface, #fef7ff);
+  color: var(--st-sys-color-on-surface, #1d1b20);
+}
+
+.sc-pricing-header {
+  padding: 12px 24px;
+  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+}
+
+.sc-pricing-header__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.sc-pricing-content {
+  flex: 1;
+  padding: 64px 24px;
+}
+
+.sc-pricing-content__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.sc-pricing-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.sc-pricing-subtitle {
+  font-size: 1.125rem;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin-bottom: 48px;
+}
+
+.sc-pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
+  max-width: 960px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.sc-pricing-card {
+  padding: 32px 24px;
+  border: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  border-radius: 16px;
+  position: relative;
+  background: var(--st-sys-color-surface, #fef7ff);
+}
+
+.sc-pricing-card--recommended {
+  border-color: var(--st-sys-color-primary, #6750a4);
+  box-shadow: 0 4px 24px rgba(103, 80, 164, 0.12);
+}
+
+.sc-pricing-card__badge {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--st-sys-color-primary, #6750a4);
+  color: var(--st-sys-color-on-primary, #fff);
+  padding: 4px 16px;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.sc-pricing-card__icon {
+  color: var(--st-sys-color-primary, #6750a4);
+  margin-bottom: 12px;
+}
+
+.sc-pricing-card__name {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.sc-pricing-card__price {
+  font-size: 2rem;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.sc-pricing-card__price-note {
+  font-size: 0.8125rem;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin-bottom: 12px;
+}
+
+.sc-pricing-card__description {
+  font-size: 0.875rem;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.sc-pricing-card__features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 24px;
+}
+
+.sc-pricing-card__features li {
+  padding: 6px 0;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+}
+
+.sc-pricing-card__features li:last-child {
+  border-bottom: none;
+}
+
+.sc-pricing-footer {
+  padding: 16px 24px;
+  border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  text-align: center;
+  font-size: 0.8125rem;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+}
+
+.sc-pricing-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
