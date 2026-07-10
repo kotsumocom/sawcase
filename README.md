@@ -1,22 +1,80 @@
-# sawcase-css
+# Sawcase
 
-sawtooth-css の上に載るレイアウト CSS ライブラリ。
-管理画面・ドキュメントページ・LP の骨格を CSS クラスとして提供します。
+Deno Fresh 専用の統合 UI キット。テーマ設定からレイアウト、UIコンポーネントまでをワンパッケージで提供します。
 
 ## 特徴
 
-- **手軽さ最優先** — クラスを書くだけで洗練されたレイアウト
-- **AI エージェント対応** — AGENT.md 同梱
-- **sawtooth-css 専用** — MD3 デザイントークンと統合
-- **Deno Fresh + Zag.js 向け**
+- **ワンパッケージ** — テーマ・レイアウト・UIコンポーネントを `@kotsumo/sawcase` ひとつで
+- **HCT カラー生成** — プライマリカラーを指定するだけで Material Design 3 準拠の配色を自動生成
+- **57 種の UI コンポーネント CSS** — Zag.js 対応の `[data-scope]` セレクタ
+- **レイアウト CSS** — 管理画面・ドキュメント・LP・認証・規約・エラー・料金・ブログ
+- **Preact コンポーネント** — レイアウト + インタラクティブ UI
+- **ライト/ダークモード** — `data-theme` 属性で切替
 
 ## インストール
 
-```ts
-import { generateSawcaseCSS } from "@kotsumo/sawcase-css/generate";
+```bash
+deno add @kotsumo/sawcase
 ```
 
-## 詳細
+## CSS の利用
 
-- [実装計画](./IMPLEMENTATION_PLAN.md)
-- [背景コンテキスト](./CONTEXT.md)
+### デフォルトテーマ（即利用可）
+
+```tsx
+// routes/_app.tsx — dist/sawcase.css のパスを取得
+import { SAWCASE_CSS_PATH } from "@kotsumo/sawcase/styles";
+```
+
+または `deno task build` で生成した `dist/sawcase.css` をコピー:
+
+```html
+<link rel="stylesheet" href="/sawcase.css" />
+```
+
+### カスタムテーマ
+
+```ts
+// sawcase.config.ts
+import type { SawcaseConfig } from "@kotsumo/sawcase";
+
+export default {
+  theme: { colors: { primary: "#2563eb" } },
+  output: "./static/sawcase.css",
+} satisfies SawcaseConfig;
+```
+
+```bash
+deno task sawcase:theme
+```
+
+## コンポーネント
+
+```tsx
+import { AdminShell, AdminPage, Clipboard } from "@kotsumo/sawcase/components";
+```
+
+## ディレクトリ構成
+
+```
+sawcase/
+├── mod.ts                ← 型定義 + エクスポート
+├── generate.ts           ← CSS 生成エンジン
+├── styles.ts             ← デフォルト CSS パス
+├── dist/
+│   └── sawcase.css       ← ビルド済みデフォルト CSS
+├── src/
+│   ├── tokens/           ← デザイントークン生成 TS
+│   ├── css/
+│   │   ├── base/         ← リセット + グローバル
+│   │   ├── components/   ← 57 UI コンポーネント CSS
+│   │   ├── layouts/      ← レイアウト CSS
+│   │   └── utilities/
+│   ├── components/       ← Preact コンポーネント
+│   └── js/               ← 軽量 JS
+└── deno.json
+```
+
+## ライセンス
+
+MIT
