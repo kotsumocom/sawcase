@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "exports": {
     ".": "./mod.ts",
-    "./styles": "./dist/sawcase.css",
+    "./styles": "./styles.ts",
     "./generate": "./generate.ts",
     "./components": "./src/components/mod.ts",
     "./js": "./src/js/mod.ts"
@@ -11,8 +11,9 @@
   "publish": {
     "include": [
       "mod.ts",
+      "styles.ts",
       "generate.ts",
-      "dist/",
+      "dist/sawcase.css",
       "src/",
       ".agents/",
       "docs/",
