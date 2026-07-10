@@ -1,9 +1,10 @@
 ---
 name: sawcase
 description: |
-  Sawcase — Deno Fresh 専用 SaaS スターターキットのコンポーネントガイド。
-  管理画面、ドキュメント、LP、認証、規約、エラー、料金、ブログの
-  レイアウトと Zag.js ベースのインタラクティブコンポーネントの使い方。
+  Sawcase — Deno Fresh 専用 SaaS スターターキット。
+  テーマ設定 → デザイントークン → レイアウト → UI コンポーネント → Preact コンポーネント
+  の統合パッケージ。管理画面、ドキュメント、LP、認証、規約、エラー、料金、ブログの
+  レイアウトと 57 種の Zag.js UI コンポーネント CSS を提供。
 ---
 
 # Sawcase コンポーネントガイド
@@ -14,15 +15,42 @@ description: |
 deno add @kotsumo/sawcase
 ```
 
-依存パッケージ（sawtooth-css, @deno/gfm, Zag.js, lucide-preact）は自動解決されます。
+## CSS の利用
 
-## インポート
+### 方法 1: import（推奨 — Fresh 2 / Vite）
+
+```tsx
+// routes/_app.tsx
+import "@kotsumo/sawcase/styles";
+```
+
+### 方法 2: デフォルト CSS をコピー
+
+```bash
+cp node_modules/.deno/@kotsumo+sawcase@1.0.0/dist/sawcase.css static/
+```
+
+### 方法 3: カスタムテーマで生成
+
+```ts
+// sawcase.config.ts
+import type { SawcaseConfig } from "@kotsumo/sawcase";
+
+export default {
+  theme: { colors: { primary: "#2563eb" } },
+  output: "./static/sawcase.css",
+} satisfies SawcaseConfig;
+```
+
+```bash
+deno task sawcase:theme
+```
+
+## コンポーネント
 
 ```tsx
 import { AdminShell, AdminPage, Clipboard } from "@kotsumo/sawcase/components";
 ```
-
-## コンポーネント一覧
 
 ### レイアウト
 
@@ -52,6 +80,46 @@ import { AdminShell, AdminPage, Clipboard } from "@kotsumo/sawcase/components";
 | `<Tooltip>` | ツールチップ |
 | `<Accordion>` | アコーディオン |
 
+## CSS アーキテクチャ
+
+### デザイントークン（--sc-sys-*, --sc-ref-*）
+
+HCT カラースペースで自動生成。ライト/ダークモード対応。
+
+```css
+/* 例: ボタンの背景色 */
+background-color: var(--sc-sys-color-primary);
+color: var(--sc-sys-color-on-primary);
+```
+
+### ライト/ダークモード
+
+```html
+<!-- ライトモード強制 -->
+<html data-theme="light">
+
+<!-- ダークモード強制 -->
+<html data-theme="dark">
+
+<!-- OS 設定に従う（デフォルト） -->
+<html>
+```
+
+### レイアウト CSS クラス
+
+構造はクラス名、状態は data 属性：
+
+```html
+<div class="sc-admin-shell" data-sc-sidebar="open">
+  <nav class="sc-admin-nav">...</nav>
+  <main class="sc-admin-content">...</main>
+</div>
+```
+
+### UI コンポーネント CSS（Zag.js 対応）
+
+57 種の UI コンポーネント CSS。`[data-scope]` セレクタで Zag.js と自動連携。
+
 ## 使用例
 
 ### 管理画面
@@ -75,29 +143,6 @@ export default function Dashboard() {
 }
 ```
 
-### ドキュメント
-
-```tsx
-import { DocsLayout, Markdown } from "@kotsumo/sawcase/components";
-
-export default async function DocsPage({ params }) {
-  const md = await Deno.readTextFile(`docs/${params.slug}.md`);
-  return (
-    <DocsLayout
-      brand="My SaaS"
-      sidebarGroups={[
-        { label: "はじめに", items: [
-          { label: "概要", href: "/docs", active: true },
-          { label: "インストール", href: "/docs/install" },
-        ]},
-      ]}
-    >
-      <Markdown content={md} />
-    </DocsLayout>
-  );
-}
-```
-
 ### 認証
 
 ```tsx
@@ -109,119 +154,37 @@ export default function LoginPage() {
       <form method="post">
         <input type="email" name="email" />
         <input type="password" name="password" />
-        <button type="submit" class="st-button st-button--filled">ログイン</button>
+        <button type="submit" data-scope="button" data-part="root">ログイン</button>
       </form>
     </AuthCard>
   );
 }
 ```
 
-### 規約ページ
-
-```tsx
-import { LegalPage } from "@kotsumo/sawcase/components";
-
-export default async function Terms() {
-  const md = await Deno.readTextFile("legal/terms.md");
-  return (
-    <LegalPage
-      brand="My SaaS"
-      title="利用規約"
-      lastUpdated="2026年1月1日"
-      content={md}
-      nav={[
-        { label: "利用規約", href: "/legal/terms", active: true },
-        { label: "プライバシーポリシー", href: "/legal/privacy" },
-      ]}
-    />
-  );
-}
-```
-
-### エラーページ
-
-```tsx
-import { ErrorPage } from "@kotsumo/sawcase/components";
-import { FileQuestion } from "lucide-preact";
-
-export default function NotFound() {
-  return (
-    <ErrorPage
-      code={404}
-      title="ページが見つかりません"
-      message="お探しのページは存在しないか、移動した可能性があります。"
-      icon={FileQuestion}
-    />
-  );
-}
-```
-
-### 料金ページ
-
-```tsx
-import { PricingPage } from "@kotsumo/sawcase/components";
-
-export default function Pricing() {
-  return (
-    <PricingPage
-      brand="My SaaS"
-      title="料金プラン"
-      subtitle="あなたに最適なプランを選択"
-      plans={[
-        { name: "Free", price: "¥0/月", features: ["機能A", "機能B"], ctaHref: "/signup" },
-        { name: "Pro", price: "¥980/月", features: ["全機能", "優先サポート"], recommended: true, ctaHref: "/signup?plan=pro" },
-      ]}
-    />
-  );
-}
-```
-
-### コピーボタン（Island として使用）
-
-```tsx
-// islands/CopyInstall.tsx
-import { Clipboard } from "@kotsumo/sawcase/components";
-
-export default function CopyInstall() {
-  return <Clipboard value="deno add @kotsumo/sawcase" />;
-}
-```
-
-## CSS
-
-内部で sawtooth-css のデザイントークンを使用。
-CSS は `sawcase.css` としてビルド可能：
-
-```bash
-deno task build
-```
-
 ## 依存パッケージ
 
-- `@kotsumo/sawtooth-css` — デザイントークン + コンポーネント CSS
+- `@material/material-color-utilities` — HCT カラー生成
 - `lucide-preact` — アイコン
 - `@deno/gfm` — Markdown レンダリング
-- `@zag-js/*` — インタラクティブ UI（clipboard, dialog, tabs, toast, menu, tooltip, accordion）
+- `@zag-js/*` — インタラクティブ UI
 - `preact` — コンポーネントランタイム（Fresh が提供）
 
 ## ディレクトリ構成
 
 ```
 sawcase/
+├── mod.ts                    ← 型定義 + エクスポート
+├── generate.ts               ← CSS 生成エンジン
+├── dist/
+│   └── sawcase.css           ← ビルド済みデフォルト CSS
 ├── src/
-│   ├── components/         ← Preact コンポーネント
-│   │   ├── admin/         AdminShell, AdminNav, AdminPage
-│   │   ├── auth/          AuthCard
-│   │   ├── blog/          BlogLayout
-│   │   ├── docs/          DocsLayout, Markdown
-│   │   ├── error/         ErrorPage
-│   │   ├── interactive/   Clipboard, Dialog, Tabs, Toast, Menu, Tooltip, Accordion
-│   │   ├── landing/       LandingPage
-│   │   ├── legal/         LegalPage
-│   │   ├── pricing/       PricingPage
-│   │   └── mod.ts         バレルエクスポート
-│   ├── css/               ← CSS ソース
-│   └── js/                ← JS ソース
-├── mod.ts                 ← パッケージエントリ
+│   ├── tokens/               ← デザイントークン生成 TS
+│   ├── css/
+│   │   ├── base/             ← リセット + グローバル
+│   │   ├── components/       ← 57 UI コンポーネント CSS
+│   │   ├── layouts/          ← レイアウト CSS
+│   │   └── utilities/
+│   ├── components/           ← Preact コンポーネント
+│   └── js/                   ← 軽量 JS
 └── deno.json
 ```
