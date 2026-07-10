@@ -1,14 +1,14 @@
 /**
- * MD3 Typography (Type Scale) トークン生成
+ * MD3 Typography (Type Scale) ト�Eクン生�E
  */
 
-/** タイポグラフィテーマ設定 */
+/** タイポグラフィチE�Eマ設宁E*/
 export interface TypographyConfig {
   /** フォントファミリ */
   fontFamily?: string;
-  /** フォントファミリ（ブランド用） */
+  /** フォントファミリ�E�ブランド用�E�E*/
   fontFamilyBrand?: string;
-  /** フォントファミリ（プレーンテキスト用） */
+  /** フォントファミリ�E��EレーンチE��スト用�E�E*/
   fontFamilyPlain?: string;
 }
 
@@ -22,7 +22,7 @@ interface TypeStyle {
 
 /**
  * MD3 Type Scale 定義
- * Display / Headline / Title / Body / Label × Large / Medium / Small
+ * Display / Headline / Title / Body / Label ÁELarge / Medium / Small
  */
 const TYPE_SCALE: Record<string, TypeStyle> = {
   "display-large": {
@@ -133,8 +133,7 @@ const TYPE_SCALE: Record<string, TypeStyle> = {
 };
 
 /**
- * タイポグラフィトークン CSS を生成する。
- */
+ * タイポグラフィト�Eクン CSS を生成する、E */
 export function generateTypographyCSS(config?: TypographyConfig): string {
   const brandFont = config?.fontFamilyBrand ?? config?.fontFamily ??
     '"Roboto", "Noto Sans JP", system-ui, sans-serif';
@@ -144,30 +143,30 @@ export function generateTypographyCSS(config?: TypographyConfig): string {
   const lines: string[] = [];
 
   lines.push(`  /* Font families */`);
-  lines.push(`  --st-sys-typescale-font-family-brand: ${brandFont};`);
-  lines.push(`  --st-sys-typescale-font-family-plain: ${plainFont};`);
+  lines.push(`  --sc-sys-typescale-font-family-brand: ${brandFont};`);
+  lines.push(`  --sc-sys-typescale-font-family-plain: ${plainFont};`);
   lines.push("");
 
   for (const [name, style] of Object.entries(TYPE_SCALE)) {
     const familyVar = style.fontFamily === "brand"
-      ? "var(--st-sys-typescale-font-family-brand)"
-      : "var(--st-sys-typescale-font-family-plain)";
+      ? "var(--sc-sys-typescale-font-family-brand)"
+      : "var(--sc-sys-typescale-font-family-plain)";
 
     lines.push(`  /* ${name} */`);
-    lines.push(`  --st-sys-typescale-${name}-font: ${familyVar};`);
-    lines.push(`  --st-sys-typescale-${name}-weight: ${style.fontWeight};`);
-    lines.push(`  --st-sys-typescale-${name}-size: ${style.fontSize};`);
+    lines.push(`  --sc-sys-typescale-${name}-font: ${familyVar};`);
+    lines.push(`  --sc-sys-typescale-${name}-weight: ${style.fontWeight};`);
+    lines.push(`  --sc-sys-typescale-${name}-size: ${style.fontSize};`);
     lines.push(
-      `  --st-sys-typescale-${name}-line-height: ${style.lineHeight};`,
+      `  --sc-sys-typescale-${name}-line-height: ${style.lineHeight};`,
     );
     lines.push(
-      `  --st-sys-typescale-${name}-tracking: ${style.letterSpacing};`,
+      `  --sc-sys-typescale-${name}-tracking: ${style.letterSpacing};`,
     );
     lines.push("");
   }
 
   return `/* ==========================================================
- * Sawtooth CSS — Typography Tokens
+ * Sawtooth CSS  ETypography Tokens
  * MD3 Type Scale (15 styles)
  * ========================================================== */
 

@@ -1,14 +1,12 @@
 /* ==========================================================
- * Sawtooth CSS — Slider Component (Zag.js)
- * [data-scope="slider"] セレクタ対応
- * Slider + Range Slider 両対応
- * ========================================================== */
+ * Sawtooth CSS  ESlider Component (Zag.js)
+ * [data-scope="slider"] セレクタ対忁E * Slider + Range Slider 両対忁E * ========================================================== */
 
 /* --- Root --- */
 [data-scope="slider"][data-part="root"] {
   display: flex;
   flex-direction: column;
-  gap: var(--st-sys-spacing-2);
+  gap: var(--sc-sys-spacing-2);
   width: 100%;
   touch-action: none;
 }
@@ -19,16 +17,16 @@
 
 /* --- Label --- */
 [data-scope="slider"][data-part="label"] {
-  font-family: var(--st-sys-typescale-body-medium-font);
-  font-size: var(--st-sys-typescale-body-medium-size);
-  color: var(--st-sys-color-on-surface);
+  font-family: var(--sc-sys-typescale-body-medium-font);
+  font-size: var(--sc-sys-typescale-body-medium-size);
+  color: var(--sc-sys-color-on-surface);
 }
 
 /* --- Value Text --- */
 [data-scope="slider"][data-part="value-text"] {
-  font-family: var(--st-sys-typescale-body-small-font);
-  font-size: var(--st-sys-typescale-body-small-size);
-  color: var(--st-sys-color-on-surface-variant);
+  font-family: var(--sc-sys-typescale-body-small-font);
+  font-size: var(--sc-sys-typescale-body-small-size);
+  color: var(--sc-sys-color-on-surface-variant);
 }
 
 /* --- Control (wrapper for track + thumbs) --- */
@@ -49,8 +47,8 @@
   position: relative;
   width: 100%;
   height: 0.25rem; /* 4px */
-  border-radius: var(--st-sys-shape-corner-full);
-  background-color: var(--st-sys-color-surface-container-highest);
+  border-radius: var(--sc-sys-shape-corner-full);
+  background-color: var(--sc-sys-color-surface-container-highest);
   overflow: hidden;
 }
 
@@ -58,7 +56,7 @@
 [data-scope="slider"][data-part="range"] {
   position: absolute;
   height: 100%;
-  background-color: var(--st-sys-color-primary);
+  background-color: var(--sc-sys-color-primary);
   border-radius: inherit;
 }
 
@@ -67,30 +65,30 @@
   position: absolute;
   width: 1.25rem; /* 20px */
   height: 1.25rem;
-  border-radius: var(--st-sys-shape-corner-full);
-  background-color: var(--st-sys-color-primary);
-  box-shadow: var(--st-sys-elevation-level1);
+  border-radius: var(--sc-sys-shape-corner-full);
+  background-color: var(--sc-sys-color-primary);
+  box-shadow: var(--sc-sys-elevation-level1);
   transform: translate(-50%, -50%);
   top: 50%;
   cursor: grab;
   transition:
-    box-shadow var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+    box-shadow var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
   z-index: 1;
 }
 
 [data-scope="slider"][data-part="thumb"]:hover {
-  box-shadow: var(--st-sys-elevation-level2);
+  box-shadow: var(--sc-sys-elevation-level2);
 }
 
 [data-scope="slider"][data-part="thumb"]:active,
 [data-scope="slider"][data-part="thumb"][data-dragging] {
   cursor: grabbing;
-  box-shadow: var(--st-sys-elevation-level3);
+  box-shadow: var(--sc-sys-elevation-level3);
 }
 
 [data-scope="slider"][data-part="thumb"][data-focus] {
-  outline: 2px solid var(--st-sys-color-primary);
+  outline: 2px solid var(--sc-sys-color-primary);
   outline-offset: 2px;
 }
 
@@ -98,13 +96,13 @@
 [data-scope="slider"][data-part="marker-group"] {
   position: relative;
   width: 100%;
-  margin-top: var(--st-sys-spacing-1);
+  margin-top: var(--sc-sys-spacing-1);
 }
 
 /* --- Marker --- */
 [data-scope="slider"][data-part="marker"] {
   position: absolute;
-  font-size: var(--st-sys-typescale-label-small-size);
-  color: var(--st-sys-color-on-surface-variant);
+  font-size: var(--sc-sys-typescale-label-small-size);
+  color: var(--sc-sys-color-on-surface-variant);
   transform: translateX(-50%);
 }

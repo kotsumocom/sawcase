@@ -1,17 +1,16 @@
 /* ==========================================================
- * Sawtooth CSS — Presence Component (Zag.js)
- * [data-scope="presence"] セレクタ対応
- * CSS トランジション制御のみ
+ * Sawtooth CSS  EPresence Component (Zag.js)
+ * [data-scope="presence"] セレクタ対忁E * CSS トランジション制御のみ
  * ========================================================== */
 
 [data-scope="presence"][data-state="open"] {
-  animation: st-presence-in var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-presence-in var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 
 [data-scope="presence"][data-state="closed"] {
-  animation: st-presence-out var(--st-sys-motion-duration-short3)
-    var(--st-sys-motion-easing-emphasized-accelerate);
+  animation: st-presence-out var(--sc-sys-motion-duration-short3)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
 }
 
 @keyframes st-presence-in {

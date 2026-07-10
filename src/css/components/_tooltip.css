@@ -1,7 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — Tooltip Component (Zag.js)
- * [data-scope="tooltip"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  ETooltip Component (Zag.js)
+ * [data-scope="tooltip"] セレクタ対忁E * ========================================================== */
 
 [data-scope="tooltip"][data-part="positioner"] {
   z-index: 50;
@@ -9,29 +8,29 @@
 
 [data-scope="tooltip"][data-part="content"] {
   max-width: 12.5rem; /* 200px */
-  padding: var(--st-sys-spacing-1) var(--st-sys-spacing-2);
-  background-color: var(--st-sys-color-inverse-surface);
-  color: var(--st-sys-color-inverse-on-surface);
-  border-radius: var(--st-sys-shape-corner-xs);
-  font-family: var(--st-sys-typescale-body-small-font);
-  font-size: var(--st-sys-typescale-body-small-size);
-  line-height: var(--st-sys-typescale-body-small-line-height);
-  box-shadow: var(--st-sys-elevation-level1);
+  padding: var(--sc-sys-spacing-1) var(--sc-sys-spacing-2);
+  background-color: var(--sc-sys-color-inverse-surface);
+  color: var(--sc-sys-color-inverse-on-surface);
+  border-radius: var(--sc-sys-shape-corner-xs);
+  font-family: var(--sc-sys-typescale-body-small-font);
+  font-size: var(--sc-sys-typescale-body-small-size);
+  line-height: var(--sc-sys-typescale-body-small-line-height);
+  box-shadow: var(--sc-sys-elevation-level1);
 }
 
 [data-scope="tooltip"][data-part="content"][data-state="open"] {
-  animation: st-tooltip-in var(--st-sys-motion-duration-short3)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-tooltip-in var(--sc-sys-motion-duration-short3)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 
 [data-scope="tooltip"][data-part="content"][data-state="closed"] {
-  animation: st-tooltip-out var(--st-sys-motion-duration-short2)
-    var(--st-sys-motion-easing-emphasized-accelerate);
+  animation: st-tooltip-out var(--sc-sys-motion-duration-short2)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
 }
 
 [data-scope="tooltip"][data-part="arrow"] {
   --arrow-size: 8px;
-  --arrow-background: var(--st-sys-color-inverse-surface);
+  --arrow-background: var(--sc-sys-color-inverse-surface);
 }
 
 [data-scope="tooltip"][data-part="arrow-tip"] {

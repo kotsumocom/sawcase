@@ -1,19 +1,18 @@
 /* ==========================================================
- * sc-blog — ブログレイアウト
- * ========================================================== */
+ * sc-blog  EブログレイアウチE * ========================================================== */
 
 .sc-blog-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--st-sys-color-surface, #fef7ff);
-  color: var(--st-sys-color-on-surface, #1d1b20);
+  background-color: var(--sc-sys-color-surface, #fef7ff);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
 }
 
 .sc-blog-header {
   padding: 12px 24px;
-  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
-  background-color: var(--st-sys-color-surface, #fef7ff);
+  border-bottom: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  background-color: var(--sc-sys-color-surface, #fef7ff);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -34,12 +33,12 @@
 }
 
 .sc-blog-header__nav a {
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   text-decoration: none;
 }
 
 .sc-blog-header__nav a:hover {
-  color: var(--st-sys-color-primary, #6750a4);
+  color: var(--sc-sys-color-primary, #6750a4);
 }
 
 .sc-blog-body {
@@ -71,26 +70,26 @@
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   margin-bottom: 8px;
   padding-bottom: 4px;
-  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  border-bottom: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
 }
 
 .sc-blog-sidebar__link {
   display: block;
   padding: 6px 0;
   font-size: 0.875rem;
-  color: var(--st-sys-color-on-surface, #1d1b20);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
   text-decoration: none;
 }
 
 .sc-blog-sidebar__link:hover {
-  color: var(--st-sys-color-primary, #6750a4);
+  color: var(--sc-sys-color-primary, #6750a4);
 }
 
 .sc-blog-sidebar__link--active {
-  color: var(--st-sys-color-primary, #6750a4);
+  color: var(--sc-sys-color-primary, #6750a4);
   font-weight: 600;
 }
 
@@ -100,7 +99,7 @@
   }
   .sc-blog-sidebar {
     width: 100%;
-    border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+    border-top: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
     padding-top: 24px;
   }
 }

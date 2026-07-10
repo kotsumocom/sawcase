@@ -1,7 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — Collapsible Component (Zag.js)
- * [data-scope="collapsible"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  ECollapsible Component (Zag.js)
+ * [data-scope="collapsible"] セレクタ対忁E * ========================================================== */
 
 [data-scope="collapsible"][data-part="root"] {
   width: 100%;
@@ -10,15 +9,15 @@
 [data-scope="collapsible"][data-part="trigger"] {
   display: inline-flex;
   align-items: center;
-  gap: var(--st-sys-spacing-2);
+  gap: var(--sc-sys-spacing-2);
   cursor: pointer;
-  color: var(--st-sys-color-primary);
-  font-family: var(--st-sys-typescale-label-large-font);
-  font-size: var(--st-sys-typescale-label-large-size);
-  font-weight: var(--st-sys-typescale-label-large-weight);
+  color: var(--sc-sys-color-primary);
+  font-family: var(--sc-sys-typescale-label-large-font);
+  font-size: var(--sc-sys-typescale-label-large-size);
+  font-weight: var(--sc-sys-typescale-label-large-weight);
   background: transparent;
   border: none;
-  padding: var(--st-sys-spacing-2) 0;
+  padding: var(--sc-sys-spacing-2) 0;
 }
 
 [data-scope="collapsible"][data-part="trigger"]:hover {
@@ -30,13 +29,13 @@
 }
 
 [data-scope="collapsible"][data-part="content"][data-state="open"] {
-  animation: st-collapsible-open var(--st-sys-motion-duration-medium2)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-collapsible-open var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 
 [data-scope="collapsible"][data-part="content"][data-state="closed"] {
-  animation: st-collapsible-close var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized-accelerate);
+  animation: st-collapsible-close var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
 }
 
 @keyframes st-collapsible-open {

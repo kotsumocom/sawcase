@@ -1,11 +1,10 @@
 /* ==========================================================
- * sc-docs-sidebar — 左サイドバー（目次ナビ）
- *
- * デスクトップ: 常時表示
+ * sc-docs-sidebar  E左サイドバー�E�目次ナビ�E�E *
+ * チE��クトッチE 常時表示
  * モバイル: ドロワー
  * ========================================================== */
 
-/* ドキュメントボディ: 3カラム構造 */
+/* ドキュメント�EチE��: 3カラム構造 */
 .sc-docs-body {
   display: flex;
   flex: 1;
@@ -20,66 +19,66 @@
   min-width: var(--sc-docs-sidebar-width);
   height: 100%;
   overflow-y: auto;
-  background-color: var(--st-sys-color-surface, #fef7ff);
-  border-right: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
-  padding: var(--st-sys-spacing-4, 16px) 0;
+  background-color: var(--sc-sys-color-surface, #fef7ff);
+  border-right: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  padding: var(--sc-sys-spacing-4, 16px) 0;
   flex-shrink: 0;
 }
 
-/* サイドバーグループ */
+/* サイドバーグルーチE*/
 .sc-docs-sidebar__group {
-  padding: var(--st-sys-spacing-1, 4px) var(--st-sys-spacing-3, 12px);
-  margin-bottom: var(--st-sys-spacing-2, 8px);
+  padding: var(--sc-sys-spacing-1, 4px) var(--sc-sys-spacing-3, 12px);
+  margin-bottom: var(--sc-sys-spacing-2, 8px);
 }
 
 .sc-docs-sidebar__group-label {
-  font-size: var(--st-sys-typescale-label-small-size, 0.6875rem);
+  font-size: var(--sc-sys-typescale-label-small-size, 0.6875rem);
   font-weight: 600;
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   text-transform: uppercase;
   letter-spacing: 0.05em;
-  padding: var(--st-sys-spacing-2, 8px) var(--st-sys-spacing-3, 12px);
+  padding: var(--sc-sys-spacing-2, 8px) var(--sc-sys-spacing-3, 12px);
 }
 
 /* サイドバーリンク */
 .sc-docs-sidebar__link {
   display: block;
-  font-size: var(--st-sys-typescale-body-medium-size, 0.875rem);
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  font-size: var(--sc-sys-typescale-body-medium-size, 0.875rem);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   text-decoration: none;
-  padding: var(--st-sys-spacing-2, 8px) var(--st-sys-spacing-3, 12px);
-  border-radius: var(--st-sys-shape-corner-sm, 8px);
+  padding: var(--sc-sys-spacing-2, 8px) var(--sc-sys-spacing-3, 12px);
+  border-radius: var(--sc-sys-shape-corner-sm, 8px);
   border-left: 2px solid transparent;
-  transition: all var(--st-sys-motion-duration-short1, 100ms)
-    var(--st-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+  transition: all var(--sc-sys-motion-duration-short1, 100ms)
+    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
 }
 
 .sc-docs-sidebar__link:hover {
-  background-color: var(--st-sys-color-surface-variant, #e7e0ec);
-  color: var(--st-sys-color-on-surface, #1d1b20);
+  background-color: var(--sc-sys-color-surface-variant, #e7e0ec);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
 }
 
 .sc-docs-sidebar__link--active {
-  color: var(--st-sys-color-primary, #6750a4);
-  border-left-color: var(--st-sys-color-primary, #6750a4);
+  color: var(--sc-sys-color-primary, #6750a4);
+  border-left-color: var(--sc-sys-color-primary, #6750a4);
   font-weight: 600;
   background-color: color-mix(
     in srgb,
-    var(--st-sys-color-primary, #6750a4) 8%,
+    var(--sc-sys-color-primary, #6750a4) 8%,
     transparent
   );
 }
 
-/* ドキュメントメインコンテンツ */
+/* ドキュメントメインコンチE��チE*/
 .sc-docs-content {
   flex: 1;
   overflow-y: auto;
-  padding: var(--st-sys-spacing-8, 32px);
+  padding: var(--sc-sys-spacing-8, 32px);
   display: flex;
   justify-content: center;
 }
 
-/* モバイル対応 */
+/* モバイル対忁E*/
 @media (max-width: 768px) {
   .sc-docs-sidebar {
     position: fixed;
@@ -88,25 +87,25 @@
     bottom: 0;
     width: var(--sc-docs-sidebar-width);
     transform: translateX(-100%);
-    transition: transform var(--st-sys-motion-duration-short3, 200ms)
-      var(--st-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+    transition: transform var(--sc-sys-motion-duration-short3, 200ms)
+      var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
     box-shadow: none;
     z-index: var(--sc-z-nav);
   }
 
   .sc-docs-sidebar--open {
     transform: translateX(0);
-    box-shadow: var(--st-sys-elevation-level3, 0 4px 8px 3px rgba(0, 0, 0, 0.15));
+    box-shadow: var(--sc-sys-elevation-level3, 0 4px 8px 3px rgba(0, 0, 0, 0.15));
   }
 
   .sc-docs-content {
-    padding: var(--st-sys-spacing-4, 16px);
+    padding: var(--sc-sys-spacing-4, 16px);
   }
 }
 
-/* タブレット: TOC 非表示 */
+/* タブレチE��: TOC 非表示 */
 @media (min-width: 769px) and (max-width: 1024px) {
   .sc-docs-content {
-    padding: var(--st-sys-spacing-6, 24px);
+    padding: var(--sc-sys-spacing-6, 24px);
   }
 }

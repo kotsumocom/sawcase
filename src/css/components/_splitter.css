@@ -1,7 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — Splitter Component (Zag.js)
- * [data-scope="splitter"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  ESplitter Component (Zag.js)
+ * [data-scope="splitter"] セレクタ対忁E * ========================================================== */
 
 [data-scope="splitter"][data-part="root"] {
   display: flex;
@@ -18,10 +17,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--st-sys-color-outline-variant);
+  background-color: var(--sc-sys-color-outline-variant);
   flex-shrink: 0;
-  transition: background-color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+  transition: background-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 /* Horizontal (default) */
@@ -37,11 +36,11 @@
 }
 
 [data-scope="splitter"][data-part="resize-trigger"]:hover {
-  background-color: var(--st-sys-color-primary);
+  background-color: var(--sc-sys-color-primary);
 }
 
 [data-scope="splitter"][data-part="resize-trigger"][data-focus] {
-  background-color: var(--st-sys-color-primary);
+  background-color: var(--sc-sys-color-primary);
   outline: none;
 }
 

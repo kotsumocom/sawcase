@@ -1,7 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — Accordion Component (Zag.js)
- * [data-scope="accordion"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  EAccordion Component (Zag.js)
+ * [data-scope="accordion"] セレクタ対忁E * ========================================================== */
 
 [data-scope="accordion"][data-part="root"] {
   display: flex;
@@ -10,7 +9,7 @@
 }
 
 [data-scope="accordion"][data-part="item"] {
-  border-bottom: 1px solid var(--st-sys-color-outline-variant);
+  border-bottom: 1px solid var(--sc-sys-color-outline-variant);
 }
 
 [data-scope="accordion"][data-part="item-trigger"] {
@@ -19,21 +18,21 @@
   justify-content: space-between;
   width: 100%;
   min-height: 3rem;
-  padding: var(--st-sys-spacing-4) 0;
+  padding: var(--sc-sys-spacing-4) 0;
   background: transparent;
   border: none;
-  color: var(--st-sys-color-on-surface);
-  font-family: var(--st-sys-typescale-body-large-font);
-  font-size: var(--st-sys-typescale-body-large-size);
+  color: var(--sc-sys-color-on-surface);
+  font-family: var(--sc-sys-typescale-body-large-font);
+  font-size: var(--sc-sys-typescale-body-large-size);
   font-weight: 500;
   cursor: pointer;
   text-align: left;
-  transition: color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+  transition: color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="accordion"][data-part="item-trigger"]:hover {
-  color: var(--st-sys-color-primary);
+  color: var(--sc-sys-color-primary);
 }
 
 [data-scope="accordion"][data-part="item-trigger"][data-disabled] {
@@ -42,14 +41,14 @@
 }
 
 [data-scope="accordion"][data-part="item-trigger"]:focus-visible {
-  outline: 2px solid var(--st-sys-color-primary);
+  outline: 2px solid var(--sc-sys-color-primary);
   outline-offset: -2px;
-  border-radius: var(--st-sys-shape-corner-xs);
+  border-radius: var(--sc-sys-shape-corner-xs);
 }
 
 [data-scope="accordion"][data-part="item-indicator"] {
-  transition: transform var(--st-sys-motion-duration-medium2)
-    var(--st-sys-motion-easing-emphasized);
+  transition: transform var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized);
   flex-shrink: 0;
 }
 
@@ -59,20 +58,20 @@
 
 [data-scope="accordion"][data-part="item-content"] {
   overflow: hidden;
-  color: var(--st-sys-color-on-surface-variant);
-  font-family: var(--st-sys-typescale-body-medium-font);
-  font-size: var(--st-sys-typescale-body-medium-size);
-  line-height: var(--st-sys-typescale-body-medium-line-height);
+  color: var(--sc-sys-color-on-surface-variant);
+  font-family: var(--sc-sys-typescale-body-medium-font);
+  font-size: var(--sc-sys-typescale-body-medium-size);
+  line-height: var(--sc-sys-typescale-body-medium-line-height);
 }
 
 [data-scope="accordion"][data-part="item-content"][data-state="open"] {
-  animation: st-accordion-open var(--st-sys-motion-duration-medium2)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-accordion-open var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 
 [data-scope="accordion"][data-part="item-content"][data-state="closed"] {
-  animation: st-accordion-close var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized-accelerate);
+  animation: st-accordion-close var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
 }
 
 @keyframes st-accordion-open {

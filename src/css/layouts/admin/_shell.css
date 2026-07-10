@@ -1,8 +1,7 @@
 /* ==========================================================
- * sc-admin-shell — 管理画面の全画面シェル
+ * sc-admin-shell  E管琁E��面の全画面シェル
  *
- * 画面全体を覆い、header + body の縦分割を行う。
- * ========================================================== */
+ * 画面全体を要E��、header + body の縦刁E��を行う、E * ========================================================== */
 
 .sc-admin-shell {
   display: flex;
@@ -10,6 +9,6 @@
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
-  background-color: var(--st-sys-color-surface, #fef7ff);
-  color: var(--st-sys-color-on-surface, #1d1b20);
+  background-color: var(--sc-sys-color-surface, #fef7ff);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
 }

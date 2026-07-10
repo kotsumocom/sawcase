@@ -1,41 +1,38 @@
 /* ==========================================================
- * sc-admin-stats — Stats カード
- *
- * ダッシュボードの統計情報カード。
- * レスポンシブグリッドで自動折り返し。
- * ========================================================== */
+ * sc-admin-stats  EStats カーチE *
+ * ダチE��ュボ�Eド�E統計情報カード、E * レスポンシブグリチE��で自動折り返し、E * ========================================================== */
 
 .sc-admin-stats {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: var(--st-sys-spacing-4, 16px);
-  margin-bottom: var(--st-sys-spacing-6, 24px);
+  gap: var(--sc-sys-spacing-4, 16px);
+  margin-bottom: var(--sc-sys-spacing-6, 24px);
 }
 
 .sc-admin-stats__card {
-  background-color: var(--st-sys-color-surface, #fef7ff);
-  border: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
-  border-radius: var(--st-sys-shape-corner-lg, 16px);
-  padding: var(--st-sys-spacing-5, 20px);
+  background-color: var(--sc-sys-color-surface, #fef7ff);
+  border: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  border-radius: var(--sc-sys-shape-corner-lg, 16px);
+  padding: var(--sc-sys-spacing-5, 20px);
   display: flex;
   flex-direction: column;
-  gap: var(--st-sys-spacing-1, 4px);
+  gap: var(--sc-sys-spacing-1, 4px);
 }
 
 .sc-admin-stats__label {
-  font-size: var(--st-sys-typescale-label-large-size, 0.875rem);
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  font-size: var(--sc-sys-typescale-label-large-size, 0.875rem);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   font-weight: 500;
 }
 
 .sc-admin-stats__value {
-  font-size: var(--st-sys-typescale-title-large-size, 1.375rem);
+  font-size: var(--sc-sys-typescale-title-large-size, 1.375rem);
   font-weight: 700;
-  color: var(--st-sys-color-on-surface, #1d1b20);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
 }
 
 .sc-admin-stats__trend {
-  font-size: var(--st-sys-typescale-body-small-size, 0.75rem);
+  font-size: var(--sc-sys-typescale-body-small-size, 0.75rem);
   font-weight: 500;
 }
 
@@ -44,5 +41,5 @@
 }
 
 .sc-admin-stats__trend--down {
-  color: var(--st-sys-color-error, #b3261e);
+  color: var(--sc-sys-color-error, #b3261e);
 }

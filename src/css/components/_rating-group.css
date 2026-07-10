@@ -1,32 +1,31 @@
 /* ==========================================================
- * Sawtooth CSS — Rating Group Component (Zag.js)
- * [data-scope="rating-group"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  ERating Group Component (Zag.js)
+ * [data-scope="rating-group"] セレクタ対忁E * ========================================================== */
 
 [data-scope="rating-group"][data-part="root"] {
   display: flex;
   flex-direction: column;
-  gap: var(--st-sys-spacing-1);
+  gap: var(--sc-sys-spacing-1);
 }
 
 [data-scope="rating-group"][data-part="label"] {
-  font-family: var(--st-sys-typescale-body-small-font);
-  font-size: var(--st-sys-typescale-body-small-size);
-  color: var(--st-sys-color-on-surface-variant);
+  font-family: var(--sc-sys-typescale-body-small-font);
+  font-size: var(--sc-sys-typescale-body-small-size);
+  color: var(--sc-sys-color-on-surface-variant);
 }
 
 [data-scope="rating-group"][data-part="control"] {
   display: flex;
-  gap: var(--st-sys-spacing-1);
+  gap: var(--sc-sys-spacing-1);
 }
 
 [data-scope="rating-group"][data-part="item"] {
   cursor: pointer;
-  color: var(--st-sys-color-outline);
-  transition: color var(--st-sys-motion-duration-short2)
-    var(--st-sys-motion-easing-standard),
-    transform var(--st-sys-motion-duration-short2)
-    var(--st-sys-motion-easing-emphasized);
+  color: var(--sc-sys-color-outline);
+  transition: color var(--sc-sys-motion-duration-short2)
+    var(--sc-sys-motion-easing-standard),
+    transform var(--sc-sys-motion-duration-short2)
+    var(--sc-sys-motion-easing-emphasized);
 }
 
 [data-scope="rating-group"][data-part="item"]:hover {
@@ -34,7 +33,7 @@
 }
 
 [data-scope="rating-group"][data-part="item"][data-highlighted] {
-  color: var(--st-sys-color-primary);
+  color: var(--sc-sys-color-primary);
 }
 
 [data-scope="rating-group"][data-part="item"][data-disabled] {
@@ -43,7 +42,7 @@
 }
 
 [data-scope="rating-group"][data-part="item"]:focus-visible {
-  outline: 2px solid var(--st-sys-color-primary);
+  outline: 2px solid var(--sc-sys-color-primary);
   outline-offset: 2px;
   border-radius: 2px;
 }

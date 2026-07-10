@@ -1,7 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — Floating Panel Component (Zag.js)
- * [data-scope="floating-panel"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  EFloating Panel Component (Zag.js)
+ * [data-scope="floating-panel"] セレクタ対忁E * ========================================================== */
 
 [data-scope="floating-panel"][data-part="trigger"] {
   cursor: pointer;
@@ -14,9 +13,9 @@
 [data-scope="floating-panel"][data-part="content"] {
   display: flex;
   flex-direction: column;
-  background-color: var(--st-sys-color-surface-container);
-  border-radius: var(--st-sys-shape-corner-md);
-  box-shadow: var(--st-sys-elevation-level3);
+  background-color: var(--sc-sys-color-surface-container);
+  border-radius: var(--sc-sys-shape-corner-md);
+  box-shadow: var(--sc-sys-elevation-level3);
   overflow: hidden;
   min-width: 20rem;
   min-height: 15rem;
@@ -24,16 +23,16 @@
 }
 
 [data-scope="floating-panel"][data-part="content"][data-state="open"] {
-  animation: st-fade-in var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-fade-in var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 
 [data-scope="floating-panel"][data-part="header"] {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: var(--st-sys-spacing-3) var(--st-sys-spacing-4);
-  background-color: var(--st-sys-color-surface-container-high);
+  padding: var(--sc-sys-spacing-3) var(--sc-sys-spacing-4);
+  background-color: var(--sc-sys-color-surface-container-high);
   cursor: grab;
   user-select: none;
 }
@@ -43,15 +42,15 @@
 }
 
 [data-scope="floating-panel"][data-part="title"] {
-  font-family: var(--st-sys-typescale-title-small-font);
-  font-size: var(--st-sys-typescale-title-small-size);
-  font-weight: var(--st-sys-typescale-title-small-weight);
-  color: var(--st-sys-color-on-surface);
+  font-family: var(--sc-sys-typescale-title-small-font);
+  font-size: var(--sc-sys-typescale-title-small-size);
+  font-weight: var(--sc-sys-typescale-title-small-weight);
+  color: var(--sc-sys-color-on-surface);
 }
 
 [data-scope="floating-panel"][data-part="body"] {
   flex: 1;
-  padding: var(--st-sys-spacing-4);
+  padding: var(--sc-sys-spacing-4);
   overflow: auto;
 }
 
@@ -61,17 +60,17 @@
   justify-content: center;
   width: 2rem;
   height: 2rem;
-  border-radius: var(--st-sys-shape-corner-full);
-  color: var(--st-sys-color-on-surface-variant);
+  border-radius: var(--sc-sys-shape-corner-full);
+  color: var(--sc-sys-color-on-surface-variant);
   cursor: pointer;
   background: transparent;
   border: none;
-  transition: background-color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+  transition: background-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="floating-panel"][data-part="close-trigger"]:hover {
-  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+  background-color: color-mix(in srgb, var(--sc-sys-color-on-surface) 8%,
     transparent);
 }
 

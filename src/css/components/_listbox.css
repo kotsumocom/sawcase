@@ -1,50 +1,49 @@
 /* ==========================================================
- * Sawtooth CSS — Listbox Component (Zag.js)
- * [data-scope="listbox"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  EListbox Component (Zag.js)
+ * [data-scope="listbox"] セレクタ対忁E * ========================================================== */
 
 [data-scope="listbox"][data-part="root"] {
   display: flex;
   flex-direction: column;
-  gap: var(--st-sys-spacing-1);
+  gap: var(--sc-sys-spacing-1);
 }
 
 [data-scope="listbox"][data-part="label"] {
-  font-family: var(--st-sys-typescale-body-small-font);
-  font-size: var(--st-sys-typescale-body-small-size);
-  color: var(--st-sys-color-on-surface-variant);
+  font-family: var(--sc-sys-typescale-body-small-font);
+  font-size: var(--sc-sys-typescale-body-small-size);
+  color: var(--sc-sys-color-on-surface-variant);
 }
 
 [data-scope="listbox"][data-part="content"] {
-  border: 1px solid var(--st-sys-color-outline-variant);
-  border-radius: var(--st-sys-shape-corner-xs);
+  border: 1px solid var(--sc-sys-color-outline-variant);
+  border-radius: var(--sc-sys-shape-corner-xs);
   max-height: 15rem;
   overflow-y: auto;
-  padding: var(--st-sys-spacing-1) 0;
+  padding: var(--sc-sys-spacing-1) 0;
   outline: none;
 }
 
 [data-scope="listbox"][data-part="item"] {
   display: flex;
   align-items: center;
-  gap: var(--st-sys-spacing-3);
-  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-4);
+  gap: var(--sc-sys-spacing-3);
+  padding: var(--sc-sys-spacing-2) var(--sc-sys-spacing-4);
   cursor: pointer;
-  font-family: var(--st-sys-typescale-body-large-font);
-  font-size: var(--st-sys-typescale-body-large-size);
-  color: var(--st-sys-color-on-surface);
-  transition: background-color var(--st-sys-motion-duration-short2)
-    var(--st-sys-motion-easing-standard);
+  font-family: var(--sc-sys-typescale-body-large-font);
+  font-size: var(--sc-sys-typescale-body-large-size);
+  color: var(--sc-sys-color-on-surface);
+  transition: background-color var(--sc-sys-motion-duration-short2)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="listbox"][data-part="item"][data-highlighted] {
-  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+  background-color: color-mix(in srgb, var(--sc-sys-color-on-surface) 8%,
     transparent);
 }
 
 [data-scope="listbox"][data-part="item"][data-state="checked"] {
-  background-color: var(--st-sys-color-secondary-container);
-  color: var(--st-sys-color-on-secondary-container);
+  background-color: var(--sc-sys-color-secondary-container);
+  color: var(--sc-sys-color-on-secondary-container);
 }
 
 [data-scope="listbox"][data-part="item"][data-disabled] {
@@ -53,6 +52,6 @@
 }
 
 [data-scope="listbox"][data-part="item-indicator"] {
-  color: var(--st-sys-color-primary);
+  color: var(--sc-sys-color-primary);
   margin-left: auto;
 }

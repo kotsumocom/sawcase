@@ -1,14 +1,13 @@
 /* ==========================================================
- * Sawtooth CSS — QR Code Component (Zag.js)
- * [data-scope="qr-code"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  EQR Code Component (Zag.js)
+ * [data-scope="qr-code"] セレクタ対忁E * ========================================================== */
 
 [data-scope="qr-code"][data-part="root"] {
   display: inline-flex;
-  padding: var(--st-sys-spacing-3);
+  padding: var(--sc-sys-spacing-3);
   background-color: white;
-  border-radius: var(--st-sys-shape-corner-md);
-  box-shadow: var(--st-sys-elevation-level1);
+  border-radius: var(--sc-sys-shape-corner-md);
+  box-shadow: var(--sc-sys-elevation-level1);
 }
 
 [data-scope="qr-code"][data-part="frame"] {

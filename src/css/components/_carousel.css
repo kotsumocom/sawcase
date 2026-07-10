@@ -1,7 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — Carousel Component (Zag.js)
- * [data-scope="carousel"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  ECarousel Component (Zag.js)
+ * [data-scope="carousel"] セレクタ対忁E * ========================================================== */
 
 [data-scope="carousel"][data-part="root"] {
   position: relative;
@@ -15,8 +14,8 @@
 
 [data-scope="carousel"][data-part="item-group"] {
   display: flex;
-  transition: transform var(--st-sys-motion-duration-long1)
-    var(--st-sys-motion-easing-emphasized);
+  transition: transform var(--sc-sys-motion-duration-long1)
+    var(--sc-sys-motion-easing-emphasized);
 }
 
 [data-scope="carousel"][data-part="item"] {
@@ -28,8 +27,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: var(--st-sys-spacing-2);
-  margin-top: var(--st-sys-spacing-3);
+  gap: var(--sc-sys-spacing-2);
+  margin-top: var(--sc-sys-spacing-3);
 }
 
 [data-scope="carousel"][data-part="prev-trigger"],
@@ -39,19 +38,19 @@
   justify-content: center;
   width: 2.5rem;
   height: 2.5rem;
-  border-radius: var(--st-sys-shape-corner-full);
-  background-color: var(--st-sys-color-surface-container);
-  color: var(--st-sys-color-on-surface);
+  border-radius: var(--sc-sys-shape-corner-full);
+  background-color: var(--sc-sys-color-surface-container);
+  color: var(--sc-sys-color-on-surface);
   border: none;
   cursor: pointer;
-  box-shadow: var(--st-sys-elevation-level1);
-  transition: background-color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+  box-shadow: var(--sc-sys-elevation-level1);
+  transition: background-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="carousel"][data-part="prev-trigger"]:hover,
 [data-scope="carousel"][data-part="next-trigger"]:hover {
-  background-color: var(--st-sys-color-surface-container-high);
+  background-color: var(--sc-sys-color-surface-container-high);
 }
 
 [data-scope="carousel"][data-part="prev-trigger"][data-disabled],
@@ -63,24 +62,24 @@
 [data-scope="carousel"][data-part="indicator-group"] {
   display: flex;
   justify-content: center;
-  gap: var(--st-sys-spacing-2);
-  margin-top: var(--st-sys-spacing-3);
+  gap: var(--sc-sys-spacing-2);
+  margin-top: var(--sc-sys-spacing-3);
 }
 
 [data-scope="carousel"][data-part="indicator"] {
   width: 0.5rem;
   height: 0.5rem;
-  border-radius: var(--st-sys-shape-corner-full);
-  background-color: var(--st-sys-color-outline-variant);
+  border-radius: var(--sc-sys-shape-corner-full);
+  background-color: var(--sc-sys-color-outline-variant);
   border: none;
   cursor: pointer;
-  transition: background-color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard),
-    width var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized);
+  transition: background-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard),
+    width var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized);
 }
 
 [data-scope="carousel"][data-part="indicator"][data-current] {
-  background-color: var(--st-sys-color-primary);
+  background-color: var(--sc-sys-color-primary);
   width: 1.5rem;
 }

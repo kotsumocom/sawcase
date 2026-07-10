@@ -1,8 +1,7 @@
 /* ==========================================================
- * sc-admin-overlay — モバイルオーバーレイ
+ * sc-admin-overlay  Eモバイルオーバ�Eレイ
  *
- * ドロワー展開時の背景暗転。クリックでドロワーを閉じる。
- * ========================================================== */
+ * ドロワー展開時�E背景暗転。クリチE��でドロワーを閉じる、E * ========================================================== */
 
 .sc-admin-overlay {
   display: none;
@@ -19,8 +18,8 @@
     background-color: rgba(0, 0, 0, 0.32);
     z-index: calc(var(--sc-z-nav) - 1);
     opacity: 0;
-    transition: opacity var(--st-sys-motion-duration-short3, 200ms)
-      var(--st-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+    transition: opacity var(--sc-sys-motion-duration-short3, 200ms)
+      var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
   }
 
   .sc-admin-overlay--visible {

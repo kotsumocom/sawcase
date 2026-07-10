@@ -1,6 +1,6 @@
 /* ==========================================================
  * Sawcase Interactive Components CSS
- * Zag.js コンポーネント用のスタイル
+ * Zag.js コンポ�Eネント用のスタイル
  * ========================================================== */
 
 /* --- Clipboard --- */
@@ -10,20 +10,20 @@
   gap: 6px;
   padding: 4px 10px;
   background: transparent;
-  border: 1px solid var(--st-sys-color-outline, #79747e);
+  border: 1px solid var(--sc-sys-color-outline, #79747e);
   border-radius: 6px;
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   cursor: pointer;
   font-size: 0.75rem;
   transition: color 0.15s, border-color 0.15s;
 }
 .sc-clipboard-btn:hover {
-  color: var(--st-sys-color-on-surface, #1d1b20);
-  border-color: var(--st-sys-color-on-surface, #1d1b20);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+  border-color: var(--sc-sys-color-on-surface, #1d1b20);
 }
 .sc-clipboard-btn[data-copied="true"] {
-  color: var(--st-sys-color-primary, #6750a4);
-  border-color: var(--st-sys-color-primary, #6750a4);
+  color: var(--sc-sys-color-primary, #6750a4);
+  border-color: var(--sc-sys-color-primary, #6750a4);
 }
 
 /* --- Dialog --- */
@@ -43,7 +43,7 @@
   padding: 24px;
 }
 .sc-dialog-content {
-  background: var(--st-sys-color-surface-container-low, #f7f2fa);
+  background: var(--sc-sys-color-surface-container-low, #f7f2fa);
   border-radius: 16px;
   padding: 24px;
   max-width: 560px;
@@ -67,14 +67,14 @@
   cursor: pointer;
   padding: 8px;
   border-radius: 50%;
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
 }
 .sc-dialog-close:hover {
-  background: var(--st-sys-color-surface-variant, #e7e0ec);
+  background: var(--sc-sys-color-surface-variant, #e7e0ec);
 }
 .sc-dialog-description {
   font-size: 0.875rem;
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   margin: 0 0 16px;
 }
 .sc-dialog-body {
@@ -89,7 +89,7 @@
 /* --- Tabs --- */
 .sc-tabs-list {
   display: flex;
-  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  border-bottom: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
   gap: 0;
 }
 .sc-tabs-trigger {
@@ -100,15 +100,15 @@
   cursor: pointer;
   font-size: 0.875rem;
   font-weight: 500;
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   transition: color 0.15s, border-color 0.15s;
 }
 .sc-tabs-trigger:hover {
-  color: var(--st-sys-color-on-surface, #1d1b20);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
 }
 .sc-tabs-trigger[data-selected] {
-  color: var(--st-sys-color-primary, #6750a4);
-  border-bottom-color: var(--st-sys-color-primary, #6750a4);
+  color: var(--sc-sys-color-primary, #6750a4);
+  border-bottom-color: var(--sc-sys-color-primary, #6750a4);
 }
 .sc-tabs-content {
   padding: 16px 0;
@@ -134,7 +134,7 @@
   gap: 12px;
   padding: 16px;
   border-radius: 12px;
-  background: var(--st-sys-color-surface-container-low, #f7f2fa);
+  background: var(--sc-sys-color-surface-container-low, #f7f2fa);
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   animation: sc-toast-in 0.2s ease;
 }
@@ -148,7 +148,7 @@
 .sc-toast--warning .sc-toast__icon { color: #d97706; }
 .sc-toast--info .sc-toast__icon { color: #2563eb; }
 .sc-toast__title { font-weight: 600; font-size: 0.875rem; }
-.sc-toast__description { font-size: 0.8125rem; color: var(--st-sys-color-on-surface-variant, #49454f); margin-top: 2px; }
+.sc-toast__description { font-size: 0.8125rem; color: var(--sc-sys-color-on-surface-variant, #49454f); margin-top: 2px; }
 
 /* --- Menu --- */
 .sc-menu-trigger {
@@ -158,7 +158,7 @@
   padding: 0;
 }
 .sc-menu-content {
-  background: var(--st-sys-color-surface-container-low, #f7f2fa);
+  background: var(--sc-sys-color-surface-container-low, #f7f2fa);
   border-radius: 8px;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
   padding: 4px;
@@ -176,13 +176,13 @@
 }
 .sc-menu-item:hover,
 .sc-menu-item[data-highlighted] {
-  background: var(--st-sys-color-surface-variant, #e7e0ec);
+  background: var(--sc-sys-color-surface-variant, #e7e0ec);
 }
 
 /* --- Tooltip --- */
 .sc-tooltip {
-  background: var(--st-sys-color-inverse-surface, #322f35);
-  color: var(--st-sys-color-inverse-on-surface, #f5eff7);
+  background: var(--sc-sys-color-inverse-surface, #322f35);
+  color: var(--sc-sys-color-inverse-on-surface, #f5eff7);
   padding: 6px 12px;
   border-radius: 6px;
   font-size: 0.75rem;
@@ -192,12 +192,12 @@
 
 /* --- Accordion --- */
 .sc-accordion {
-  border: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  border: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
   border-radius: 12px;
   overflow: hidden;
 }
 .sc-accordion-item + .sc-accordion-item {
-  border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  border-top: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
 }
 .sc-accordion-trigger {
   width: 100%;
@@ -211,11 +211,11 @@
   font-size: 0.9375rem;
   font-weight: 500;
   text-align: left;
-  color: var(--st-sys-color-on-surface, #1d1b20);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
   transition: background 0.1s;
 }
 .sc-accordion-trigger:hover {
-  background: var(--st-sys-color-surface-variant, #e7e0ec);
+  background: var(--sc-sys-color-surface-variant, #e7e0ec);
 }
 .sc-accordion-indicator {
   transition: transform 0.2s;
@@ -226,6 +226,6 @@
 .sc-accordion-content__inner {
   padding: 0 20px 16px;
   font-size: 0.875rem;
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   line-height: 1.6;
 }

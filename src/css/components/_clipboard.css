@@ -1,28 +1,27 @@
 /* ==========================================================
- * Sawtooth CSS — Clipboard Component (Zag.js)
- * [data-scope="clipboard"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  EClipboard Component (Zag.js)
+ * [data-scope="clipboard"] セレクタ対忁E * ========================================================== */
 
 [data-scope="clipboard"][data-part="root"] {
   display: inline-flex;
   align-items: center;
-  gap: var(--st-sys-spacing-2);
+  gap: var(--sc-sys-spacing-2);
 }
 
 [data-scope="clipboard"][data-part="control"] {
   display: flex;
   align-items: center;
-  gap: var(--st-sys-spacing-2);
+  gap: var(--sc-sys-spacing-2);
 }
 
 [data-scope="clipboard"][data-part="input"] {
-  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
-  border: 1px solid var(--st-sys-color-outline);
-  border-radius: var(--st-sys-shape-corner-xs);
-  background-color: var(--st-sys-color-surface-container);
-  color: var(--st-sys-color-on-surface);
-  font-family: var(--st-sys-typescale-body-medium-font);
-  font-size: var(--st-sys-typescale-body-medium-size);
+  padding: var(--sc-sys-spacing-2) var(--sc-sys-spacing-3);
+  border: 1px solid var(--sc-sys-color-outline);
+  border-radius: var(--sc-sys-shape-corner-xs);
+  background-color: var(--sc-sys-color-surface-container);
+  color: var(--sc-sys-color-on-surface);
+  font-family: var(--sc-sys-typescale-body-medium-font);
+  font-size: var(--sc-sys-typescale-body-medium-size);
   outline: none;
 }
 
@@ -30,24 +29,24 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--st-sys-spacing-2);
-  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
-  border-radius: var(--st-sys-shape-corner-sm);
-  background-color: var(--st-sys-color-surface-container);
-  color: var(--st-sys-color-on-surface);
-  border: 1px solid var(--st-sys-color-outline);
+  gap: var(--sc-sys-spacing-2);
+  padding: var(--sc-sys-spacing-2) var(--sc-sys-spacing-3);
+  border-radius: var(--sc-sys-shape-corner-sm);
+  background-color: var(--sc-sys-color-surface-container);
+  color: var(--sc-sys-color-on-surface);
+  border: 1px solid var(--sc-sys-color-outline);
   cursor: pointer;
-  font-family: var(--st-sys-typescale-label-large-font);
-  font-size: var(--st-sys-typescale-label-large-size);
-  transition: background-color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+  font-family: var(--sc-sys-typescale-label-large-font);
+  font-size: var(--sc-sys-typescale-label-large-size);
+  transition: background-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="clipboard"][data-part="trigger"]:hover {
-  background-color: var(--st-sys-color-surface-container-high);
+  background-color: var(--sc-sys-color-surface-container-high);
 }
 
 /* Copied indicator */
 [data-scope="clipboard"][data-part="indicator"][data-copied] {
-  color: var(--st-sys-color-tertiary);
+  color: var(--sc-sys-color-tertiary);
 }

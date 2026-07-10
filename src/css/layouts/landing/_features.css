@@ -1,33 +1,32 @@
 /* ==========================================================
- * sc-lp-features — フィーチャーグリッド [β]
+ * sc-lp-features  EフィーチャーグリチE�� [β]
  *
- * プロダクト機能紹介のカードグリッド。
- * ========================================================== */
+ * プロダクト機�E紹介�EカードグリチE��、E * ========================================================== */
 
 .sc-lp-features {
-  padding: var(--st-sys-spacing-12, 48px) var(--st-sys-spacing-6, 24px);
+  padding: var(--sc-sys-spacing-12, 48px) var(--sc-sys-spacing-6, 24px);
 }
 
 .sc-lp-features__grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: var(--st-sys-spacing-6, 24px);
+  gap: var(--sc-sys-spacing-6, 24px);
   max-width: var(--sc-lp-content-max-width);
   margin: 0 auto;
 }
 
 .sc-lp-features__card {
-  background-color: var(--st-sys-color-surface, #fef7ff);
-  border: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
-  border-radius: var(--st-sys-shape-corner-lg, 16px);
-  padding: var(--st-sys-spacing-6, 24px);
-  transition: box-shadow var(--st-sys-motion-duration-short3, 200ms)
-    var(--st-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+  background-color: var(--sc-sys-color-surface, #fef7ff);
+  border: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  border-radius: var(--sc-sys-shape-corner-lg, 16px);
+  padding: var(--sc-sys-spacing-6, 24px);
+  transition: box-shadow var(--sc-sys-motion-duration-short3, 200ms)
+    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
 }
 
 .sc-lp-features__card:hover {
   box-shadow: var(
-    --st-sys-elevation-level2,
+    --sc-sys-elevation-level2,
     0 1px 2px 0 rgba(0, 0, 0, 0.3),
     0 2px 6px 2px rgba(0, 0, 0, 0.15)
   );
@@ -35,25 +34,25 @@
 
 .sc-lp-features__card-icon {
   font-size: 2rem;
-  margin-bottom: var(--st-sys-spacing-3, 12px);
+  margin-bottom: var(--sc-sys-spacing-3, 12px);
 }
 
 .sc-lp-features__card-title {
-  font-size: var(--st-sys-typescale-title-medium-size, 1rem);
+  font-size: var(--sc-sys-typescale-title-medium-size, 1rem);
   font-weight: 600;
-  color: var(--st-sys-color-on-surface, #1d1b20);
-  margin: 0 0 var(--st-sys-spacing-2, 8px);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+  margin: 0 0 var(--sc-sys-spacing-2, 8px);
 }
 
 .sc-lp-features__card-description {
-  font-size: var(--st-sys-typescale-body-medium-size, 0.875rem);
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  font-size: var(--sc-sys-typescale-body-medium-size, 0.875rem);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   margin: 0;
   line-height: 1.6;
 }
 
 @media (max-width: 768px) {
   .sc-lp-features {
-    padding: var(--st-sys-spacing-8, 32px) var(--st-sys-spacing-4, 16px);
+    padding: var(--sc-sys-spacing-8, 32px) var(--sc-sys-spacing-4, 16px);
   }
 }

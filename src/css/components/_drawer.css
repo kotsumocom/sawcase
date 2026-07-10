@@ -1,7 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — Drawer Component (Zag.js) [Beta]
- * dialog スコープを再利用（Drawer は Dialog のバリアント）
- * ========================================================== */
+ * Sawtooth CSS  EDrawer Component (Zag.js) [Beta]
+ * dialog スコープを再利用�E�Erawer は Dialog のバリアント！E * ========================================================== */
 
 /* Drawer uses [data-scope="dialog"] with placement variants */
 
@@ -59,30 +58,30 @@
 
 /* --- Slide animations --- */
 [data-scope="dialog"][data-part="content"][data-placement="right"][data-state="open"] {
-  animation: st-drawer-slide-right-in var(--st-sys-motion-duration-medium2)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-drawer-slide-right-in var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 [data-scope="dialog"][data-part="content"][data-placement="right"][data-state="closed"] {
-  animation: st-drawer-slide-right-out var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized-accelerate);
+  animation: st-drawer-slide-right-out var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
 }
 
 [data-scope="dialog"][data-part="content"][data-placement="left"][data-state="open"] {
-  animation: st-drawer-slide-left-in var(--st-sys-motion-duration-medium2)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-drawer-slide-left-in var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 [data-scope="dialog"][data-part="content"][data-placement="left"][data-state="closed"] {
-  animation: st-drawer-slide-left-out var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized-accelerate);
+  animation: st-drawer-slide-left-out var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
 }
 
 [data-scope="dialog"][data-part="content"][data-placement="bottom"][data-state="open"] {
-  animation: st-drawer-slide-bottom-in var(--st-sys-motion-duration-medium2)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-drawer-slide-bottom-in var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 [data-scope="dialog"][data-part="content"][data-placement="bottom"][data-state="closed"] {
-  animation: st-drawer-slide-bottom-out var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized-accelerate);
+  animation: st-drawer-slide-bottom-out var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
 }
 
 @keyframes st-drawer-slide-right-in {

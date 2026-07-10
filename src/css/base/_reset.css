@@ -1,6 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — CSS Reset
- * 軽量リセット: box-sizing, margin, padding の正規化
+ * Sawtooth CSS  ECSS Reset
+ * 軽量リセチE��: box-sizing, margin, padding の正規化
  * ========================================================== */
 
 *,
@@ -101,7 +101,7 @@ table {
 
 /* Focus */
 :focus-visible {
-  outline: 2px solid var(--st-sys-color-primary, #6750A4);
+  outline: 2px solid var(--sc-sys-color-primary, #6750A4);
   outline-offset: 2px;
 }
 

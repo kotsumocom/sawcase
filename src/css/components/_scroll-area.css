@@ -1,7 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — Scroll Area Component (Zag.js)
- * [data-scope="scroll-area"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  EScroll Area Component (Zag.js)
+ * [data-scope="scroll-area"] セレクタ対忁E * ========================================================== */
 
 [data-scope="scroll-area"][data-part="root"] {
   position: relative;
@@ -25,8 +24,8 @@
   user-select: none;
   touch-action: none;
   padding: 1px;
-  transition: opacity var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+  transition: opacity var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="scroll-area"][data-part="scrollbar"][data-orientation="vertical"] {
@@ -48,14 +47,14 @@
 }
 
 [data-scope="scroll-area"][data-part="thumb"] {
-  background-color: var(--st-sys-color-outline-variant);
-  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--sc-sys-color-outline-variant);
+  border-radius: var(--sc-sys-shape-corner-full);
   flex: 1;
   position: relative;
-  transition: background-color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+  transition: background-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="scroll-area"][data-part="thumb"]:hover {
-  background-color: var(--st-sys-color-outline);
+  background-color: var(--sc-sys-color-outline);
 }

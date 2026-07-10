@@ -1,5 +1,5 @@
 /* ==========================================================
- * sc-docs-shell — ドキュメントページの全画面シェル
+ * sc-docs-shell  Eドキュメント�Eージの全画面シェル
  * ========================================================== */
 
 .sc-docs-shell {
@@ -8,6 +8,6 @@
   height: 100vh;
   height: 100dvh;
   overflow: hidden;
-  background-color: var(--st-sys-color-surface, #fef7ff);
-  color: var(--st-sys-color-on-surface, #1d1b20);
+  background-color: var(--sc-sys-color-surface, #fef7ff);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
 }

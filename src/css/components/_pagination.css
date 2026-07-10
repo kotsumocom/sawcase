@@ -1,12 +1,11 @@
 /* ==========================================================
- * Sawtooth CSS — Pagination Component (Zag.js)
- * [data-scope="pagination"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  EPagination Component (Zag.js)
+ * [data-scope="pagination"] セレクタ対忁E * ========================================================== */
 
 [data-scope="pagination"][data-part="root"] {
   display: flex;
   align-items: center;
-  gap: var(--st-sys-spacing-1);
+  gap: var(--sc-sys-spacing-1);
 }
 
 [data-scope="pagination"][data-part="item"],
@@ -17,28 +16,28 @@
   justify-content: center;
   min-width: 2.5rem;
   height: 2.5rem;
-  padding: 0 var(--st-sys-spacing-2);
-  border-radius: var(--st-sys-shape-corner-full);
+  padding: 0 var(--sc-sys-spacing-2);
+  border-radius: var(--sc-sys-shape-corner-full);
   background: transparent;
   border: none;
-  color: var(--st-sys-color-on-surface);
-  font-family: var(--st-sys-typescale-label-large-font);
-  font-size: var(--st-sys-typescale-label-large-size);
+  color: var(--sc-sys-color-on-surface);
+  font-family: var(--sc-sys-typescale-label-large-font);
+  font-size: var(--sc-sys-typescale-label-large-size);
   cursor: pointer;
-  transition: background-color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+  transition: background-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="pagination"][data-part="item"]:hover,
 [data-scope="pagination"][data-part="prev-trigger"]:hover,
 [data-scope="pagination"][data-part="next-trigger"]:hover {
-  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+  background-color: color-mix(in srgb, var(--sc-sys-color-on-surface) 8%,
     transparent);
 }
 
 [data-scope="pagination"][data-part="item"][data-selected] {
-  background-color: var(--st-sys-color-primary);
-  color: var(--st-sys-color-on-primary);
+  background-color: var(--sc-sys-color-primary);
+  color: var(--sc-sys-color-on-primary);
 }
 
 [data-scope="pagination"][data-part="prev-trigger"][data-disabled],
@@ -53,5 +52,5 @@
   justify-content: center;
   min-width: 2.5rem;
   height: 2.5rem;
-  color: var(--st-sys-color-on-surface-variant);
+  color: var(--sc-sys-color-on-surface-variant);
 }

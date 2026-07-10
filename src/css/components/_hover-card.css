@@ -1,33 +1,32 @@
 /* ==========================================================
- * Sawtooth CSS — Hover Card Component (Zag.js)
- * [data-scope="hover-card"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  EHover Card Component (Zag.js)
+ * [data-scope="hover-card"] セレクタ対忁E * ========================================================== */
 
 [data-scope="hover-card"][data-part="positioner"] {
   z-index: 50;
 }
 
 [data-scope="hover-card"][data-part="content"] {
-  background-color: var(--st-sys-color-surface-container);
-  border-radius: var(--st-sys-shape-corner-md);
-  box-shadow: var(--st-sys-elevation-level2);
-  padding: var(--st-sys-spacing-4);
+  background-color: var(--sc-sys-color-surface-container);
+  border-radius: var(--sc-sys-shape-corner-md);
+  box-shadow: var(--sc-sys-elevation-level2);
+  padding: var(--sc-sys-spacing-4);
   min-width: 12.5rem;
   max-width: 20rem;
   outline: none;
 }
 
 [data-scope="hover-card"][data-part="content"][data-state="open"] {
-  animation: st-fade-in var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-fade-in var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 
 [data-scope="hover-card"][data-part="content"][data-state="closed"] {
-  animation: st-fade-out var(--st-sys-motion-duration-short3)
-    var(--st-sys-motion-easing-emphasized-accelerate);
+  animation: st-fade-out var(--sc-sys-motion-duration-short3)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
 }
 
 [data-scope="hover-card"][data-part="arrow"] {
   --arrow-size: 8px;
-  --arrow-background: var(--st-sys-color-surface-container);
+  --arrow-background: var(--sc-sys-color-surface-container);
 }

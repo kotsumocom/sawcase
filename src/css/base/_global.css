@@ -1,23 +1,23 @@
 /* ==========================================================
- * Sawtooth CSS — Global Styles
- * body にデザイントークンを適用
+ * Sawtooth CSS  EGlobal Styles
+ * body にチE��イント�Eクンを適用
  * ========================================================== */
 
 body {
-  background-color: var(--st-sys-color-surface);
-  color: var(--st-sys-color-on-surface);
-  font-family: var(--st-sys-typescale-font-family-plain);
-  font-size: var(--st-sys-typescale-body-medium-size);
-  line-height: var(--st-sys-typescale-body-medium-line-height);
-  letter-spacing: var(--st-sys-typescale-body-medium-tracking);
+  background-color: var(--sc-sys-color-surface);
+  color: var(--sc-sys-color-on-surface);
+  font-family: var(--sc-sys-typescale-font-family-plain);
+  font-size: var(--sc-sys-typescale-body-medium-size);
+  line-height: var(--sc-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--sc-sys-typescale-body-medium-tracking);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 /* Selection */
 ::selection {
-  background-color: var(--st-sys-color-primary-container);
-  color: var(--st-sys-color-on-primary-container);
+  background-color: var(--sc-sys-color-primary-container);
+  color: var(--sc-sys-color-on-primary-container);
 }
 
 /* Scrollbar (subtle styling) */
@@ -31,10 +31,10 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--st-sys-color-outline-variant);
-  border-radius: var(--st-sys-shape-corner-full);
+  background-color: var(--sc-sys-color-outline-variant);
+  border-radius: var(--sc-sys-shape-corner-full);
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: var(--st-sys-color-outline);
+  background-color: var(--sc-sys-color-outline);
 }

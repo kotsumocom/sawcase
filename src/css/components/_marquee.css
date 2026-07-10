@@ -1,7 +1,6 @@
 /* ==========================================================
- * Sawtooth CSS — Marquee Component (Zag.js)
- * [data-scope="marquee"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  EMarquee Component (Zag.js)
+ * [data-scope="marquee"] セレクタ対忁E * ========================================================== */
 
 [data-scope="marquee"][data-part="root"] {
   overflow: hidden;
@@ -10,7 +9,7 @@
 
 [data-scope="marquee"][data-part="content"] {
   display: flex;
-  gap: var(--st-sys-spacing-6);
+  gap: var(--sc-sys-spacing-6);
   animation: st-marquee-scroll var(--marquee-duration, 20s) linear infinite;
   width: max-content;
 }

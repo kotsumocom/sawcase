@@ -1,19 +1,18 @@
 /* ==========================================================
- * sc-legal — 規約ページのレイアウト
- * ========================================================== */
+ * sc-legal  E規紁E�EージのレイアウチE * ========================================================== */
 
 .sc-legal-shell {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  background-color: var(--st-sys-color-surface, #fef7ff);
-  color: var(--st-sys-color-on-surface, #1d1b20);
+  background-color: var(--sc-sys-color-surface, #fef7ff);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
 }
 
 .sc-legal-header {
   padding: 12px 24px;
-  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
-  background-color: var(--st-sys-color-surface, #fef7ff);
+  border-bottom: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  background-color: var(--sc-sys-color-surface, #fef7ff);
 }
 
 .sc-legal-header__inner {
@@ -35,16 +34,16 @@
 }
 
 .sc-legal-header__nav a {
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   text-decoration: none;
 }
 
 .sc-legal-header__nav a:hover {
-  color: var(--st-sys-color-primary, #6750a4);
+  color: var(--sc-sys-color-primary, #6750a4);
 }
 
 .sc-legal-header__link--active {
-  color: var(--st-sys-color-primary, #6750a4) !important;
+  color: var(--sc-sys-color-primary, #6750a4) !important;
   font-weight: 600;
 }
 
@@ -64,16 +63,16 @@
 
 .sc-legal-article__date {
   font-size: 0.875rem;
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
   margin-bottom: 32px;
 }
 
 .sc-legal-footer {
   padding: 16px 24px;
-  border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  border-top: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
   text-align: center;
   font-size: 0.8125rem;
-  color: var(--st-sys-color-on-surface-variant, #49454f);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
 }
 
 .sc-legal-footer__inner {

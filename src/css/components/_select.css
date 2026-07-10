@@ -1,36 +1,35 @@
 /* ==========================================================
- * Sawtooth CSS — Select Component (Zag.js)
- * [data-scope="select"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  ESelect Component (Zag.js)
+ * [data-scope="select"] セレクタ対忁E * ========================================================== */
 
 /* --- Trigger (dropdown button) --- */
 [data-scope="select"][data-part="trigger"] {
   display: inline-flex;
   align-items: center;
   justify-content: space-between;
-  gap: var(--st-sys-spacing-2);
+  gap: var(--sc-sys-spacing-2);
   width: 100%;
   min-height: 3.5rem;
-  padding: var(--st-sys-spacing-4);
+  padding: var(--sc-sys-spacing-4);
   background-color: transparent;
-  color: var(--st-sys-color-on-surface);
-  border: 1px solid var(--st-sys-color-outline);
-  border-radius: var(--st-sys-shape-corner-xs);
-  font-family: var(--st-sys-typescale-body-large-font);
-  font-size: var(--st-sys-typescale-body-large-size);
+  color: var(--sc-sys-color-on-surface);
+  border: 1px solid var(--sc-sys-color-outline);
+  border-radius: var(--sc-sys-shape-corner-xs);
+  font-family: var(--sc-sys-typescale-body-large-font);
+  font-size: var(--sc-sys-typescale-body-large-size);
   cursor: pointer;
   transition:
-    border-color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+    border-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="select"][data-part="trigger"]:hover {
-  border-color: var(--st-sys-color-on-surface);
+  border-color: var(--sc-sys-color-on-surface);
 }
 
 [data-scope="select"][data-part="trigger"][data-state="open"] {
-  border-color: var(--st-sys-color-primary);
-  box-shadow: inset 0 0 0 1px var(--st-sys-color-primary);
+  border-color: var(--sc-sys-color-primary);
+  box-shadow: inset 0 0 0 1px var(--sc-sys-color-primary);
 }
 
 [data-scope="select"][data-part="trigger"][data-disabled] {
@@ -40,8 +39,8 @@
 
 /* --- Indicator (arrow icon) --- */
 [data-scope="select"][data-part="indicator"] {
-  transition: transform var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+  transition: transform var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="select"][data-part="trigger"][data-state="open"] [data-scope="select"][data-part="indicator"] {
@@ -55,10 +54,10 @@
 
 /* --- Content (dropdown menu) --- */
 [data-scope="select"][data-part="content"] {
-  background-color: var(--st-sys-color-surface-container);
-  border-radius: var(--st-sys-shape-corner-xs);
-  box-shadow: var(--st-sys-elevation-level2);
-  padding: var(--st-sys-spacing-1) 0;
+  background-color: var(--sc-sys-color-surface-container);
+  border-radius: var(--sc-sys-shape-corner-xs);
+  box-shadow: var(--sc-sys-elevation-level2);
+  padding: var(--sc-sys-spacing-1) 0;
   min-width: 7rem;
   overflow: auto;
   max-height: 20rem;
@@ -66,37 +65,37 @@
 }
 
 [data-scope="select"][data-part="content"][data-state="open"] {
-  animation: st-fade-in var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-emphasized-decelerate);
+  animation: st-fade-in var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
 }
 
 [data-scope="select"][data-part="content"][data-state="closed"] {
-  animation: st-fade-out var(--st-sys-motion-duration-short3)
-    var(--st-sys-motion-easing-emphasized-accelerate);
+  animation: st-fade-out var(--sc-sys-motion-duration-short3)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
 }
 
 /* --- Item --- */
 [data-scope="select"][data-part="item"] {
   display: flex;
   align-items: center;
-  gap: var(--st-sys-spacing-3);
-  padding: var(--st-sys-spacing-2) var(--st-sys-spacing-3);
-  font-family: var(--st-sys-typescale-body-large-font);
-  font-size: var(--st-sys-typescale-body-large-size);
-  color: var(--st-sys-color-on-surface);
+  gap: var(--sc-sys-spacing-3);
+  padding: var(--sc-sys-spacing-2) var(--sc-sys-spacing-3);
+  font-family: var(--sc-sys-typescale-body-large-font);
+  font-size: var(--sc-sys-typescale-body-large-size);
+  color: var(--sc-sys-color-on-surface);
   cursor: pointer;
-  transition: background-color var(--st-sys-motion-duration-short2)
-    var(--st-sys-motion-easing-standard);
+  transition: background-color var(--sc-sys-motion-duration-short2)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="select"][data-part="item"][data-highlighted] {
-  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+  background-color: color-mix(in srgb, var(--sc-sys-color-on-surface) 8%,
     transparent);
 }
 
 [data-scope="select"][data-part="item"][data-state="checked"] {
-  background-color: var(--st-sys-color-secondary-container);
-  color: var(--st-sys-color-on-secondary-container);
+  background-color: var(--sc-sys-color-secondary-container);
+  color: var(--sc-sys-color-on-secondary-container);
 }
 
 [data-scope="select"][data-part="item"][data-disabled] {

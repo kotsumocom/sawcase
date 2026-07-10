@@ -1,12 +1,11 @@
 /* ==========================================================
- * Sawtooth CSS — Tabs Component (Zag.js)
- * [data-scope="tabs"] セレクタ対応
- * ========================================================== */
+ * Sawtooth CSS  ETabs Component (Zag.js)
+ * [data-scope="tabs"] セレクタ対忁E * ========================================================== */
 
 /* --- Tab List --- */
 [data-scope="tabs"][data-part="list"] {
   display: flex;
-  border-bottom: 1px solid var(--st-sys-color-surface-variant);
+  border-bottom: 1px solid var(--sc-sys-color-surface-variant);
   gap: 0;
 }
 
@@ -16,21 +15,21 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: var(--st-sys-spacing-2);
+  gap: var(--sc-sys-spacing-2);
   min-height: 3rem; /* 48px */
-  padding: 0 var(--st-sys-spacing-4);
+  padding: 0 var(--sc-sys-spacing-4);
   background-color: transparent;
-  color: var(--st-sys-color-on-surface-variant);
-  font-family: var(--st-sys-typescale-title-small-font);
-  font-size: var(--st-sys-typescale-title-small-size);
-  font-weight: var(--st-sys-typescale-title-small-weight);
-  letter-spacing: var(--st-sys-typescale-title-small-tracking);
+  color: var(--sc-sys-color-on-surface-variant);
+  font-family: var(--sc-sys-typescale-title-small-font);
+  font-size: var(--sc-sys-typescale-title-small-size);
+  font-weight: var(--sc-sys-typescale-title-small-weight);
+  letter-spacing: var(--sc-sys-typescale-title-small-tracking);
   border: none;
   cursor: pointer;
   flex: 1;
   transition:
-    color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+    color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 /* Active indicator (bottom border) */
@@ -44,23 +43,23 @@
   border-radius: 3px 3px 0 0;
   background-color: transparent;
   transition:
-    background-color var(--st-sys-motion-duration-short4)
-    var(--st-sys-motion-easing-standard);
+    background-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
 }
 
 [data-scope="tabs"][data-part="trigger"]:hover {
-  color: var(--st-sys-color-on-surface);
-  background-color: color-mix(in srgb, var(--st-sys-color-on-surface) 8%,
+  color: var(--sc-sys-color-on-surface);
+  background-color: color-mix(in srgb, var(--sc-sys-color-on-surface) 8%,
     transparent);
 }
 
 /* Active state */
 [data-scope="tabs"][data-part="trigger"][data-selected] {
-  color: var(--st-sys-color-primary);
+  color: var(--sc-sys-color-primary);
 }
 
 [data-scope="tabs"][data-part="trigger"][data-selected]::after {
-  background-color: var(--st-sys-color-primary);
+  background-color: var(--sc-sys-color-primary);
 }
 
 /* Disabled */
@@ -71,14 +70,14 @@
 
 /* Focus */
 [data-scope="tabs"][data-part="trigger"]:focus-visible {
-  outline: 2px solid var(--st-sys-color-primary);
+  outline: 2px solid var(--sc-sys-color-primary);
   outline-offset: -2px;
-  border-radius: var(--st-sys-shape-corner-xs);
+  border-radius: var(--sc-sys-shape-corner-xs);
 }
 
 /* --- Tab Content --- */
 [data-scope="tabs"][data-part="content"] {
-  padding: var(--st-sys-spacing-4) 0;
+  padding: var(--sc-sys-spacing-4) 0;
   outline: none;
 }
 
@@ -86,14 +85,14 @@
   display: none;
 }
 
-/* --- Indicator (animated underline — optional) --- */
+/* --- Indicator (animated underline  Eoptional) --- */
 [data-scope="tabs"][data-part="indicator"] {
   height: 3px;
-  background-color: var(--st-sys-color-primary);
+  background-color: var(--sc-sys-color-primary);
   border-radius: 3px 3px 0 0;
   transition:
-    left var(--st-sys-motion-duration-medium2)
-    var(--st-sys-motion-easing-emphasized),
-    width var(--st-sys-motion-duration-medium2)
-    var(--st-sys-motion-easing-emphasized);
+    left var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized),
+    width var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized);
 }
