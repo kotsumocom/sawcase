@@ -29,6 +29,7 @@
 @import "./common/_auth.css";
 @import "./common/_empty.css";
 @import "./common/_loading.css";
+@import "./common/_interactive.css";
 
 /* --- 5. Landing Page (sc-lp-*) --- */
 @import "./landing/_header.css";

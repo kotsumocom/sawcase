@@ -1,0 +1,231 @@
+/* ==========================================================
+ * Sawcase Interactive Components CSS
+ * Zag.js コンポーネント用のスタイル
+ * ========================================================== */
+
+/* --- Clipboard --- */
+.sc-clipboard-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: transparent;
+  border: 1px solid var(--st-sys-color-outline, #79747e);
+  border-radius: 6px;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  cursor: pointer;
+  font-size: 0.75rem;
+  transition: color 0.15s, border-color 0.15s;
+}
+.sc-clipboard-btn:hover {
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  border-color: var(--st-sys-color-on-surface, #1d1b20);
+}
+.sc-clipboard-btn[data-copied="true"] {
+  color: var(--st-sys-color-primary, #6750a4);
+  border-color: var(--st-sys-color-primary, #6750a4);
+}
+
+/* --- Dialog --- */
+.sc-dialog-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+.sc-dialog-positioner {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1001;
+  padding: 24px;
+}
+.sc-dialog-content {
+  background: var(--st-sys-color-surface-container-low, #f7f2fa);
+  border-radius: 16px;
+  padding: 24px;
+  max-width: 560px;
+  width: 100%;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+}
+.sc-dialog-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+.sc-dialog-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+}
+.sc-dialog-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 50%;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+}
+.sc-dialog-close:hover {
+  background: var(--st-sys-color-surface-variant, #e7e0ec);
+}
+.sc-dialog-description {
+  font-size: 0.875rem;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  margin: 0 0 16px;
+}
+.sc-dialog-body {
+  margin-bottom: 16px;
+}
+.sc-dialog-footer {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+/* --- Tabs --- */
+.sc-tabs-list {
+  display: flex;
+  border-bottom: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  gap: 0;
+}
+.sc-tabs-trigger {
+  padding: 12px 20px;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  transition: color 0.15s, border-color 0.15s;
+}
+.sc-tabs-trigger:hover {
+  color: var(--st-sys-color-on-surface, #1d1b20);
+}
+.sc-tabs-trigger[data-selected] {
+  color: var(--st-sys-color-primary, #6750a4);
+  border-bottom-color: var(--st-sys-color-primary, #6750a4);
+}
+.sc-tabs-content {
+  padding: 16px 0;
+}
+.sc-tabs-content[hidden] {
+  display: none;
+}
+
+/* --- Toast --- */
+.sc-toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+}
+.sc-toast {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  border-radius: 12px;
+  background: var(--st-sys-color-surface-container-low, #f7f2fa);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  animation: sc-toast-in 0.2s ease;
+}
+@keyframes sc-toast-in {
+  from { transform: translateY(12px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+.sc-toast__icon { flex-shrink: 0; }
+.sc-toast--success .sc-toast__icon { color: #059669; }
+.sc-toast--error .sc-toast__icon { color: #dc2626; }
+.sc-toast--warning .sc-toast__icon { color: #d97706; }
+.sc-toast--info .sc-toast__icon { color: #2563eb; }
+.sc-toast__title { font-weight: 600; font-size: 0.875rem; }
+.sc-toast__description { font-size: 0.8125rem; color: var(--st-sys-color-on-surface-variant, #49454f); margin-top: 2px; }
+
+/* --- Menu --- */
+.sc-menu-trigger {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+.sc-menu-content {
+  background: var(--st-sys-color-surface-container-low, #f7f2fa);
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+  padding: 4px;
+  list-style: none;
+  margin: 0;
+  min-width: 180px;
+  z-index: 1000;
+}
+.sc-menu-item {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.875rem;
+  transition: background 0.1s;
+}
+.sc-menu-item:hover,
+.sc-menu-item[data-highlighted] {
+  background: var(--st-sys-color-surface-variant, #e7e0ec);
+}
+
+/* --- Tooltip --- */
+.sc-tooltip {
+  background: var(--st-sys-color-inverse-surface, #322f35);
+  color: var(--st-sys-color-inverse-on-surface, #f5eff7);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  white-space: nowrap;
+  z-index: 1000;
+}
+
+/* --- Accordion --- */
+.sc-accordion {
+  border: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+  border-radius: 12px;
+  overflow: hidden;
+}
+.sc-accordion-item + .sc-accordion-item {
+  border-top: 1px solid var(--st-sys-color-outline-variant, #cac4d0);
+}
+.sc-accordion-trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.9375rem;
+  font-weight: 500;
+  text-align: left;
+  color: var(--st-sys-color-on-surface, #1d1b20);
+  transition: background 0.1s;
+}
+.sc-accordion-trigger:hover {
+  background: var(--st-sys-color-surface-variant, #e7e0ec);
+}
+.sc-accordion-indicator {
+  transition: transform 0.2s;
+}
+.sc-accordion-item[data-state="open"] .sc-accordion-indicator {
+  transform: rotate(180deg);
+}
+.sc-accordion-content__inner {
+  padding: 0 20px 16px;
+  font-size: 0.875rem;
+  color: var(--st-sys-color-on-surface-variant, #49454f);
+  line-height: 1.6;
+}
