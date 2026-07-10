@@ -1,54 +1,74 @@
 /**
  * @module
- * Sawcase — sawtooth-css の上に載るレイアウト CSS + 軽量 JS ライブラリ
+ * Sawcase — Deno Fresh 専用 SaaS スターターキット
  *
- * 管理画面・ドキュメントページ・LP の骨格を CSS クラスと
- * 最小限の JS として提供する。
+ * 管理画面・ドキュメント・LP・認証画面の骨格を Preact コンポーネントとして提供。
+ * sawtooth-css, @deno/gfm, Zag.js, lucide-preact は依存として自動解決。
  *
  * @example
- * ```ts
- * import type { SawcaseGenerateOptions } from "@kotsumo/sawcase";
+ * ```tsx
+ * import { AdminShell, AdminPage } from "@kotsumo/sawcase/components";
+ * import { LayoutDashboard } from "lucide-preact";
  *
- * const options: SawcaseGenerateOptions = {
- *   output: "./static/sawcase.css",
- *   jsOutput: "./static/sawcase.js",
- *   sawtooth: { output: "./static/sawtooth.css" },
- *   theme: { colors: { primary: "#6750A4" } },
- * };
+ * export default function Dashboard() {
+ *   return (
+ *     <AdminShell brand="My SaaS" nav={[
+ *       { icon: LayoutDashboard, label: "ダッシュボード", href: "/admin" },
+ *     ]}>
+ *       <AdminPage title="ダッシュボード">
+ *         <p>コンテンツ</p>
+ *       </AdminPage>
+ *     </AdminShell>
+ *   );
+ * }
  * ```
  */
 
+// レイアウトコンポーネントの再エクスポート
+export {
+  AdminShell,
+  AdminNav,
+  AdminPage,
+  DocsLayout,
+  Markdown,
+  AuthCard,
+  LandingPage,
+  LegalPage,
+  ErrorPage,
+  PricingPage,
+  BlogLayout,
+} from "./src/components/mod.ts";
+
+// Zag.js コンポーネントの再エクスポート
+export {
+  Clipboard,
+  Dialog,
+  Tabs,
+  Toast,
+  Menu,
+  Tooltip,
+  Accordion,
+} from "./src/components/mod.ts";
+
+// 型定義の再エクスポート
 export type {
-  GenerateOptions as SawtoothGenerateOptions,
-  SawtoothTheme,
-} from "@kotsumo/sawtooth-css";
+  AdminShellProps,
+  NavItem,
+  NavGroup,
+  AdminPageProps,
+  DocsLayoutProps,
+  DocsSidebarItem,
+  DocsSidebarGroup,
+  MarkdownProps,
+  AuthCardProps,
+  LandingPageProps,
+  LegalPageProps,
+  ErrorPageProps,
+  PricingPageProps,
+  PricingPlan,
+  BlogLayoutProps,
+  ToastItem,
+} from "./src/components/mod.ts";
 
-/** sawcase が提供するレイアウトカテゴリ */
-export type SawcaseLayout = "admin" | "docs" | "common" | "landing";
-
-/** sawcase CSS + JS 生成オプション */
-export interface SawcaseGenerateOptions {
-  /** CSS 出力先ファイルパス */
-  output: string;
-  /** JS 出力先ファイルパス（省略時は CSS と同ディレクトリに sawcase.js） */
-  jsOutput?: string;
-  /** sawtooth CSS も同時に生成する場合の設定 */
-  sawtooth?: {
-    /** sawtooth CSS の出力先 */
-    output: string;
-  };
-  /** sawtooth テーマ設定 */
-  theme?: {
-    colors?: {
-      primary?: string;
-      secondary?: string;
-      tertiary?: string;
-      error?: string;
-    };
-    typography?: {
-      fontFamily?: string;
-    };
-  };
-  /** 含めるレイアウト（省略時は全レイアウト） */
-  layouts?: SawcaseLayout[];
-}
+// CSS 生成（後方互換）
+export type { SawcaseGenerateOptions } from "./mod_types.ts";
