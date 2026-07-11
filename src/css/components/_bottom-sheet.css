@@ -1,0 +1,163 @@
+/* ==========================================================
+ * Sawcase — Bottom Sheet Component (Zag.js)
+ * [data-scope="bottom-sheet"] セレクタ対応
+ * ========================================================== */
+
+/* --- Backdrop --- */
+[data-scope="bottom-sheet"][data-part="backdrop"] {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  background: rgba(0, 0, 0, 0.32);
+}
+
+[data-scope="bottom-sheet"][data-part="backdrop"][data-state="open"] {
+  animation: sc-bottom-sheet-backdrop-in var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-standard);
+}
+
+[data-scope="bottom-sheet"][data-part="backdrop"][data-state="closed"] {
+  animation: sc-bottom-sheet-backdrop-out var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
+}
+
+@keyframes sc-bottom-sheet-backdrop-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes sc-bottom-sheet-backdrop-out {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+/* --- Positioner --- */
+[data-scope="bottom-sheet"][data-part="positioner"] {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 101;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- Content --- */
+[data-scope="bottom-sheet"][data-part="content"] {
+  background: var(--sc-sys-color-surface-container-low);
+  border-radius: var(--sc-sys-shape-corner-xl) var(--sc-sys-shape-corner-xl) 0 0;
+  box-shadow: var(--sc-sys-elevation-3);
+  width: 100%;
+  max-width: 40rem;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 0;
+  outline: none;
+}
+
+[data-scope="bottom-sheet"][data-part="content"][data-state="open"] {
+  animation: sc-bottom-sheet-slide-in var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="bottom-sheet"][data-part="content"][data-state="closed"] {
+  animation: sc-bottom-sheet-slide-out var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
+}
+
+@keyframes sc-bottom-sheet-slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes sc-bottom-sheet-slide-out {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(100%);
+  }
+}
+
+/* --- Drag Handle --- */
+[data-scope="bottom-sheet"][data-part="drag-handle"] {
+  display: flex;
+  justify-content: center;
+  padding: var(--sc-sys-spacing-3) 0 var(--sc-sys-spacing-2);
+  cursor: grab;
+}
+
+[data-scope="bottom-sheet"][data-part="drag-handle"]::before {
+  content: "";
+  width: 2rem;
+  height: 0.25rem;
+  border-radius: var(--sc-sys-shape-corner-full);
+  background: var(--sc-sys-color-on-surface-variant);
+  opacity: 0.4;
+}
+
+[data-scope="bottom-sheet"][data-part="drag-handle"]:active {
+  cursor: grabbing;
+}
+
+/* --- Header --- */
+[data-scope="bottom-sheet"][data-part="header"] {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--sc-sys-spacing-2) var(--sc-sys-spacing-6);
+}
+
+/* --- Title --- */
+[data-scope="bottom-sheet"][data-part="title"] {
+  font-family: var(--sc-sys-typescale-title-large-font);
+  font-size: var(--sc-sys-typescale-title-large-size);
+  font-weight: var(--sc-sys-typescale-title-large-weight);
+  line-height: var(--sc-sys-typescale-title-large-line-height);
+  color: var(--sc-sys-color-on-surface);
+  margin: 0;
+}
+
+/* --- Description --- */
+[data-scope="bottom-sheet"][data-part="description"] {
+  font-family: var(--sc-sys-typescale-body-medium-font);
+  font-size: var(--sc-sys-typescale-body-medium-size);
+  color: var(--sc-sys-color-on-surface-variant);
+  padding: 0 var(--sc-sys-spacing-6);
+  margin: 0 0 var(--sc-sys-spacing-4);
+}
+
+/* --- Body (user content area) --- */
+[data-scope="bottom-sheet"][data-part="body"] {
+  padding: var(--sc-sys-spacing-4) var(--sc-sys-spacing-6)
+    var(--sc-sys-spacing-6);
+  overflow-y: auto;
+}
+
+/* --- Close Trigger --- */
+[data-scope="bottom-sheet"][data-part="close-trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--sc-sys-shape-corner-full);
+  border: none;
+  background: transparent;
+  color: var(--sc-sys-color-on-surface-variant);
+  cursor: pointer;
+  transition: background var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
+}
+
+[data-scope="bottom-sheet"][data-part="close-trigger"]:hover {
+  background: var(--sc-sys-color-surface-container-highest);
+}

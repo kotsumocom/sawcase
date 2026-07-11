@@ -1,0 +1,172 @@
+/* ==========================================================
+ * Sawcase — Time Picker Component (Zag.js)
+ * [data-scope="time-picker"] セレクタ対応
+ * ========================================================== */
+
+/* --- Root --- */
+[data-scope="time-picker"][data-part="root"] {
+  display: inline-flex;
+  flex-direction: column;
+  gap: var(--sc-sys-spacing-1);
+}
+
+/* --- Label --- */
+[data-scope="time-picker"][data-part="label"] {
+  font-family: var(--sc-sys-typescale-body-medium-font);
+  font-size: var(--sc-sys-typescale-body-medium-size);
+  font-weight: var(--sc-sys-typescale-body-medium-weight);
+  color: var(--sc-sys-color-on-surface-variant);
+}
+
+/* --- Control --- */
+[data-scope="time-picker"][data-part="control"] {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--sc-sys-color-outline);
+  border-radius: var(--sc-sys-shape-corner-xs);
+  overflow: hidden;
+  transition: border-color var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
+}
+
+[data-scope="time-picker"][data-part="control"]:focus-within {
+  border-color: var(--sc-sys-color-primary);
+  box-shadow: inset 0 0 0 1px var(--sc-sys-color-primary);
+}
+
+/* --- Input --- */
+[data-scope="time-picker"][data-part="input"] {
+  flex: 1;
+  padding: var(--sc-sys-spacing-3) var(--sc-sys-spacing-4);
+  background: transparent;
+  color: var(--sc-sys-color-on-surface);
+  border: none;
+  outline: none;
+  font-family: var(--sc-sys-typescale-body-large-font);
+  font-size: var(--sc-sys-typescale-body-large-size);
+}
+
+[data-scope="time-picker"][data-part="input"]::placeholder {
+  color: var(--sc-sys-color-on-surface-variant);
+  opacity: 0.6;
+}
+
+/* --- Trigger --- */
+[data-scope="time-picker"][data-part="trigger"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  color: var(--sc-sys-color-on-surface-variant);
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  border-left: 1px solid var(--sc-sys-color-outline);
+  padding: var(--sc-sys-spacing-2);
+  transition: background var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
+}
+
+[data-scope="time-picker"][data-part="trigger"]:hover {
+  background: var(--sc-sys-color-surface-container-highest);
+}
+
+/* --- Positioner --- */
+[data-scope="time-picker"][data-part="positioner"] {
+  z-index: 200;
+}
+
+/* --- Content (dropdown panel) --- */
+[data-scope="time-picker"][data-part="content"] {
+  background: var(--sc-sys-color-surface-container);
+  border-radius: var(--sc-sys-shape-corner-md);
+  box-shadow: var(--sc-sys-elevation-2);
+  padding: var(--sc-sys-spacing-2);
+  display: flex;
+  gap: var(--sc-sys-spacing-1);
+  max-height: 16rem;
+  overflow: hidden;
+}
+
+[data-scope="time-picker"][data-part="content"][data-state="open"] {
+  animation: sc-time-picker-in var(--sc-sys-motion-duration-medium2)
+    var(--sc-sys-motion-easing-emphasized-decelerate);
+}
+
+[data-scope="time-picker"][data-part="content"][data-state="closed"] {
+  animation: sc-time-picker-out var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-emphasized-accelerate);
+}
+
+@keyframes sc-time-picker-in {
+  from {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes sc-time-picker-out {
+  from {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: scale(0.95) translateY(-4px);
+  }
+}
+
+/* --- Column (hour / minute / period) --- */
+[data-scope="time-picker"][data-part="column"] {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-sys-spacing-1);
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--sc-sys-color-outline-variant) transparent;
+  padding: var(--sc-sys-spacing-1);
+  min-width: 3.5rem;
+}
+
+/* --- Cell (individual time option) --- */
+[data-scope="time-picker"][data-part="cell"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--sc-sys-spacing-2) var(--sc-sys-spacing-3);
+  border-radius: var(--sc-sys-shape-corner-sm);
+  cursor: pointer;
+  font-family: var(--sc-sys-typescale-body-medium-font);
+  font-size: var(--sc-sys-typescale-body-medium-size);
+  color: var(--sc-sys-color-on-surface);
+  transition: background var(--sc-sys-motion-duration-short4)
+    var(--sc-sys-motion-easing-standard);
+  border: none;
+  background: transparent;
+}
+
+[data-scope="time-picker"][data-part="cell"]:hover {
+  background: var(--sc-sys-color-surface-container-highest);
+}
+
+[data-scope="time-picker"][data-part="cell"][data-selected] {
+  background: var(--sc-sys-color-primary);
+  color: var(--sc-sys-color-on-primary);
+}
+
+[data-scope="time-picker"][data-part="cell"][data-disabled] {
+  opacity: 0.38;
+  cursor: not-allowed;
+}
+
+/* --- Spacer between columns --- */
+[data-scope="time-picker"][data-part="spacer"] {
+  width: 1px;
+  background: var(--sc-sys-color-outline-variant);
+  align-self: stretch;
+  margin: var(--sc-sys-spacing-2) 0;
+}

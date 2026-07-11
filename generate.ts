@@ -134,6 +134,8 @@ const COMPONENT_FILES: Record<string, string> = {
   "tour": "_tour.css",
   "tree-view": "_tree-view.css",
   "angle-slider": "_angle-slider.css",
+  "time-picker": "_time-picker.css",
+  "bottom-sheet": "_bottom-sheet.css",
 };
 
 /** JS ファイル（レイアウトカテゴリ別） */

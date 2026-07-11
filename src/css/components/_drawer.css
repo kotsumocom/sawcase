@@ -1,11 +1,11 @@
 /* ==========================================================
  * Sawtooth CSS  EDrawer Component (Zag.js) [Beta]
- * dialog スコープを再利用�E�Erawer は Dialog のバリアント！E * ========================================================== */
+ * dialog スコープを再利用�E�Erawer は Dialog のバリアント！E * ========================================================== */
 
 /* Drawer uses [data-scope="dialog"] with placement variants */
 
 /* --- Drawer-specific positioner (edge-anchored) --- */
-.st-drawer [data-scope="dialog"][data-part="positioner"],
+.sc-drawer [data-scope="dialog"][data-part="positioner"],
 [data-scope="dialog"][data-part="positioner"][data-placement] {
   position: fixed;
   inset: 0;
@@ -34,7 +34,7 @@
 }
 
 /* --- Drawer content (override dialog content for edge) --- */
-.st-drawer [data-scope="dialog"][data-part="content"],
+.sc-drawer [data-scope="dialog"][data-part="content"],
 [data-scope="dialog"][data-part="content"][data-placement] {
   border-radius: 0;
   max-width: none;
