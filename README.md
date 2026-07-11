@@ -17,6 +17,16 @@ Deno Fresh 専用の統合 UI キット。テーマ設定からレイアウト�
 deno add @kotsumo/sawcase
 ```
 
+### AI エージェント向けセットアップ（オプション）
+
+AI エージェント（Gemini, Copilot 等）が sawcase の使い方を認識するようにするには:
+
+```bash
+deno run -A jsr:@kotsumo/sawcase/setup
+```
+
+`.agents/skills/sawcase/SKILL.md` がプロジェクトにコピーされ、エージェントが sawcase のコンポーネントや CSS の使い方をガイドできるようになります。
+
 ## CSS の利用
 
 ### デフォルトテーマ（即利用可）

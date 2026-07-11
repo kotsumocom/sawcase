@@ -5,6 +5,7 @@
     ".": "./mod.ts",
     "./styles": "./styles.ts",
     "./generate": "./generate.ts",
+    "./setup": "./setup.ts",
     "./components": "./src/components/mod.ts",
     "./js": "./src/js/mod.ts"
   },
@@ -13,6 +14,7 @@
       "mod.ts",
       "styles.ts",
       "generate.ts",
+      "setup.ts",
       "dist/sawcase.css",
       "src/",
       ".agents/",
