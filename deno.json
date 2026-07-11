@@ -48,7 +48,22 @@
     "@zag-js/menu": "npm:@zag-js/menu@^1.42.0",
     "@zag-js/tooltip": "npm:@zag-js/tooltip@^1.42.0",
     "@zag-js/accordion": "npm:@zag-js/accordion@^1.42.0",
-    "@zag-js/preact": "npm:@zag-js/preact@^1.42.0"
+    "@zag-js/preact": "npm:@zag-js/preact@^1.42.0",
+    "@zag-js/switch": "npm:@zag-js/switch@^1.42.0",
+    "@zag-js/select": "npm:@zag-js/select@^1.42.0",
+    "@zag-js/checkbox": "npm:@zag-js/checkbox@^1.42.0",
+    "@zag-js/radio-group": "npm:@zag-js/radio-group@^1.42.0",
+    "@zag-js/date-picker": "npm:@zag-js/date-picker@^1.42.0",
+    "@zag-js/popover": "npm:@zag-js/popover@^1.42.0",
+    "@zag-js/hover-card": "npm:@zag-js/hover-card@^1.42.0",
+    "@zag-js/slider": "npm:@zag-js/slider@^1.42.0",
+    "@zag-js/number-input": "npm:@zag-js/number-input@^1.42.0",
+    "@zag-js/tags-input": "npm:@zag-js/tags-input@^1.42.0",
+    "@zag-js/combobox": "npm:@zag-js/combobox@^1.42.0",
+    "@zag-js/file-upload": "npm:@zag-js/file-upload@^1.42.0",
+    "@zag-js/collapsible": "npm:@zag-js/collapsible@^1.42.0",
+    "@zag-js/steps": "npm:@zag-js/steps@^1.42.0",
+    "@zag-js/pagination": "npm:@zag-js/pagination@^1.42.0"
   },
   "compilerOptions": {
     "jsx": "react-jsx",
