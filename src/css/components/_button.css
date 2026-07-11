@@ -4,7 +4,7 @@
  * ========================================================== */
 
 /* --- Base Button --- */
-.st-button {
+.sc-ui-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -34,7 +34,7 @@
 }
 
 /* State layer (ripple-like hover/focus effect) */
-.st-button::before {
+.sc-ui-button::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -45,167 +45,167 @@
 }
 
 /* --- Filled Button (Default) --- */
-.st-button--filled {
+.sc-ui-button--filled {
   background-color: var(--sc-sys-color-primary);
   color: var(--sc-sys-color-on-primary);
 }
 
-.st-button--filled::before {
+.sc-ui-button--filled::before {
   background-color: var(--sc-sys-color-on-primary);
 }
 
-.st-button--filled:hover::before {
+.sc-ui-button--filled:hover::before {
   opacity: 0.08;
 }
 
-.st-button--filled:focus-visible::before {
+.sc-ui-button--filled:focus-visible::before {
   opacity: 0.1;
 }
 
-.st-button--filled:active::before {
+.sc-ui-button--filled:active::before {
   opacity: 0.1;
 }
 
 /* --- Outlined Button --- */
-.st-button--outlined {
+.sc-ui-button--outlined {
   background-color: transparent;
   color: var(--sc-sys-color-primary);
   border: 1px solid var(--sc-sys-color-outline);
 }
 
-.st-button--outlined::before {
+.sc-ui-button--outlined::before {
   background-color: var(--sc-sys-color-primary);
 }
 
-.st-button--outlined:hover::before {
+.sc-ui-button--outlined:hover::before {
   opacity: 0.08;
 }
 
-.st-button--outlined:focus-visible::before {
+.sc-ui-button--outlined:focus-visible::before {
   opacity: 0.1;
 }
 
-.st-button--outlined:active::before {
+.sc-ui-button--outlined:active::before {
   opacity: 0.1;
 }
 
-.st-button--outlined:focus-visible {
+.sc-ui-button--outlined:focus-visible {
   border-color: var(--sc-sys-color-primary);
 }
 
 /* --- Text Button --- */
-.st-button--text {
+.sc-ui-button--text {
   background-color: transparent;
   color: var(--sc-sys-color-primary);
   padding: 0 var(--sc-sys-spacing-3);
 }
 
-.st-button--text::before {
+.sc-ui-button--text::before {
   background-color: var(--sc-sys-color-primary);
 }
 
-.st-button--text:hover::before {
+.sc-ui-button--text:hover::before {
   opacity: 0.08;
 }
 
-.st-button--text:focus-visible::before {
+.sc-ui-button--text:focus-visible::before {
   opacity: 0.1;
 }
 
-.st-button--text:active::before {
+.sc-ui-button--text:active::before {
   opacity: 0.1;
 }
 
 /* --- Elevated Button --- */
-.st-button--elevated {
+.sc-ui-button--elevated {
   background-color: var(--sc-sys-color-surface-container-low);
   color: var(--sc-sys-color-primary);
   box-shadow: var(--sc-sys-elevation-level1);
 }
 
-.st-button--elevated::before {
+.sc-ui-button--elevated::before {
   background-color: var(--sc-sys-color-primary);
 }
 
-.st-button--elevated:hover {
+.sc-ui-button--elevated:hover {
   box-shadow: var(--sc-sys-elevation-level2);
 }
 
-.st-button--elevated:hover::before {
+.sc-ui-button--elevated:hover::before {
   opacity: 0.08;
 }
 
-.st-button--elevated:focus-visible::before {
+.sc-ui-button--elevated:focus-visible::before {
   opacity: 0.1;
 }
 
-.st-button--elevated:focus-visible {
+.sc-ui-button--elevated:focus-visible {
   box-shadow: var(--sc-sys-elevation-level1);
 }
 
-.st-button--elevated:active::before {
+.sc-ui-button--elevated:active::before {
   opacity: 0.1;
 }
 
 /* --- Tonal Button --- */
-.st-button--tonal {
+.sc-ui-button--tonal {
   background-color: var(--sc-sys-color-secondary-container);
   color: var(--sc-sys-color-on-secondary-container);
 }
 
-.st-button--tonal::before {
+.sc-ui-button--tonal::before {
   background-color: var(--sc-sys-color-on-secondary-container);
 }
 
-.st-button--tonal:hover::before {
+.sc-ui-button--tonal:hover::before {
   opacity: 0.08;
 }
 
-.st-button--tonal:focus-visible::before {
+.sc-ui-button--tonal:focus-visible::before {
   opacity: 0.1;
 }
 
-.st-button--tonal:active::before {
+.sc-ui-button--tonal:active::before {
   opacity: 0.1;
 }
 
 /* --- Disabled State (all variants) --- */
-.st-button:disabled,
-.st-button[aria-disabled="true"] {
+.sc-ui-button:disabled,
+.sc-ui-button[aria-disabled="true"] {
   cursor: not-allowed;
   pointer-events: none;
   opacity: 0.38;
   box-shadow: none;
 }
 
-.st-button--filled:disabled,
-.st-button--tonal:disabled {
+.sc-ui-button--filled:disabled,
+.sc-ui-button--tonal:disabled {
   background-color: color-mix(in srgb, var(--sc-sys-color-on-surface) 12%,
     transparent);
   color: color-mix(in srgb, var(--sc-sys-color-on-surface) 38%, transparent);
 }
 
-.st-button--outlined:disabled {
+.sc-ui-button--outlined:disabled {
   border-color: color-mix(in srgb, var(--sc-sys-color-on-surface) 12%,
     transparent);
   color: color-mix(in srgb, var(--sc-sys-color-on-surface) 38%, transparent);
 }
 
 /* --- Size Variants --- */
-.st-button--sm {
+.sc-ui-button--sm {
   min-height: 2rem; /* 32px */
   padding: 0 var(--sc-sys-spacing-4);
   font-size: var(--sc-sys-typescale-label-medium-size);
 }
 
-.st-button--lg {
+.sc-ui-button--lg {
   min-height: 3rem; /* 48px */
   padding: 0 var(--sc-sys-spacing-8);
   font-size: var(--sc-sys-typescale-label-large-size);
 }
 
 /* --- Icon Button --- */
-.st-button--icon {
+.sc-ui-button--icon {
   min-height: 2.5rem;
   min-width: 2.5rem;
   padding: var(--sc-sys-spacing-2);
@@ -213,7 +213,7 @@
 }
 
 /* --- Focus visible override --- */
-.st-button:focus-visible {
+.sc-ui-button:focus-visible {
   outline: 2px solid var(--sc-sys-color-primary);
   outline-offset: 2px;
 }

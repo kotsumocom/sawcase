@@ -3,7 +3,7 @@
  * info / success / warning / error
  * ========================================================== */
 
-.st-alert {
+.sc-ui-alert {
   display: flex;
   align-items: flex-start;
   gap: var(--sc-sys-spacing-3);
@@ -15,43 +15,43 @@
 }
 
 /* --- Info --- */
-.st-alert--info {
+.sc-ui-alert--info {
   background-color: var(--sc-sys-color-primary-container);
   color: var(--sc-sys-color-on-primary-container);
 }
 
 /* --- Success --- */
-.st-alert--success {
+.sc-ui-alert--success {
   background-color: var(--sc-sys-color-tertiary-container);
   color: var(--sc-sys-color-on-tertiary-container);
 }
 
 /* --- Warning --- */
-.st-alert--warning {
+.sc-ui-alert--warning {
   background-color: var(--sc-sys-color-surface-container-highest);
   color: var(--sc-sys-color-on-surface);
   border: 1px solid var(--sc-sys-color-outline);
 }
 
 /* --- Error --- */
-.st-alert--error {
+.sc-ui-alert--error {
   background-color: var(--sc-sys-color-error-container);
   color: var(--sc-sys-color-on-error-container);
 }
 
 /* --- Alert Parts --- */
-.st-alert__icon {
+.sc-ui-alert__icon {
   flex-shrink: 0;
   width: 1.5rem;
   height: 1.5rem;
 }
 
-.st-alert__content {
+.sc-ui-alert__content {
   flex: 1;
   min-width: 0;
 }
 
-.st-alert__title {
+.sc-ui-alert__title {
   font-family: var(--sc-sys-typescale-title-small-font);
   font-size: var(--sc-sys-typescale-title-small-size);
   font-weight: var(--sc-sys-typescale-title-small-weight);
@@ -59,7 +59,7 @@
   margin-bottom: var(--sc-sys-spacing-1);
 }
 
-.st-alert__close {
+.sc-ui-alert__close {
   flex-shrink: 0;
   display: flex;
   align-items: center;
@@ -73,6 +73,6 @@
     var(--sc-sys-motion-easing-standard);
 }
 
-.st-alert__close:hover {
+.sc-ui-alert__close:hover {
   opacity: 1;
 }

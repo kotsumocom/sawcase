@@ -2,7 +2,7 @@
  * Sawtooth CSS  ETextarea Component
  * ========================================================== */
 
-.st-textarea {
+.sc-ui-textarea {
   display: block;
   width: 100%;
   min-height: 7rem; /* 112px */
@@ -21,21 +21,21 @@
     var(--sc-sys-motion-easing-standard);
 }
 
-.st-textarea::placeholder {
+.sc-ui-textarea::placeholder {
   color: var(--sc-sys-color-on-surface-variant);
 }
 
-.st-textarea:hover {
+.sc-ui-textarea:hover {
   border-color: var(--sc-sys-color-on-surface);
 }
 
-.st-textarea:focus {
+.sc-ui-textarea:focus {
   outline: none;
   border-color: var(--sc-sys-color-primary);
   box-shadow: inset 0 0 0 1px var(--sc-sys-color-primary);
 }
 
-.st-textarea:disabled {
+.sc-ui-textarea:disabled {
   opacity: 0.38;
   cursor: not-allowed;
   border-color: color-mix(in srgb, var(--sc-sys-color-on-surface) 12%,
@@ -44,13 +44,13 @@
     transparent);
 }
 
-.st-textarea[aria-invalid="true"],
-.st-textarea--error {
+.sc-ui-textarea[aria-invalid="true"],
+.sc-ui-textarea--error {
   border-color: var(--sc-sys-color-error);
 }
 
-.st-textarea[aria-invalid="true"]:focus,
-.st-textarea--error:focus {
+.sc-ui-textarea[aria-invalid="true"]:focus,
+.sc-ui-textarea--error:focus {
   border-color: var(--sc-sys-color-error);
   box-shadow: inset 0 0 0 1px var(--sc-sys-color-error);
 }

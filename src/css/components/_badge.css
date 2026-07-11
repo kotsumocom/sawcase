@@ -3,7 +3,7 @@
  * small / medium / large + color variants
  * ========================================================== */
 
-.st-badge {
+.sc-ui-badge {
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -19,47 +19,47 @@
 }
 
 /* --- Color Variants --- */
-.st-badge--primary {
+.sc-ui-badge--primary {
   background-color: var(--sc-sys-color-primary);
   color: var(--sc-sys-color-on-primary);
 }
 
-.st-badge--secondary {
+.sc-ui-badge--secondary {
   background-color: var(--sc-sys-color-secondary);
   color: var(--sc-sys-color-on-secondary);
 }
 
-.st-badge--tertiary {
+.sc-ui-badge--tertiary {
   background-color: var(--sc-sys-color-tertiary);
   color: var(--sc-sys-color-on-tertiary);
 }
 
-.st-badge--error {
+.sc-ui-badge--error {
   background-color: var(--sc-sys-color-error);
   color: var(--sc-sys-color-on-error);
 }
 
-.st-badge--outline {
+.sc-ui-badge--outline {
   background-color: transparent;
   color: var(--sc-sys-color-on-surface-variant);
   border: 1px solid var(--sc-sys-color-outline);
 }
 
 /* --- Size Variants --- */
-.st-badge--sm {
+.sc-ui-badge--sm {
   min-height: 1rem; /* 16px */
   padding: 0 var(--sc-sys-spacing-1);
   font-size: var(--sc-sys-typescale-label-small-size);
 }
 
-.st-badge--lg {
+.sc-ui-badge--lg {
   min-height: 2rem; /* 32px */
   padding: 0 var(--sc-sys-spacing-3);
   font-size: var(--sc-sys-typescale-label-large-size);
 }
 
 /* --- Dot Badge (no text) --- */
-.st-badge--dot {
+.sc-ui-badge--dot {
   min-height: 0.5rem; /* 8px */
   min-width: 0.5rem;
   padding: 0;

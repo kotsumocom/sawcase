@@ -3,7 +3,7 @@
  * MD3 Card: Elevated / Filled / Outlined
  * ========================================================== */
 
-.st-card {
+.sc-ui-card {
   display: flex;
   flex-direction: column;
   border-radius: var(--sc-sys-shape-corner-md);
@@ -14,48 +14,48 @@
 }
 
 /* --- Elevated Card (Default) --- */
-.st-card--elevated {
+.sc-ui-card--elevated {
   background-color: var(--sc-sys-color-surface-container-low);
   box-shadow: var(--sc-sys-elevation-level1);
 }
 
-.st-card--elevated:hover {
+.sc-ui-card--elevated:hover {
   box-shadow: var(--sc-sys-elevation-level2);
 }
 
 /* --- Filled Card --- */
-.st-card--filled {
+.sc-ui-card--filled {
   background-color: var(--sc-sys-color-surface-container-highest);
   box-shadow: var(--sc-sys-elevation-level0);
 }
 
 /* --- Outlined Card --- */
-.st-card--outlined {
+.sc-ui-card--outlined {
   background-color: var(--sc-sys-color-surface);
   border: 1px solid var(--sc-sys-color-outline-variant);
   box-shadow: var(--sc-sys-elevation-level0);
 }
 
 /* --- Card Parts --- */
-.st-card__header {
+.sc-ui-card__header {
   display: flex;
   align-items: center;
   gap: var(--sc-sys-spacing-4);
   padding: var(--sc-sys-spacing-4);
 }
 
-.st-card__media {
+.sc-ui-card__media {
   width: 100%;
   aspect-ratio: 16 / 9;
   object-fit: cover;
 }
 
-.st-card__content {
+.sc-ui-card__content {
   padding: var(--sc-sys-spacing-4);
   flex: 1;
 }
 
-.st-card__title {
+.sc-ui-card__title {
   font-family: var(--sc-sys-typescale-title-large-font);
   font-size: var(--sc-sys-typescale-title-large-size);
   font-weight: var(--sc-sys-typescale-title-large-weight);
@@ -63,7 +63,7 @@
   color: var(--sc-sys-color-on-surface);
 }
 
-.st-card__subtitle {
+.sc-ui-card__subtitle {
   font-family: var(--sc-sys-typescale-body-medium-font);
   font-size: var(--sc-sys-typescale-body-medium-size);
   line-height: var(--sc-sys-typescale-body-medium-line-height);
@@ -71,7 +71,7 @@
   margin-top: var(--sc-sys-spacing-1);
 }
 
-.st-card__actions {
+.sc-ui-card__actions {
   display: flex;
   align-items: center;
   gap: var(--sc-sys-spacing-2);
