@@ -82,7 +82,13 @@
     "@zag-js/toggle": "npm:@zag-js/toggle@^1.42.0",
     "@zag-js/toggle-group": "npm:@zag-js/toggle-group@^1.42.0",
     "@zag-js/tour": "npm:@zag-js/tour@^1.42.0",
-    "@zag-js/tree-view": "npm:@zag-js/tree-view@^1.42.0"
+    "@zag-js/tree-view": "npm:@zag-js/tree-view@^1.42.0",
+    "@zag-js/image-cropper": "npm:@zag-js/image-cropper@^1.42.0",
+    "@zag-js/listbox": "npm:@zag-js/listbox@^1.42.0",
+    "@zag-js/marquee": "npm:@zag-js/marquee@^1.42.0",
+    "@zag-js/password-input": "npm:@zag-js/password-input@^1.42.0",
+    "@zag-js/scroll-area": "npm:@zag-js/scroll-area@^1.42.0",
+    "@zag-js/cascade-select": "npm:@zag-js/cascade-select@^1.42.0"
   },
   "compilerOptions": {
     "jsx": "react-jsx",

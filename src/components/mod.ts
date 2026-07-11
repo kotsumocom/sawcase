@@ -57,6 +57,13 @@ export { Toggle } from "./interactive/Toggle.tsx";
 export { ToggleGroup } from "./interactive/ToggleGroup.tsx";
 export { Tour } from "./interactive/Tour.tsx";
 export { TreeView } from "./interactive/TreeView.tsx";
+export { ImageCropper } from "./interactive/ImageCropper.tsx";
+export { Listbox } from "./interactive/Listbox.tsx";
+export { Marquee } from "./interactive/Marquee.tsx";
+export { PasswordInput } from "./interactive/PasswordInput.tsx";
+export { ScrollArea } from "./interactive/ScrollArea.tsx";
+export { CascadeSelect } from "./interactive/CascadeSelect.tsx";
+export { Presence } from "./interactive/Presence.tsx";
 
 // UI コンポーネント（Zag.js 非依存）
 export { DataTable } from "./ui/DataTable.tsx";
@@ -115,3 +122,10 @@ export type { ToggleProps } from "./interactive/Toggle.tsx";
 export type { ToggleGroupProps, ToggleGroupItem } from "./interactive/ToggleGroup.tsx";
 export type { TourProps, TourStep } from "./interactive/Tour.tsx";
 export type { TreeViewProps, TreeNode } from "./interactive/TreeView.tsx";
+export type { ImageCropperProps } from "./interactive/ImageCropper.tsx";
+export type { ListboxProps, ListboxItem } from "./interactive/Listbox.tsx";
+export type { MarqueeProps } from "./interactive/Marquee.tsx";
+export type { PasswordInputProps } from "./interactive/PasswordInput.tsx";
+export type { ScrollAreaProps } from "./interactive/ScrollArea.tsx";
+export type { CascadeSelectProps, CascadeItem } from "./interactive/CascadeSelect.tsx";
+export type { PresenceProps } from "./interactive/Presence.tsx";

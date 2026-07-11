@@ -10,6 +10,7 @@
     "npm:@zag-js/angle-slider@^1.42.0": "1.42.0",
     "npm:@zag-js/avatar@^1.42.0": "1.42.0",
     "npm:@zag-js/carousel@^1.42.0": "1.42.0",
+    "npm:@zag-js/cascade-select@^1.42.0": "1.42.0",
     "npm:@zag-js/checkbox@^1.42.0": "1.42.0",
     "npm:@zag-js/clipboard@^1.42.0": "1.42.0",
     "npm:@zag-js/collapsible@^1.42.0": "1.42.0",
@@ -21,10 +22,14 @@
     "npm:@zag-js/file-upload@^1.42.0": "1.42.0",
     "npm:@zag-js/floating-panel@^1.42.0": "1.42.0",
     "npm:@zag-js/hover-card@^1.42.0": "1.42.0",
+    "npm:@zag-js/image-cropper@^1.42.0": "1.42.0",
+    "npm:@zag-js/listbox@^1.42.0": "1.42.0",
+    "npm:@zag-js/marquee@^1.42.0": "1.42.0",
     "npm:@zag-js/menu@^1.42.0": "1.42.0",
     "npm:@zag-js/navigation-menu@^1.42.0": "1.42.0",
     "npm:@zag-js/number-input@^1.42.0": "1.42.0",
     "npm:@zag-js/pagination@^1.42.0": "1.42.0",
+    "npm:@zag-js/password-input@^1.42.0": "1.42.0",
     "npm:@zag-js/pin-input@^1.42.0": "1.42.0",
     "npm:@zag-js/popover@^1.42.0": "1.42.0",
     "npm:@zag-js/preact@^1.42.0": "1.42.0_preact@10.29.6",
@@ -33,6 +38,7 @@
     "npm:@zag-js/qr-code@^1.42.0": "1.42.0",
     "npm:@zag-js/radio-group@^1.42.0": "1.42.0",
     "npm:@zag-js/rating-group@^1.42.0": "1.42.0",
+    "npm:@zag-js/scroll-area@^1.42.0": "1.42.0",
     "npm:@zag-js/select@^1.42.0": "1.42.0",
     "npm:@zag-js/signature-pad@^1.42.0": "1.42.0",
     "npm:@zag-js/slider@^1.42.0": "1.42.0",
@@ -180,6 +186,21 @@
         "@zag-js/core",
         "@zag-js/dom-query",
         "@zag-js/scroll-snap",
+        "@zag-js/types",
+        "@zag-js/utils"
+      ]
+    },
+    "@zag-js/cascade-select@1.42.0": {
+      "integrity": "sha512-3hq0yKkK/iGdLIfePvgPGPQeHnRSZdAf2YhCwlL83XzcbWEqFGZyJvtFDmUVWcGUN9kbKQaKyB7u0+Jha4jSGQ==",
+      "dependencies": [
+        "@zag-js/anatomy",
+        "@zag-js/collection",
+        "@zag-js/core",
+        "@zag-js/dismissable",
+        "@zag-js/dom-query",
+        "@zag-js/focus-visible",
+        "@zag-js/popper",
+        "@zag-js/rect-utils",
         "@zag-js/types",
         "@zag-js/utils"
       ]
@@ -383,6 +404,16 @@
         "@zag-js/dom-query"
       ]
     },
+    "@zag-js/image-cropper@1.42.0": {
+      "integrity": "sha512-+nNEKtuhLeLmXnSHrh/S5K1Yj6y/nFPJ5DgW67+jcIgJf5Lky52RvjW69rYqqLLkGLUTaRQShq+ZiuDsap52rg==",
+      "dependencies": [
+        "@zag-js/anatomy",
+        "@zag-js/core",
+        "@zag-js/dom-query",
+        "@zag-js/types",
+        "@zag-js/utils"
+      ]
+    },
     "@zag-js/interact-outside@1.42.0": {
       "integrity": "sha512-CNNT1OtASacXEst8NMWDGmDwkOQgVQ0Ahc2SpPjSBZoVpxQIfhZ9FoeqcggDX7Nvze7kl6/OwA7pPi5TGQTVZQ==",
       "dependencies": [
@@ -390,8 +421,30 @@
         "@zag-js/utils"
       ]
     },
+    "@zag-js/listbox@1.42.0": {
+      "integrity": "sha512-nt842jgTaBYTgkqu3y+4l88wpmoyesXkS+Bc3Uvuc7ze9IB04vicSiRi+vstYyA20s/EjOr2tR9Kq7dNoROLaQ==",
+      "dependencies": [
+        "@zag-js/anatomy",
+        "@zag-js/collection",
+        "@zag-js/core",
+        "@zag-js/dom-query",
+        "@zag-js/focus-visible",
+        "@zag-js/types",
+        "@zag-js/utils"
+      ]
+    },
     "@zag-js/live-region@1.42.0": {
       "integrity": "sha512-YFkytNxBJDQIndh7W+bWMN9P74qsnQkzqqLv6LtX/TiOYr1PnL0p54DMvWhE7hqYiCyyLscBM9nbA1foSoPIPg=="
+    },
+    "@zag-js/marquee@1.42.0": {
+      "integrity": "sha512-bTYbNFuDdKV7SyHchyCLhE+JtReO8VUaGfv9Prh3LfFq7yNEqiFngqhY7TZBw6Vok4q8msu0r9aAqOspZqHEHA==",
+      "dependencies": [
+        "@zag-js/anatomy",
+        "@zag-js/core",
+        "@zag-js/dom-query",
+        "@zag-js/types",
+        "@zag-js/utils"
+      ]
     },
     "@zag-js/menu@1.42.0": {
       "integrity": "sha512-Jg2q+FrHeZ2ZTxrz/TAnNelapN6IGtyCnBmoNbcHGcnf3gqnEjJpug3Fn6BmPQrmTNw0+q7hBmrESyncjrfbUg==",
@@ -431,6 +484,16 @@
     },
     "@zag-js/pagination@1.42.0": {
       "integrity": "sha512-QEcnc8z0U4RREOa1MVGFNbKJONLzbo5egdUppURkbAwhv+paR9ufG4uli7QlMvA3KgdfCHPM92+MhnYwutp5nw==",
+      "dependencies": [
+        "@zag-js/anatomy",
+        "@zag-js/core",
+        "@zag-js/dom-query",
+        "@zag-js/types",
+        "@zag-js/utils"
+      ]
+    },
+    "@zag-js/password-input@1.42.0": {
+      "integrity": "sha512-GZGJGsJTNZy/4pQ3ho5S34AqPZbDrtBquzdJ5q0ZyEQI6AqaEgPSKdc8kVvFoqBhGypUYReLcFlmjg8OtGkbsg==",
       "dependencies": [
         "@zag-js/anatomy",
         "@zag-js/core",
@@ -540,6 +603,16 @@
       "integrity": "sha512-RP1SzQuVDk+np5knkEz/mRasLHZUbO6f3xgq4M2u4SQhpOe34uJybd+14f4ElBntAJQWVeMhohpW4n0pNUW6WQ==",
       "dependencies": [
         "@zag-js/dom-query"
+      ]
+    },
+    "@zag-js/scroll-area@1.42.0": {
+      "integrity": "sha512-7rFGSUp82kxp5SuiNtCllWbtzJzcC5GKcbykwsgDFGFyhVtmZIzKsow+1Lu1SoygspaYTNQIb2qhWP8pLNfyLg==",
+      "dependencies": [
+        "@zag-js/anatomy",
+        "@zag-js/core",
+        "@zag-js/dom-query",
+        "@zag-js/types",
+        "@zag-js/utils"
       ]
     },
     "@zag-js/scroll-snap@1.42.0": {
@@ -904,6 +977,7 @@
       "npm:@zag-js/angle-slider@^1.42.0",
       "npm:@zag-js/avatar@^1.42.0",
       "npm:@zag-js/carousel@^1.42.0",
+      "npm:@zag-js/cascade-select@^1.42.0",
       "npm:@zag-js/checkbox@^1.42.0",
       "npm:@zag-js/clipboard@^1.42.0",
       "npm:@zag-js/collapsible@^1.42.0",
@@ -915,10 +989,14 @@
       "npm:@zag-js/file-upload@^1.42.0",
       "npm:@zag-js/floating-panel@^1.42.0",
       "npm:@zag-js/hover-card@^1.42.0",
+      "npm:@zag-js/image-cropper@^1.42.0",
+      "npm:@zag-js/listbox@^1.42.0",
+      "npm:@zag-js/marquee@^1.42.0",
       "npm:@zag-js/menu@^1.42.0",
       "npm:@zag-js/navigation-menu@^1.42.0",
       "npm:@zag-js/number-input@^1.42.0",
       "npm:@zag-js/pagination@^1.42.0",
+      "npm:@zag-js/password-input@^1.42.0",
       "npm:@zag-js/pin-input@^1.42.0",
       "npm:@zag-js/popover@^1.42.0",
       "npm:@zag-js/preact@^1.42.0",
@@ -927,6 +1005,7 @@
       "npm:@zag-js/qr-code@^1.42.0",
       "npm:@zag-js/radio-group@^1.42.0",
       "npm:@zag-js/rating-group@^1.42.0",
+      "npm:@zag-js/scroll-area@^1.42.0",
       "npm:@zag-js/select@^1.42.0",
       "npm:@zag-js/signature-pad@^1.42.0",
       "npm:@zag-js/slider@^1.42.0",
