@@ -1,6 +1,6 @@
-import { useState } from "preact/hooks";
+import { useState, useRef, useEffect } from "preact/hooks";
 import type { ComponentChildren, FunctionComponent } from "preact";
-import { PanelLeftClose, PanelLeft, PanelLeftOpen } from "lucide-preact";
+import { PanelLeftClose, PanelLeft, PanelLeftOpen, Check } from "lucide-preact";
 
 /** レール表示モード */
 export type RailMode = "expanded" | "collapsed" | "hover-expand";
@@ -33,17 +33,17 @@ export interface AdminIconRailProps {
   showModeToggle?: boolean;
 }
 
-const MODE_CYCLE: RailMode[] = ["expanded", "collapsed", "hover-expand"];
-const MODE_LABELS: Record<RailMode, string> = {
-  expanded: "展開",
-  collapsed: "折りたたみ",
-  "hover-expand": "ホバーで展開",
-};
+/** モード定義 */
+const MODES: { value: RailMode; label: string; icon: FunctionComponent<{ size?: number | string }> }[] = [
+  { value: "expanded", label: "Expanded", icon: PanelLeftClose },
+  { value: "collapsed", label: "Collapsed", icon: PanelLeft },
+  { value: "hover-expand", label: "Expand on hover", icon: PanelLeftOpen },
+];
 
 /**
  * Supabase 式アイコンレール（グローバルナビゲーション）。
  * 3 つの表示モード: expanded / collapsed / hover-expand（デフォルト）
- * 最下部のトグルボタンでモード切替可能。
+ * 最下部のトグルボタンでポップオーバーを表示し、モードを選択可能。
  */
 export function AdminIconRail({
   items,
@@ -53,11 +53,20 @@ export function AdminIconRail({
   showModeToggle = true,
 }: AdminIconRailProps) {
   const [mode, setMode] = useState<RailMode>(initialMode);
+  const [menuOpen, setMenuOpen] = useState(false);
+  const popoverRef = useRef<HTMLDivElement>(null);
 
-  const cycleMode = () => {
-    const idx = MODE_CYCLE.indexOf(mode);
-    setMode(MODE_CYCLE[(idx + 1) % MODE_CYCLE.length]);
-  };
+  // 外部クリックで閉じる
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handler = (e: MouseEvent) => {
+      if (popoverRef.current && !popoverRef.current.contains(e.target as Node)) {
+        setMenuOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => document.removeEventListener("mousedown", handler);
+  }, [menuOpen]);
 
   const modeClass = mode === "expanded"
     ? " sc-admin-rail--expanded"
@@ -65,11 +74,8 @@ export function AdminIconRail({
     ? " sc-admin-rail--hover-expand"
     : "";
 
-  const ModeIcon = mode === "expanded"
-    ? PanelLeftClose
-    : mode === "collapsed"
-    ? PanelLeft
-    : PanelLeftOpen;
+  const currentMode = MODES.find((m) => m.value === mode)!;
+  const ModeIcon = currentMode.icon;
 
   return (
     <nav class={`sc-admin-rail${modeClass}`}>
@@ -118,18 +124,50 @@ export function AdminIconRail({
       )}
 
       {showModeToggle && (
-        <div class="sc-admin-rail__toggle">
+        <div class="sc-admin-rail__toggle" ref={popoverRef}>
           <button
             class="sc-admin-rail__toggle-btn"
-            onClick={cycleMode}
+            onClick={() => setMenuOpen(!menuOpen)}
             type="button"
-            title={`サイドバー: ${MODE_LABELS[mode]}`}
+            title="Sidebar control"
+            aria-expanded={menuOpen}
+            aria-haspopup="true"
           >
             <span class="sc-admin-rail__icon">
               <ModeIcon size={18} />
             </span>
-            <span class="sc-admin-rail__label">{MODE_LABELS[mode]}</span>
+            <span class="sc-admin-rail__label">{currentMode.label}</span>
           </button>
+
+          {menuOpen && (
+            <div class="sc-admin-rail__mode-popover" role="listbox" aria-label="Sidebar control">
+              <div class="sc-admin-rail__mode-header">Sidebar control</div>
+              {MODES.map((m) => {
+                const OptionIcon = m.icon;
+                const isSelected = m.value === mode;
+                return (
+                  <button
+                    key={m.value}
+                    class={`sc-admin-rail__mode-option${isSelected ? " sc-admin-rail__mode-option--selected" : ""}`}
+                    role="option"
+                    aria-selected={isSelected}
+                    onClick={() => { setMode(m.value); setMenuOpen(false); }}
+                    type="button"
+                  >
+                    <span class="sc-admin-rail__mode-option-icon">
+                      <OptionIcon size={16} />
+                    </span>
+                    <span class="sc-admin-rail__mode-option-label">{m.label}</span>
+                    {isSelected && (
+                      <span class="sc-admin-rail__mode-option-check">
+                        <Check size={14} />
+                      </span>
+                    )}
+                  </button>
+                );
+              })}
+            </div>
+          )}
         </div>
       )}
     </nav>

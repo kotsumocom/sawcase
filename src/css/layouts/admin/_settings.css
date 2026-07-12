@@ -100,8 +100,14 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: var(--sc-sys-spacing-4, 16px);
   padding: 14px 0;
   border-bottom: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+}
+
+.sc-toggle-list__info {
+  flex: 1;
+  min-width: 0;
 }
 
 .sc-toggle-list__label {
@@ -179,9 +185,16 @@
   border-color: var(--sc-sys-color-outline, #79747e);
 }
 
-.sc-radio-card--selected {
+.sc-radio-card--selected,
+.sc-radio-card:has(.sc-radio-card__input:checked) {
   border-color: var(--sc-sys-color-primary, #6750a4);
   background: color-mix(in srgb, var(--sc-sys-color-primary, #6750a4) 8%, transparent);
+}
+
+/* 選択されていないカードはハイライトを外す */
+.sc-radio-cards:has(.sc-radio-card__input:checked) .sc-radio-card--selected:not(:has(.sc-radio-card__input:checked)) {
+  border-color: var(--sc-sys-color-outline-variant, #cac4d0);
+  background: none;
 }
 
 .sc-radio-card__input {
@@ -233,4 +246,87 @@
   display: flex;
   gap: 8px;
   padding-top: 8px;
+}
+
+/* --- チーム管理 --- */
+.sc-team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sc-sys-spacing-3, 12px);
+}
+
+.sc-team-card {
+  border: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  border-radius: var(--sc-sys-shape-corner-md, 12px);
+  padding: var(--sc-sys-spacing-4, 16px);
+  cursor: pointer;
+  transition: border-color 100ms ease, box-shadow 100ms ease;
+}
+
+.sc-team-card:hover {
+  border-color: var(--sc-sys-color-outline, #79747e);
+}
+
+.sc-team-card--selected {
+  border-color: var(--sc-sys-color-primary, #6750a4);
+  box-shadow: 0 0 0 1px var(--sc-sys-color-primary, #6750a4);
+}
+
+.sc-team-card__header {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--sc-sys-spacing-3, 12px);
+}
+
+.sc-team-card__avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--sc-sys-shape-corner-sm, 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.sc-team-card__info {
+  flex: 1;
+  min-width: 0;
+}
+
+.sc-team-card__name {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+}
+
+.sc-team-card__desc {
+  font-size: 0.75rem;
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+  margin-top: 2px;
+}
+
+.sc-team-card__menu {
+  flex-shrink: 0;
+  padding: 4px;
+}
+
+.sc-team-card__footer {
+  margin-top: var(--sc-sys-spacing-3, 12px);
+  padding-top: var(--sc-sys-spacing-3, 12px);
+  border-top: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+}
+
+.sc-team-card__count {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.75rem;
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+}
+
+.sc-team-members__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--sc-sys-spacing-3, 12px);
 }

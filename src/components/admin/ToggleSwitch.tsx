@@ -14,7 +14,8 @@ export interface ToggleSwitchProps {
 }
 
 /**
- * トグルスイッチ。ラベル + 説明 + Zag.js Switch を組み合わせたリストアイテム。
+ * トグルスイッチ。説明 + Zag.js Switch を組み合わせたリストアイテム。
+ * ラベルは Zag.js Switch の getLabelProps() で表示される（アクセシビリティ対応）。
  *
  * ```tsx
  * <ToggleSwitch
@@ -34,8 +35,7 @@ export function ToggleSwitch({
 }: ToggleSwitchProps) {
   return (
     <div class="sc-toggle-list__item">
-      <div>
-        <div class="sc-toggle-list__label">{label}</div>
+      <div class="sc-toggle-list__info">
         {description && <div class="sc-toggle-list__desc">{description}</div>}
       </div>
       <Switch
