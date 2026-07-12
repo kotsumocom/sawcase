@@ -19,6 +19,8 @@
   overflow: hidden;
   z-index: calc(var(--sc-z-nav, 10) + 1);
   transition: width var(--sc-sys-motion-duration-short3, 200ms)
+    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1)),
+    min-width var(--sc-sys-motion-duration-short3, 200ms)
     var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
 }
 
@@ -30,7 +32,7 @@
   min-width: var(--sc-admin-rail-width-expanded, 180px);
 }
 
-/* hover-expand: ホバーで展開（デフォルト） */
+/* hover-expand: ホバーで展開 */
 .sc-admin-rail--hover-expand:hover {
   width: var(--sc-admin-rail-width-expanded, 180px);
   min-width: var(--sc-admin-rail-width-expanded, 180px);
@@ -48,12 +50,12 @@
   padding: 0 var(--sc-sys-spacing-2, 8px);
 }
 
-/* --- アイテム --- */
+/* --- アイテムコンテナ --- */
 
 .sc-admin-rail__items {
   display: flex;
   flex-direction: column;
-  gap: var(--sc-sys-spacing-1, 4px);
+  gap: 2px;
   padding: var(--sc-sys-spacing-2, 8px) var(--sc-sys-spacing-1, 4px);
   flex: 1;
   overflow-y: auto;
@@ -63,7 +65,7 @@
 .sc-admin-rail__bottom {
   display: flex;
   flex-direction: column;
-  gap: var(--sc-sys-spacing-1, 4px);
+  gap: 2px;
   padding: var(--sc-sys-spacing-2, 8px) var(--sc-sys-spacing-1, 4px);
   border-top: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
   flex-shrink: 0;
@@ -76,13 +78,13 @@
   align-items: center;
   gap: var(--sc-sys-spacing-2, 8px);
   padding: var(--sc-sys-spacing-2, 8px);
-  border-radius: var(--sc-sys-shape-corner-md, 12px);
+  border-radius: var(--sc-sys-shape-corner-sm, 8px);
   color: var(--sc-sys-color-on-surface-variant, #49454f);
   text-decoration: none;
   cursor: pointer;
   white-space: nowrap;
-  transition: background-color var(--sc-sys-motion-duration-short1, 100ms)
-    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+  overflow: hidden;
+  transition: background-color var(--sc-sys-motion-duration-short1, 100ms) ease;
 }
 
 .sc-admin-rail__link:hover {
@@ -95,46 +97,45 @@
   color: var(--sc-sys-color-on-secondary-container, #1d192b);
 }
 
-/* アイコン */
+/* --- アイコン --- */
+
 .sc-admin-rail__icon {
   width: 20px;
   height: 20px;
+  min-width: 20px;
+  min-height: 20px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* ラベル */
+/* --- ラベル --- */
+
 .sc-admin-rail__label {
   font-size: var(--sc-sys-typescale-label-large-size, 0.875rem);
-  overflow: hidden;
-  transition: opacity var(--sc-sys-motion-duration-short3, 200ms)
-    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1)),
-    width var(--sc-sys-motion-duration-short3, 200ms)
-    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+  line-height: 1.2;
 }
 
-/* collapsed / hover-expand: ラベル非表示 */
+/* collapsed（デフォルト）& hover-expand 非ホバー時: ラベルを完全に隠す */
 .sc-admin-rail:not(.sc-admin-rail--expanded) .sc-admin-rail__label {
-  opacity: 0;
-  width: 0;
+  display: none;
 }
 
-/* hover-expand: ホバー時にラベル表示 */
+/* hover-expand: ホバー時にラベルを表示 */
 .sc-admin-rail--hover-expand:hover .sc-admin-rail__label {
-  opacity: 1;
-  width: auto;
+  display: inline;
 }
 
-/* collapsed: justify center */
-.sc-admin-rail:not(.sc-admin-rail--expanded):not(:hover) .sc-admin-rail__link {
+/* collapsed（デフォルト）& hover-expand 非ホバー時: リンクを中央揃え */
+.sc-admin-rail:not(.sc-admin-rail--expanded) .sc-admin-rail__link {
   justify-content: center;
+  padding: var(--sc-sys-spacing-2, 8px);
 }
 
-/* ツールチップ（collapsed 時のみ） */
-.sc-admin-rail:not(.sc-admin-rail--expanded):not(:hover) .sc-admin-rail__link {
-  position: relative;
+/* hover-expand: ホバー時はリンクを左揃え */
+.sc-admin-rail--hover-expand:hover .sc-admin-rail__link {
+  justify-content: flex-start;
 }
 
 /* --- モバイル --- */
