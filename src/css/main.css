@@ -21,6 +21,8 @@
 @import "./layouts/admin/_overlay.css";
 @import "./layouts/admin/_page.css";
 @import "./layouts/admin/_stats.css";
+@import "./layouts/admin/_rail.css";
+@import "./layouts/admin/_header-actions.css";
 
 /* --- 4. Docs Layout (sc-docs-*) --- */
 @import "./layouts/docs/_shell.css";

@@ -1,5 +1,6 @@
 import type { ComponentChildren, FunctionComponent } from "preact";
 import { AdminNav, type NavGroup } from "./AdminNav.tsx";
+import { AdminIconRail, type IconRailItem } from "./AdminIconRail.tsx";
 import { Menu } from "lucide-preact";
 
 /** ナビゲーション項目 */
@@ -20,8 +21,8 @@ export interface AdminShellProps {
   brand: string;
   /** ロゴ URL（省略時はテキストのみ） */
   logo?: string;
-  /** パンくずテキスト */
-  breadcrumb?: string;
+  /** パンくず（文字列 or AdminBreadcrumb 等のコンポーネント） */
+  breadcrumb?: string | ComponentChildren;
   /** ナビゲーション項目（フラットリスト） */
   nav?: NavItem[];
   /** ナビゲーション（グループ分け） */
@@ -30,13 +31,24 @@ export interface AdminShellProps {
   headerActions?: ComponentChildren;
   /** メインコンテンツ */
   children: ComponentChildren;
+
+  // --- 2 ペインナビ（アイコンレール）---
+
+  /** アイコンレールのアイテム */
+  rail?: IconRailItem[];
+  /** アイコンレールの表示モード */
+  railMode?: "expanded" | "collapsed" | "hover-expand";
+  /** アイコンレール下部のアイテム */
+  railBottomItems?: IconRailItem[];
+  /** アイコンレールのブランドアイコン */
+  railBrandIcon?: ComponentChildren;
 }
 
 export { type NavGroup };
 
 /**
  * 管理画面のシェルレイアウト。
- * ヘッダー + サイドナビ + メインコンテンツの3ペイン構造。
+ * ヘッダー + サイドナビ（+ オプションのアイコンレール）+ メインコンテンツ。
  */
 export function AdminShell(props: AdminShellProps) {
   const {
@@ -47,6 +59,10 @@ export function AdminShell(props: AdminShellProps) {
     navGroups,
     headerActions,
     children,
+    rail,
+    railMode,
+    railBottomItems,
+    railBrandIcon,
   } = props;
 
   // nav を navGroups に変換
@@ -74,7 +90,9 @@ export function AdminShell(props: AdminShellProps) {
         </div>
 
         {breadcrumb && (
-          <div class="sc-admin-header__breadcrumb">{breadcrumb}</div>
+          <div class="sc-admin-header__breadcrumb">
+            {typeof breadcrumb === "string" ? breadcrumb : breadcrumb}
+          </div>
         )}
 
         {headerActions && (
@@ -83,7 +101,16 @@ export function AdminShell(props: AdminShellProps) {
       </header>
 
       <div class="sc-admin-body">
-        <AdminNav groups={groups} />
+        {rail && (
+          <AdminIconRail
+            items={rail}
+            mode={railMode}
+            bottomItems={railBottomItems}
+            brandIcon={railBrandIcon}
+          />
+        )}
+
+        {groups.length > 0 && <AdminNav groups={groups} />}
 
         {/* モバイルオーバーレイ */}
         <div class="sc-admin-overlay" id="admin-overlay" />

@@ -4,6 +4,12 @@
 export { AdminShell } from "./admin/AdminShell.tsx";
 export { AdminNav } from "./admin/AdminNav.tsx";
 export { AdminPage } from "./admin/AdminPage.tsx";
+export { AdminIconRail } from "./admin/AdminIconRail.tsx";
+export { AdminBreadcrumb } from "./admin/AdminBreadcrumb.tsx";
+export { AdminHeaderSearch } from "./admin/AdminHeaderSearch.tsx";
+export { AdminHeaderNotifications } from "./admin/AdminHeaderNotifications.tsx";
+export { AdminFeedback } from "./admin/AdminFeedback.tsx";
+export { AdminHeaderUser } from "./admin/AdminHeaderUser.tsx";
 export { DocsLayout } from "./docs/DocsLayout.tsx";
 export { DocsSidebarGroup } from "./docs/DocsSidebarGroup.tsx";
 export { Markdown } from "./docs/Markdown.tsx";
@@ -74,6 +80,12 @@ export { EmptyState } from "./ui/EmptyState.tsx";
 // 型定義
 export type { AdminShellProps, NavItem, NavGroup } from "./admin/AdminShell.tsx";
 export type { AdminPageProps } from "./admin/AdminPage.tsx";
+export type { AdminIconRailProps, IconRailItem } from "./admin/AdminIconRail.tsx";
+export type { AdminBreadcrumbProps, BreadcrumbSegment, BreadcrumbDropdownItem } from "./admin/AdminBreadcrumb.tsx";
+export type { AdminHeaderSearchProps } from "./admin/AdminHeaderSearch.tsx";
+export type { AdminHeaderNotificationsProps, NotificationItem } from "./admin/AdminHeaderNotifications.tsx";
+export type { AdminFeedbackProps } from "./admin/AdminFeedback.tsx";
+export type { AdminHeaderUserProps, UserMenuItem } from "./admin/AdminHeaderUser.tsx";
 export type { DocsLayoutProps, DocsSidebarItem, DocsSidebarGroup as DocsSidebarGroupType } from "./docs/DocsLayout.tsx";
 export type { DocsSidebarGroupProps } from "./docs/DocsSidebarGroup.tsx";
 export type { MarkdownProps } from "./docs/Markdown.tsx";

@@ -1,0 +1,145 @@
+/* ==========================================================
+ * sc-admin-rail — アイコンレール（グローバルナビ）
+ *
+ * Supabase 式の左端アイコンレール。3 つの表示モード対応。
+ * expanded: アイコン + テキスト
+ * collapsed: アイコンのみ
+ * hover-expand: 通常アイコン、ホバーで展開（デフォルト）
+ * ========================================================== */
+
+.sc-admin-rail {
+  display: flex;
+  flex-direction: column;
+  width: var(--sc-admin-rail-width, 48px);
+  min-width: var(--sc-admin-rail-width, 48px);
+  height: 100%;
+  background-color: var(--sc-sys-color-surface, #fef7ff);
+  border-right: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  flex-shrink: 0;
+  overflow: hidden;
+  z-index: calc(var(--sc-z-nav, 10) + 1);
+  transition: width var(--sc-sys-motion-duration-short3, 200ms)
+    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+}
+
+/* --- モード --- */
+
+/* expanded: 常にアイコン + テキスト */
+.sc-admin-rail--expanded {
+  width: var(--sc-admin-rail-width-expanded, 180px);
+  min-width: var(--sc-admin-rail-width-expanded, 180px);
+}
+
+/* hover-expand: ホバーで展開（デフォルト） */
+.sc-admin-rail--hover-expand:hover {
+  width: var(--sc-admin-rail-width-expanded, 180px);
+  min-width: var(--sc-admin-rail-width-expanded, 180px);
+}
+
+/* --- ブランドアイコン（最上部） --- */
+
+.sc-admin-rail__brand {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--sc-admin-rail-width, 48px);
+  min-height: var(--sc-admin-rail-width, 48px);
+  flex-shrink: 0;
+  padding: 0 var(--sc-sys-spacing-2, 8px);
+}
+
+/* --- アイテム --- */
+
+.sc-admin-rail__items {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-sys-spacing-1, 4px);
+  padding: var(--sc-sys-spacing-2, 8px) var(--sc-sys-spacing-1, 4px);
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.sc-admin-rail__bottom {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sc-sys-spacing-1, 4px);
+  padding: var(--sc-sys-spacing-2, 8px) var(--sc-sys-spacing-1, 4px);
+  border-top: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  flex-shrink: 0;
+}
+
+/* --- リンク --- */
+
+.sc-admin-rail__link {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-sys-spacing-2, 8px);
+  padding: var(--sc-sys-spacing-2, 8px);
+  border-radius: var(--sc-sys-shape-corner-md, 12px);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background-color var(--sc-sys-motion-duration-short1, 100ms)
+    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+}
+
+.sc-admin-rail__link:hover {
+  background-color: var(--sc-sys-color-surface-variant, #e7e0ec);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+}
+
+.sc-admin-rail__link--active {
+  background-color: var(--sc-sys-color-secondary-container, #e8def8);
+  color: var(--sc-sys-color-on-secondary-container, #1d192b);
+}
+
+/* アイコン */
+.sc-admin-rail__icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ラベル */
+.sc-admin-rail__label {
+  font-size: var(--sc-sys-typescale-label-large-size, 0.875rem);
+  overflow: hidden;
+  transition: opacity var(--sc-sys-motion-duration-short3, 200ms)
+    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1)),
+    width var(--sc-sys-motion-duration-short3, 200ms)
+    var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+}
+
+/* collapsed / hover-expand: ラベル非表示 */
+.sc-admin-rail:not(.sc-admin-rail--expanded) .sc-admin-rail__label {
+  opacity: 0;
+  width: 0;
+}
+
+/* hover-expand: ホバー時にラベル表示 */
+.sc-admin-rail--hover-expand:hover .sc-admin-rail__label {
+  opacity: 1;
+  width: auto;
+}
+
+/* collapsed: justify center */
+.sc-admin-rail:not(.sc-admin-rail--expanded):not(:hover) .sc-admin-rail__link {
+  justify-content: center;
+}
+
+/* ツールチップ（collapsed 時のみ） */
+.sc-admin-rail:not(.sc-admin-rail--expanded):not(:hover) .sc-admin-rail__link {
+  position: relative;
+}
+
+/* --- モバイル --- */
+@media (max-width: 768px) {
+  .sc-admin-rail {
+    display: none;
+  }
+}
