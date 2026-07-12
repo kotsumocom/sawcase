@@ -67,3 +67,20 @@
   text-align: center;
   color: var(--sc-sys-color-on-surface-variant, #49454f);
 }
+
+/* ユーザーセル */
+.sc-data-table__user {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sc-data-table__user-name {
+  font-weight: 500;
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+}
+
+.sc-data-table__user-email {
+  font-size: 0.75rem;
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+}
