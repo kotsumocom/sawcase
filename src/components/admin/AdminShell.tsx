@@ -6,7 +6,7 @@ import { Menu } from "lucide-preact";
 /** ナビゲーション項目 */
 export interface NavItem {
   /** Lucide アイコンコンポーネント */
-  icon?: FunctionComponent<{ size?: number }>;
+  icon?: FunctionComponent<{ size?: number | string }>;
   /** 表示ラベル */
   label: string;
   /** リンク先 */

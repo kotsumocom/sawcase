@@ -6,7 +6,7 @@ export interface BreadcrumbDropdownItem {
   label: string;
   value: string;
   href: string;
-  icon?: FunctionComponent<{ size?: number }>;
+  icon?: FunctionComponent<{ size?: number | string }>;
 }
 
 /** パンくずのセグメント */
@@ -16,7 +16,7 @@ export interface BreadcrumbSegment {
   /** リンク先 */
   href?: string;
   /** アイコン */
-  icon?: FunctionComponent<{ size?: number }>;
+  icon?: FunctionComponent<{ size?: number | string }>;
   /** ドロップダウン（Org/Project セレクター等） */
   dropdown?: {
     items: BreadcrumbDropdownItem[];
@@ -55,7 +55,7 @@ export function AdminBreadcrumb({ segments }: AdminBreadcrumbProps) {
   );
 }
 
-function SegIcon({ Icon }: { Icon: FunctionComponent<{ size?: number }> }) {
+function SegIcon({ Icon }: { Icon: FunctionComponent<{ size?: number | string }> }) {
   return (
     <span class="sc-admin-breadcrumb__icon">
       <Icon size={14} />

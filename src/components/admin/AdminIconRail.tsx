@@ -3,7 +3,7 @@ import type { ComponentChildren, FunctionComponent } from "preact";
 /** アイコンレールのアイテム */
 export interface IconRailItem {
   /** Lucide アイコン */
-  icon: FunctionComponent<{ size?: number }>;
+  icon: FunctionComponent<{ size?: number | string }>;
   /** ラベル */
   label: string;
   /** セクション識別子 */
