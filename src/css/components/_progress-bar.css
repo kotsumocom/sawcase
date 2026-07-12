@@ -1,0 +1,46 @@
+/* ==========================================================
+ * sc-progress-bar — プログレスバー
+ * ========================================================== */
+
+.sc-progress-bar {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.sc-progress-bar__header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+}
+
+.sc-progress-bar__label {
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+  font-weight: 500;
+}
+
+.sc-progress-bar__value {
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+}
+
+.sc-progress-bar__value--danger {
+  color: var(--sc-sys-color-error, #b3261e);
+}
+
+.sc-progress-bar__track {
+  height: 8px;
+  background: var(--sc-sys-color-surface-container-highest, #e6e0e9);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.sc-progress-bar__fill {
+  height: 100%;
+  background: var(--sc-sys-color-primary, #6750a4);
+  border-radius: 4px;
+  transition: width 500ms var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+}
+
+.sc-progress-bar__fill--danger {
+  background: var(--sc-sys-color-error, #b3261e);
+}

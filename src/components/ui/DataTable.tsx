@@ -1,88 +1,126 @@
 import type { ComponentChildren } from "preact";
 
-/** DataTable のカラム定義 */
-export interface DataTableColumn<T> {
+/** テーブルカラム定義 */
+export interface DataTableColumn<T = Record<string, unknown>> {
+  /** データキー */
+  key: string;
   /** ヘッダーラベル */
-  header: string;
-  /** データのキーまたはレンダー関数 */
-  accessor: keyof T | ((row: T) => ComponentChildren);
-  /** 幅 */
-  width?: string;
-  /** 右寄せ */
+  label: string;
+  /** ソート可能 */
+  sortable?: boolean;
+  /** カスタムレンダラー */
+  render?: (value: unknown, row: T, index: number) => ComponentChildren;
+  /** テキスト位置（デフォルト: "left"） */
   align?: "left" | "center" | "right";
+  /** 幅（CSS値） */
+  width?: string;
 }
 
-/** DataTable の props */
-export interface DataTableProps<T> {
-  /** データ */
-  data: T[];
+export interface DataTableProps<T = Record<string, unknown>> {
   /** カラム定義 */
   columns: DataTableColumn<T>[];
-  /** 行キー取得関数 */
-  rowKey: (row: T) => string | number;
-  /** 空状態のメッセージ */
+  /** データ配列 */
+  data: T[];
+  /** 行選択可能 */
+  selectable?: boolean;
+  /** 行クリック */
+  onRowClick?: (row: T, index: number) => void;
+  /** データなし時のメッセージ */
   emptyMessage?: string;
-  /** ストライプ表示 */
-  striped?: boolean;
-  /** ボーダー表示 */
-  bordered?: boolean;
+  /** 行のキー取得（デフォルト: index） */
+  rowKey?: (row: T, index: number) => string;
 }
 
-/** ソート・フィルター対応データテーブルコンポーネント */
-export function DataTable<T>({
-  data,
+/**
+ * データテーブル。WAI-ARIA role="grid" 準拠。
+ *
+ * ```tsx
+ * <DataTable
+ *   columns={[
+ *     { key: "name", label: "名前", sortable: true },
+ *     { key: "role", label: "ロール", render: (v) => <StatusBadge>{v}</StatusBadge> },
+ *   ]}
+ *   data={users}
+ *   selectable
+ *   onRowClick={(row) => console.log(row)}
+ * />
+ * ```
+ */
+export function DataTable<T extends Record<string, unknown>>({
   columns,
-  rowKey,
+  data,
+  selectable,
+  onRowClick,
   emptyMessage = "データがありません",
-  striped = false,
-  bordered = true,
+  rowKey,
 }: DataTableProps<T>) {
-  if (data.length === 0) {
-    return (
-      <div style="text-align:center;padding:48px 24px;color:var(--sc-sys-color-on-surface-variant);">
-        {emptyMessage}
-      </div>
-    );
-  }
-
   return (
-    <div style="overflow-x:auto;">
-      <table
-        style={`width:100%;border-collapse:collapse;font-size:0.875rem;${bordered ? "border:1px solid var(--sc-sys-color-outline-variant);" : ""}`}
-      >
+    <div class="sc-data-table-wrap">
+      <table class="sc-data-table" role="grid">
         <thead>
-          <tr style="border-bottom:2px solid var(--sc-sys-color-outline-variant);">
-            {columns.map((col, i) => (
+          <tr class="sc-data-table__header-row">
+            {selectable && (
+              <th class="sc-data-table__th sc-data-table__th--checkbox" scope="col">
+                <input
+                  type="checkbox"
+                  class="sc-data-table__checkbox"
+                  aria-label="すべて選択"
+                />
+              </th>
+            )}
+            {columns.map((col) => (
               <th
-                key={i}
-                style={`text-align:${col.align || "left"};padding:12px 16px;font-weight:600;color:var(--sc-sys-color-on-surface-variant);${col.width ? `width:${col.width};` : ""}`}
+                key={col.key}
+                class={`sc-data-table__th${col.align === "right" ? " sc-data-table__th--right" : col.align === "center" ? " sc-data-table__th--center" : ""}`}
+                style={col.width ? { width: col.width } : undefined}
+                scope="col"
+                aria-sort={col.sortable ? "none" : undefined}
               >
-                {col.header}
+                {col.label}
               </th>
             ))}
           </tr>
         </thead>
         <tbody>
-          {data.map((row, rowIdx) => (
-            <tr
-              key={rowKey(row)}
-              style={`border-bottom:1px solid var(--sc-sys-color-outline-variant);${striped && rowIdx % 2 === 1 ? "background:var(--sc-sys-color-surface-container);" : ""}`}
-            >
-              {columns.map((col, colIdx) => {
-                const value = typeof col.accessor === "function"
-                  ? col.accessor(row)
-                  : String(row[col.accessor] ?? "");
-                return (
-                  <td
-                    key={colIdx}
-                    style={`text-align:${col.align || "left"};padding:12px 16px;color:var(--sc-sys-color-on-surface);`}
-                  >
-                    {value}
-                  </td>
-                );
-              })}
+          {data.length === 0 ? (
+            <tr>
+              <td
+                class="sc-data-table__empty"
+                colSpan={columns.length + (selectable ? 1 : 0)}
+              >
+                {emptyMessage}
+              </td>
             </tr>
-          ))}
+          ) : (
+            data.map((row, i) => (
+              <tr
+                key={rowKey ? rowKey(row, i) : i}
+                class={`sc-data-table__row${onRowClick ? " sc-data-table__row--clickable" : ""}`}
+                onClick={onRowClick ? () => onRowClick(row, i) : undefined}
+              >
+                {selectable && (
+                  <td class="sc-data-table__td sc-data-table__td--checkbox">
+                    <input
+                      type="checkbox"
+                      class="sc-data-table__checkbox"
+                      aria-label="行を選択"
+                      onClick={(e) => e.stopPropagation()}
+                    />
+                  </td>
+                )}
+                {columns.map((col) => (
+                  <td
+                    key={col.key}
+                    class={`sc-data-table__td${col.align === "right" ? " sc-data-table__td--right" : col.align === "center" ? " sc-data-table__td--center" : ""}`}
+                  >
+                    {col.render
+                      ? col.render(row[col.key], row, i)
+                      : (row[col.key] as ComponentChildren)}
+                  </td>
+                ))}
+              </tr>
+            ))
+          )}
         </tbody>
       </table>
     </div>

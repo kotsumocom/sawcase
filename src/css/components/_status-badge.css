@@ -1,0 +1,44 @@
+/* ==========================================================
+ * sc-badge — ステータスバッジ
+ * ========================================================== */
+
+.sc-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 2px 10px;
+  border-radius: var(--sc-sys-shape-corner-full, 9999px);
+  font-size: 0.75rem;
+  font-weight: 500;
+  line-height: 1.5;
+  white-space: nowrap;
+}
+
+.sc-badge--sm {
+  padding: 1px 6px;
+  font-size: 0.6875rem;
+}
+
+.sc-badge--success {
+  background: color-mix(in srgb, #22c55e 15%, transparent);
+  color: #16a34a;
+}
+
+.sc-badge--warning {
+  background: color-mix(in srgb, #f59e0b 15%, transparent);
+  color: #d97706;
+}
+
+.sc-badge--error {
+  background: color-mix(in srgb, var(--sc-sys-color-error, #b3261e) 15%, transparent);
+  color: var(--sc-sys-color-error, #b3261e);
+}
+
+.sc-badge--info {
+  background: color-mix(in srgb, #3b82f6 15%, transparent);
+  color: #2563eb;
+}
+
+.sc-badge--neutral {
+  background: var(--sc-sys-color-surface-container, #f3edf7);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+}
