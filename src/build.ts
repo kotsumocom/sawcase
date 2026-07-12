@@ -61,19 +61,34 @@ async function resolveImports(
 }
 
 /**
- * TypeScript ソースから型注釈を除去してブラウザ向け JS に変換する
+ * TypeScript ソースから型注釈を除去してブラウザ向け JS に変換する。
+ * Deno の transpile API を使用。
  */
-function stripTypeAnnotations(ts: string): string {
-  return ts
-    .replace(/export\s+/g, "")
-    .replace(
-      /(\w+)\s*:\s*[\w<>[\]|&\s]+?((?:\s*=\s*[^,)]+)?)/g,
-      "$1$2",
-    )
-    .replace(/\)\s*:\s*[\w<>[\]|&\s]+?\s*\{/g, ") {")
-    .replace(/\s+as\s+\w+/g, "")
-    .replace(/^(?:export\s+)?(?:type|interface)\s+[\s\S]*?(?:;\n|\}\n)/gm, "")
-    .trim();
+async function stripTypeAnnotations(ts: string): Promise<string> {
+  // Deno.emit が使えないので、手動で安全に型除去
+  let result = ts;
+
+  // 1. export 除去
+  result = result.replace(/^export\s+/gm, "");
+
+  // 2. type / interface 宣言全体を除去
+  result = result.replace(/^(?:export\s+)?(?:type|interface)\s+\w+[\s\S]*?(?:;\n|\}\n)/gm, "");
+
+  // 3. 関数引数の型注釈を除去: (arg: Type, arg2: Type = val) → (arg, arg2 = val)
+  // パラメータ型注釈: 識別子: 型 の後に , や ) が来る
+  result = result.replace(/(\w+)\s*:\s*(?:readonly\s+)?[\w<>\[\]|&\s.]+?(?=\s*[,)=])/g, "$1");
+
+  // 4. 戻り値型注釈: ): Type { → ) {
+  result = result.replace(/\)\s*:\s*[\w<>\[\]|&\s.]+?\s*\{/g, ") {");
+
+  // 5. as キャスト除去
+  result = result.replace(/\s+as\s+\w+/g, "");
+
+  // 6. non-null assertion (!) 除去 — プロパティアクセスの前のみ
+  result = result.replace(/(\w+)!\./g, "$1.");
+  result = result.replace(/(\w+)!\[/g, "$1[");
+
+  return result.trim();
 }
 
 /**
@@ -119,7 +134,7 @@ async function bundleJS(): Promise<string> {
       const tsContent = await Deno.readTextFile(filePath);
       sections.push("");
       sections.push(`/* --- ${file} --- */`);
-      sections.push(stripTypeAnnotations(tsContent));
+      sections.push(await stripTypeAnnotations(tsContent));
     } catch {
       console.warn(`⚠️  JS ファイルが見つかりません: ${filePath}`);
     }

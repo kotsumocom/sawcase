@@ -36,7 +36,7 @@ export function AdminHeaderUser({
           <img src={avatarUrl} alt={name} class="sc-admin-header-user__avatar" />
         ) : (
           <span class="sc-admin-header-user__avatar-fallback">
-            {name.charAt(0).toUpperCase()}
+            <User size={18} />
           </span>
         )}
         <ChevronDown size={14} />

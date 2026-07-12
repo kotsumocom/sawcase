@@ -185,6 +185,21 @@
   margin-top: 4px;
 }
 
+.sc-admin-header-notif__more {
+  display: block;
+  padding: var(--sc-sys-spacing-3, 12px) var(--sc-sys-spacing-4, 16px);
+  text-align: center;
+  font-size: var(--sc-sys-typescale-label-medium-size, 0.75rem);
+  color: var(--sc-sys-color-primary, #6750a4);
+  text-decoration: none;
+  border-top: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  transition: background-color 100ms ease;
+}
+
+.sc-admin-header-notif__more:hover {
+  background-color: var(--sc-sys-color-surface-variant, #e7e0ec);
+}
+
 /* --- パンくず --- */
 .sc-admin-breadcrumb {
   display: flex;

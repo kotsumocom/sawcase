@@ -1,3 +1,5 @@
+import { User } from "lucide-preact";
+
 export type AvatarSize = "xs" | "sm" | "md" | "lg";
 
 export interface UserAvatarProps {
@@ -7,6 +9,8 @@ export interface UserAvatarProps {
   src?: string;
   /** サイズ（デフォルト: "md"） */
   size?: AvatarSize;
+  /** フォールバック時にアイコン表示（デフォルト: true） */
+  showIcon?: boolean;
   /** 追加クラス */
   class?: string;
 }
@@ -18,18 +22,27 @@ const SIZES: Record<AvatarSize, number> = {
   lg: 48,
 };
 
+const ICON_SIZES: Record<AvatarSize, number> = {
+  xs: 14,
+  sm: 18,
+  md: 20,
+  lg: 26,
+};
+
 /**
- * ユーザーアバター。画像またはイニシャルフォールバック。
+ * ユーザーアバター。画像 / Lucide User アイコン / イニシャルフォールバック。
  *
  * ```tsx
  * <UserAvatar name="田中太郎" size="sm" />
  * <UserAvatar src="/avatar.jpg" name="鈴木花子" />
+ * <UserAvatar name="鈴木花子" showIcon={false} /> // イニシャルフォールバック
  * ```
  */
 export function UserAvatar({
   name,
   src,
   size = "md",
+  showIcon = true,
   class: className,
 }: UserAvatarProps) {
   const initial = name.charAt(0).toUpperCase();
@@ -50,6 +63,10 @@ export function UserAvatar({
           width={px}
           height={px}
         />
+      ) : showIcon ? (
+        <span class="sc-avatar__fallback sc-avatar__fallback--icon">
+          <User size={ICON_SIZES[size]} />
+        </span>
       ) : (
         <span class="sc-avatar__fallback">{initial}</span>
       )}

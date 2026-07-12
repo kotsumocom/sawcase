@@ -124,6 +124,7 @@
 @import "./components/_progress-bar.css";
 @import "./components/_data-table.css";
 @import "./components/_filter-bar.css";
+@import "./components/_fab.css";
 
 /* --- 12. Utilities --- */
 @import "./utilities/_layout.css";

@@ -84,6 +84,7 @@ export { StatusBadge } from "./ui/StatusBadge.tsx";
 export { UserAvatar } from "./ui/UserAvatar.tsx";
 export { ProgressBar } from "./ui/ProgressBar.tsx";
 export { FilterBar } from "./ui/FilterBar.tsx";
+export { Fab } from "./ui/Fab.tsx";
 
 // 型定義
 export type { AdminShellProps, NavItem, NavGroup } from "./admin/AdminShell.tsx";
@@ -103,6 +104,7 @@ export type { UserAvatarProps, AvatarSize } from "./ui/UserAvatar.tsx";
 export type { ProgressBarProps } from "./ui/ProgressBar.tsx";
 export type { DataTableColumn, DataTableProps } from "./ui/DataTable.tsx";
 export type { FilterBarProps, FilterDef } from "./ui/FilterBar.tsx";
+export type { FabProps, FabAction, FabVariant, FabSize, FabPosition } from "./ui/Fab.tsx";
 export type { DocsLayoutProps, DocsSidebarItem, DocsSidebarGroup as DocsSidebarGroupType } from "./docs/DocsLayout.tsx";
 export type { DocsSidebarGroupProps } from "./docs/DocsSidebarGroup.tsx";
 export type { MarkdownProps } from "./docs/Markdown.tsx";

@@ -1,0 +1,203 @@
+/* ==========================================================
+ * sc-fab — Floating Action Button (Material Design 3)
+ * ========================================================== */
+
+/* --- コンテナ --- */
+.sc-fab-container {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--sc-sys-spacing-3, 12px);
+}
+
+.sc-fab-container--fixed {
+  position: fixed;
+  z-index: var(--sc-z-fab, 40);
+}
+
+.sc-fab-container--bottom-right {
+  bottom: var(--sc-sys-spacing-6, 24px);
+  right: var(--sc-sys-spacing-6, 24px);
+}
+
+.sc-fab-container--bottom-left {
+  bottom: var(--sc-sys-spacing-6, 24px);
+  left: var(--sc-sys-spacing-6, 24px);
+  align-items: flex-start;
+}
+
+.sc-fab-container--bottom-center {
+  bottom: var(--sc-sys-spacing-6, 24px);
+  left: 50%;
+  transform: translateX(-50%);
+  align-items: center;
+}
+
+/* --- FAB ボタン --- */
+.sc-fab {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  font-family: inherit;
+  font-weight: 500;
+  white-space: nowrap;
+  transition:
+    box-shadow var(--sc-sys-motion-duration-short4, 200ms) var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1)),
+    background-color var(--sc-sys-motion-duration-short4, 200ms) var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1)),
+    transform var(--sc-sys-motion-duration-short4, 200ms) var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+}
+
+/* サイズ */
+.sc-fab--sm {
+  width: 40px;
+  height: 40px;
+  border-radius: var(--sc-sys-shape-corner-md, 12px);
+  box-shadow: var(--sc-sys-elevation-level2, 0 2px 6px 2px rgba(0, 0, 0, 0.15));
+}
+
+.sc-fab--md {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--sc-sys-shape-corner-lg, 16px);
+  box-shadow: var(--sc-sys-elevation-level3, 0 4px 8px 3px rgba(0, 0, 0, 0.15));
+}
+
+.sc-fab--lg {
+  width: 96px;
+  height: 96px;
+  border-radius: var(--sc-sys-shape-corner-xl, 28px);
+  box-shadow: var(--sc-sys-elevation-level3, 0 4px 8px 3px rgba(0, 0, 0, 0.15));
+}
+
+/* Extended FAB: 幅自動 */
+.sc-fab--extended {
+  width: auto;
+  padding: 0 var(--sc-sys-spacing-5, 20px);
+  gap: var(--sc-sys-spacing-3, 12px);
+}
+
+.sc-fab--extended.sc-fab--sm { height: 40px; }
+.sc-fab--extended.sc-fab--md { height: 56px; }
+.sc-fab--extended.sc-fab--lg { height: 72px; }
+
+/* バリアント */
+.sc-fab--primary {
+  background-color: var(--sc-sys-color-primary-container, #eaddff);
+  color: var(--sc-sys-color-on-primary-container, #21005d);
+}
+
+.sc-fab--primary:hover {
+  background-color: color-mix(in srgb, var(--sc-sys-color-primary-container, #eaddff) 92%, var(--sc-sys-color-on-primary-container, #21005d));
+  box-shadow: var(--sc-sys-elevation-level4, 0 6px 10px 4px rgba(0, 0, 0, 0.15));
+}
+
+.sc-fab--secondary {
+  background-color: var(--sc-sys-color-secondary-container, #e8def8);
+  color: var(--sc-sys-color-on-secondary-container, #1d192b);
+}
+
+.sc-fab--secondary:hover {
+  background-color: color-mix(in srgb, var(--sc-sys-color-secondary-container, #e8def8) 92%, var(--sc-sys-color-on-secondary-container, #1d192b));
+  box-shadow: var(--sc-sys-elevation-level4, 0 6px 10px 4px rgba(0, 0, 0, 0.15));
+}
+
+.sc-fab--tertiary {
+  background-color: var(--sc-sys-color-tertiary-container, #ffd8e4);
+  color: var(--sc-sys-color-on-tertiary-container, #31111d);
+}
+
+.sc-fab--tertiary:hover {
+  background-color: color-mix(in srgb, var(--sc-sys-color-tertiary-container, #ffd8e4) 92%, var(--sc-sys-color-on-tertiary-container, #31111d));
+  box-shadow: var(--sc-sys-elevation-level4, 0 6px 10px 4px rgba(0, 0, 0, 0.15));
+}
+
+.sc-fab--surface {
+  background-color: var(--sc-sys-color-surface-container-high, #ece6f0);
+  color: var(--sc-sys-color-primary, #6750a4);
+}
+
+.sc-fab--surface:hover {
+  background-color: color-mix(in srgb, var(--sc-sys-color-surface-container-high, #ece6f0) 92%, var(--sc-sys-color-primary, #6750a4));
+  box-shadow: var(--sc-sys-elevation-level4, 0 6px 10px 4px rgba(0, 0, 0, 0.15));
+}
+
+/* アクティブ */
+.sc-fab:active {
+  transform: scale(0.95);
+}
+
+/* アイコン */
+.sc-fab__icon {
+  display: flex;
+  transition: transform var(--sc-sys-motion-duration-short4, 200ms) var(--sc-sys-motion-easing-standard, cubic-bezier(0.2, 0, 0, 1));
+}
+
+.sc-fab__icon--rotate {
+  transform: rotate(45deg);
+}
+
+/* ラベル */
+.sc-fab__label {
+  font-size: var(--sc-sys-typescale-label-large-size, 0.875rem);
+  letter-spacing: var(--sc-sys-typescale-label-large-tracking, 0.01em);
+}
+
+/* --- SpeedDial アクション --- */
+.sc-fab-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--sc-sys-spacing-2, 8px);
+  animation: sc-fab-actions-in var(--sc-sys-motion-duration-medium1, 250ms) var(--sc-sys-motion-easing-emphasized-decelerate, cubic-bezier(0.05, 0.7, 0.1, 1));
+}
+
+.sc-fab-actions__item {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-sys-spacing-3, 12px);
+  padding: var(--sc-sys-spacing-2, 8px) var(--sc-sys-spacing-3, 12px);
+  background: var(--sc-sys-color-surface, #fef7ff);
+  border: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  border-radius: var(--sc-sys-shape-corner-md, 12px);
+  box-shadow: var(--sc-sys-elevation-level2, 0 2px 6px 2px rgba(0, 0, 0, 0.15));
+  text-decoration: none;
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+  cursor: pointer;
+  font-family: inherit;
+  font-size: var(--sc-sys-typescale-label-large-size, 0.875rem);
+  white-space: nowrap;
+  transition: background-color 100ms ease;
+}
+
+.sc-fab-actions__item:hover {
+  background: var(--sc-sys-color-surface-variant, #e7e0ec);
+}
+
+.sc-fab-actions__label {
+  font-weight: 500;
+}
+
+.sc-fab-actions__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--sc-sys-shape-corner-md, 12px);
+  background: var(--sc-sys-color-primary-container, #eaddff);
+  color: var(--sc-sys-color-on-primary-container, #21005d);
+}
+
+@keyframes sc-fab-actions-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px) scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}

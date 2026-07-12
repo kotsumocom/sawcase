@@ -13,6 +13,10 @@ export interface NotificationItem {
 
 export interface AdminHeaderNotificationsProps {
   items: NotificationItem[];
+  /** 表示する最大件数（デフォルト: 5） */
+  maxItems?: number;
+  /** 「もっと見る」リンク先 */
+  moreHref?: string;
   onMarkRead?: (id: string) => void;
   onMarkAllRead?: () => void;
 }
@@ -20,12 +24,16 @@ export interface AdminHeaderNotificationsProps {
 /** 通知ベル + Popover リストコンポーネント */
 export function AdminHeaderNotifications({
   items,
+  maxItems = 5,
+  moreHref,
   onMarkRead,
   onMarkAllRead,
 }: AdminHeaderNotificationsProps) {
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
   const unread = items.filter((i) => !i.read).length;
+  const visible = items.slice(0, maxItems);
+  const hasMore = items.length > maxItems;
 
   return (
     <div class="sc-admin-header-notif" ref={ref}>
@@ -55,10 +63,10 @@ export function AdminHeaderNotifications({
             )}
           </div>
           <div class="sc-admin-header-notif__list">
-            {items.length === 0 ? (
+            {visible.length === 0 ? (
               <div class="sc-admin-header-notif__empty">通知はありません</div>
             ) : (
-              items.map((item) => (
+              visible.map((item) => (
                 <a
                   key={item.id}
                   href={item.href || "#"}
@@ -75,6 +83,15 @@ export function AdminHeaderNotifications({
               ))
             )}
           </div>
+          {(hasMore || moreHref) && (
+            <a
+              href={moreHref || "#"}
+              class="sc-admin-header-notif__more"
+              onClick={() => setOpen(false)}
+            >
+              すべての通知を見る →
+            </a>
+          )}
         </div>
       )}
     </div>

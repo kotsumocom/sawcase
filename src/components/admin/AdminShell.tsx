@@ -42,6 +42,8 @@ export interface AdminShellProps {
   railBottomItems?: IconRailItem[];
   /** アイコンレールのブランドアイコン */
   railBrandIcon?: ComponentChildren;
+  /** Island として差し込むカスタムレール（rail prop より優先） */
+  railSlot?: ComponentChildren;
 }
 
 export { type NavGroup };
@@ -63,6 +65,7 @@ export function AdminShell(props: AdminShellProps) {
     railMode,
     railBottomItems,
     railBrandIcon,
+    railSlot,
   } = props;
 
   // nav を navGroups に変換
@@ -101,7 +104,7 @@ export function AdminShell(props: AdminShellProps) {
       </header>
 
       <div class="sc-admin-body">
-        {rail && (
+        {railSlot ? railSlot : rail && (
           <AdminIconRail
             items={rail}
             mode={railMode}
