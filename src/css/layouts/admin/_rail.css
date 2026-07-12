@@ -133,9 +133,46 @@
   padding: var(--sc-sys-spacing-2, 8px);
 }
 
-/* hover-expand: ホバー時はリンクを左揃え */
-.sc-admin-rail--hover-expand:hover .sc-admin-rail__link {
+/* hover-expand: ホバー時はリンク・ボタンを左揃え */
+.sc-admin-rail--hover-expand:hover .sc-admin-rail__link,
+.sc-admin-rail--hover-expand:hover .sc-admin-rail__toggle-btn {
   justify-content: flex-start;
+}
+
+/* collapsed 時: ボタンも中央揃え */
+.sc-admin-rail:not(.sc-admin-rail--expanded) .sc-admin-rail__toggle-btn {
+  justify-content: center;
+  padding: var(--sc-sys-spacing-2, 8px);
+}
+
+/* --- モード切替トグル --- */
+
+.sc-admin-rail__toggle {
+  padding: var(--sc-sys-spacing-1, 4px);
+  border-top: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  flex-shrink: 0;
+}
+
+.sc-admin-rail__toggle-btn {
+  display: flex;
+  align-items: center;
+  gap: var(--sc-sys-spacing-2, 8px);
+  width: 100%;
+  padding: var(--sc-sys-spacing-2, 8px);
+  border-radius: var(--sc-sys-shape-corner-sm, 8px);
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+  background: none;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  font-size: var(--sc-sys-typescale-label-medium-size, 0.75rem);
+  transition: background-color 100ms ease;
+}
+
+.sc-admin-rail__toggle-btn:hover {
+  background-color: var(--sc-sys-color-surface-variant, #e7e0ec);
+  color: var(--sc-sys-color-on-surface, #1d1b20);
 }
 
 /* --- モバイル --- */

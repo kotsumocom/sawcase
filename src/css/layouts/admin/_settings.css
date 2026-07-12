@@ -1,0 +1,236 @@
+/* ==========================================================
+ * sc-admin-settings — 設定ページ用コンポーネント
+ *
+ * タブ、トグルスイッチ、ラジオカード、セクション見出し、
+ * インプットグループ、危険ゾーンなど管理画面設定に必要な UI
+ * ========================================================== */
+
+/* --- セクション見出し --- */
+.sc-settings-section__title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+  margin: 0 0 16px;
+}
+
+.sc-settings-section__title--danger {
+  color: var(--sc-sys-color-error, #b3261e);
+}
+
+/* --- タブバー --- */
+.sc-settings-tabs {
+  display: flex;
+  gap: 0;
+  border-bottom: 2px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  margin-bottom: 32px;
+}
+
+.sc-settings-tabs__tab {
+  padding: 12px 24px;
+  font-size: 0.875rem;
+  font-weight: 500;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+  transition: color 100ms ease;
+}
+
+.sc-settings-tabs__tab:hover {
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+}
+
+.sc-settings-tabs__tab--active {
+  font-weight: 600;
+  border-bottom: 2px solid var(--sc-sys-color-primary, #6750a4);
+  color: var(--sc-sys-color-primary, #6750a4);
+  margin-bottom: -2px;
+}
+
+/* --- フォームレイアウト --- */
+.sc-settings-form {
+  display: grid;
+  gap: 32px;
+  max-width: 640px;
+}
+
+.sc-settings-form__fields {
+  display: grid;
+  gap: 16px;
+}
+
+.sc-settings-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+/* --- インプットグループ（サブドメイン等） --- */
+.sc-input-group {
+  display: flex;
+  align-items: stretch;
+}
+
+.sc-input-group .sc-ui-input {
+  border-radius: var(--sc-sys-shape-corner-xs, 4px) 0 0 var(--sc-sys-shape-corner-xs, 4px);
+  border-right: none;
+  flex: 1;
+}
+
+.sc-input-group__suffix {
+  display: flex;
+  align-items: center;
+  padding: 0 16px;
+  background: var(--sc-sys-color-surface-container, #f3edf7);
+  border: 1px solid var(--sc-sys-color-outline, #79747e);
+  border-left: none;
+  border-radius: 0 var(--sc-sys-shape-corner-xs, 4px) var(--sc-sys-shape-corner-xs, 4px) 0;
+  font-size: 0.875rem;
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+  white-space: nowrap;
+}
+
+/* --- トグルスイッチ --- */
+.sc-toggle-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.sc-toggle-list__item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+}
+
+.sc-toggle-list__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+}
+
+.sc-toggle-list__desc {
+  font-size: 0.75rem;
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+  margin-top: 2px;
+}
+
+.sc-toggle-switch {
+  width: 44px;
+  height: 24px;
+  border-radius: 12px;
+  position: relative;
+  cursor: pointer;
+  transition: background 200ms ease;
+  flex-shrink: 0;
+  border: none;
+  padding: 0;
+}
+
+.sc-toggle-switch--on {
+  background: var(--sc-sys-color-primary, #6750a4);
+}
+
+.sc-toggle-switch--off {
+  background: var(--sc-sys-color-outline, #79747e);
+}
+
+.sc-toggle-switch__knob {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: white;
+  position: absolute;
+  top: 2px;
+  transition: left 200ms ease, right 200ms ease;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.sc-toggle-switch--on .sc-toggle-switch__knob {
+  right: 2px;
+  left: auto;
+}
+
+.sc-toggle-switch--off .sc-toggle-switch__knob {
+  left: 2px;
+  right: auto;
+}
+
+/* --- ラジオカード --- */
+.sc-radio-cards {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.sc-radio-card {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: var(--sc-sys-shape-corner-sm, 8px);
+  border: 1px solid var(--sc-sys-color-outline-variant, #cac4d0);
+  cursor: pointer;
+  transition: border-color 100ms ease, background-color 100ms ease;
+}
+
+.sc-radio-card:hover {
+  border-color: var(--sc-sys-color-outline, #79747e);
+}
+
+.sc-radio-card--selected {
+  border-color: var(--sc-sys-color-primary, #6750a4);
+  background: color-mix(in srgb, var(--sc-sys-color-primary, #6750a4) 8%, transparent);
+}
+
+.sc-radio-card__input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--sc-sys-color-primary, #6750a4);
+  flex-shrink: 0;
+}
+
+.sc-radio-card__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+}
+
+.sc-radio-card__desc {
+  font-size: 0.75rem;
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+}
+
+/* --- 危険ゾーン --- */
+.sc-danger-zone {
+  border: 1px solid var(--sc-sys-color-error, #b3261e);
+  border-radius: var(--sc-sys-shape-corner-md, 12px);
+  padding: 20px;
+}
+
+.sc-danger-zone__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.sc-danger-zone__label {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--sc-sys-color-on-surface, #1d1b20);
+}
+
+.sc-danger-zone__desc {
+  font-size: 0.75rem;
+  color: var(--sc-sys-color-on-surface-variant, #49454f);
+  margin-top: 2px;
+}
+
+/* --- アクションバー --- */
+.sc-settings-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 8px;
+}

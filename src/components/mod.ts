@@ -80,7 +80,7 @@ export { EmptyState } from "./ui/EmptyState.tsx";
 // 型定義
 export type { AdminShellProps, NavItem, NavGroup } from "./admin/AdminShell.tsx";
 export type { AdminPageProps } from "./admin/AdminPage.tsx";
-export type { AdminIconRailProps, IconRailItem } from "./admin/AdminIconRail.tsx";
+export type { AdminIconRailProps, IconRailItem, RailMode } from "./admin/AdminIconRail.tsx";
 export type { AdminBreadcrumbProps, BreadcrumbSegment, BreadcrumbDropdownItem } from "./admin/AdminBreadcrumb.tsx";
 export type { AdminHeaderSearchProps } from "./admin/AdminHeaderSearch.tsx";
 export type { AdminHeaderNotificationsProps, NotificationItem } from "./admin/AdminHeaderNotifications.tsx";
