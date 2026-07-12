@@ -1,7 +1,8 @@
 import type { ComponentChildren } from "preact";
 
+// deno-lint-ignore no-explicit-any
 /** テーブルカラム定義 */
-export interface DataTableColumn<T = Record<string, unknown>> {
+export interface DataTableColumn<T = any> {
   /** データキー */
   key: string;
   /** ヘッダーラベル */
@@ -16,7 +17,8 @@ export interface DataTableColumn<T = Record<string, unknown>> {
   width?: string;
 }
 
-export interface DataTableProps<T = Record<string, unknown>> {
+// deno-lint-ignore no-explicit-any
+export interface DataTableProps<T = any> {
   /** カラム定義 */
   columns: DataTableColumn<T>[];
   /** データ配列 */
@@ -46,7 +48,8 @@ export interface DataTableProps<T = Record<string, unknown>> {
  * />
  * ```
  */
-export function DataTable<T extends Record<string, unknown>>({
+// deno-lint-ignore no-explicit-any
+export function DataTable<T = any>({
   columns,
   data,
   selectable,
@@ -114,8 +117,8 @@ export function DataTable<T extends Record<string, unknown>>({
                     class={`sc-data-table__td${col.align === "right" ? " sc-data-table__td--right" : col.align === "center" ? " sc-data-table__td--center" : ""}`}
                   >
                     {col.render
-                      ? col.render(row[col.key], row, i)
-                      : (row[col.key] as ComponentChildren)}
+                      ? col.render((row as Record<string, unknown>)[col.key], row, i)
+                      : ((row as Record<string, unknown>)[col.key] as ComponentChildren)}
                   </td>
                 ))}
               </tr>
